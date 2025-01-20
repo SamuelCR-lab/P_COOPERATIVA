@@ -7,10 +7,7 @@
 void ajustar_tamanio(int ** puntero_a_puntero, int tamanio){
 	*puntero_a_puntero = (int *) realloc(*puntero_a_puntero,tamanio * sizeof(int));
 }
-<<<<<<< HEAD
 
-=======
-*/
 int encontrar_menor(int const * numero1, int n){
 	int menor = numero1[0];
 	for (int i = 1; i < n; i++){//
@@ -20,7 +17,7 @@ int encontrar_menor(int const * numero1, int n){
 	}
 	return menor;
 }
->>>>>>> 065cf9627baff6ac31acaf3e5e7d22401e685b2e
+
 int main(){
 	int exit;
 	int vueltas = 0;
