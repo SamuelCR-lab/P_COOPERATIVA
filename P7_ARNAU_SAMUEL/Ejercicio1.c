@@ -4,10 +4,10 @@
 	Trabajo realizado por Arnau y Samuel
 */
 
-/*void ajustar_tamanio(int ** x, int n){
-	x = (int **) realloc(*x,n * sizeof(int));
+void ajustar_tamanio(int ** puntero_a_puntero, int tamanio){
+	*puntero_a_puntero = (int *) realloc(*puntero_a_puntero,tamanio * sizeof(int));
 }
-*/
+
 int main(){
 	int exit;
 	int vueltas = 0;
@@ -16,8 +16,8 @@ int main(){
 	numeros = (int *) malloc(sizeof(int));
 	do{
 		vueltas++;
-		//ajustar_tamanio(&numeros, vueltas);
-		numeros = (int *) realloc(numeros, vueltas * sizeof(int));
+		ajustar_tamanio(&numeros, vueltas);
+		//numeros = (int *) realloc(numeros, vueltas * sizeof(int));
 		exit = scanf(" %d", &numeros[vueltas-1]);
 	}while(exit != 0);
 	
