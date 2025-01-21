@@ -14,7 +14,7 @@ void intercambiarValores(int * primero, int * numero_m){
 	*numero_m = posicion;
 }
 
-int * encontrar_menor(int const * numero1, int cantidad_num){
+int * encontrar_menor(int * numero1, int cantidad_num){
 	int * menor = &numero1[0];
 	for (int i = 1; i < cantidad_num; i++){//
 		if (*menor > numero1[i]){
@@ -27,7 +27,8 @@ int * encontrar_menor(int const * numero1, int cantidad_num){
 int main(){
 	int exit;
 	int vueltas = 0;
-	int * numeros, num_menor;
+	int * numeros; 
+	int * num_menor;
 	printf("Escribe cuantos numeros quieras y escribe exit para salir\n");
 	numeros = (int *) malloc(sizeof(int));
 	do{
