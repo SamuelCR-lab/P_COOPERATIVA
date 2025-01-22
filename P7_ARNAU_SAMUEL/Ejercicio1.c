@@ -22,7 +22,6 @@ int * encontrar_menor(int * numero1, int cantidad_num){
 		}
 	}
 	return menor;
-}
 
 int main(){
 	int exit;
