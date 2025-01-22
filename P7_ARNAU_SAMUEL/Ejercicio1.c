@@ -22,7 +22,6 @@ int * encontrar_menor(int * numero1, int cantidad_num){
 		}
 	}
 	return menor;
-}
 
 int main(){
 	int exit;
@@ -37,6 +36,7 @@ int main(){
 		//numeros = (int *) realloc(numeros, vueltas * sizeof(int));
 		exit = scanf(" %d", &numeros[vueltas-1]);
 	}while(exit != 0);
+		vueltas -= 1;
 	for(int i = 0; i < vueltas; i++){
 		num_menor = encontrar_menor(&numeros[i], vueltas-i);
 		intercambiarValores(&numeros[i], num_menor);
