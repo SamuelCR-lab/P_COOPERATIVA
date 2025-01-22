@@ -11,10 +11,10 @@ typedef struct{
 }Estudiante;
 
 void OrdenarApellido(Estudiante ** OrdenApellido);
-void OrdenarNota(Estudiante ** OrdenNota);
+void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor);
 void Ordenar(Estudiante ** ordenado, int cantidad);
 void añadir_alumno(Estudiante ** pupilo, int cantidad);
-
+void imprimir_estudiantes(Estudiante * imprimir_alumnos);
 
 int main(){
 	Estudiante * alumnos;
@@ -29,32 +29,39 @@ int main(){
 	if(alumnos == NULL) return 1;
 	añadir_alumno(&alumnos, cantidad);
 	Ordenar(&alumnos, cantidad);
-	for (int i = 0; i < cantidad; ++i){
-		printf("Estudiante %d:\n- Nombre: %s- Apellido: %s- Nota: %.2f\n", i+1, alumnos[i].nombre, alumnos[i].apellido, alumnos[i].nota);
-	}
+	imprimir_estudiantes(alumnos);
 	free(alumnos);
 return 0;
 }
 
 void Ordenar(Estudiante ** ordenado, int cantidad){
 	Estudiante * orden = ordenado[0];
-	for (int i = 1; i < cantidad; i++){
-		if (orden->nota < ordenado[i]->nota){
-			*orden = *ordenado[i];
-		}
-		OrdenarNota(&orden);
-	}
 	for (int i = 0; i < cantidad; i++){
-		if (strcmp){
-			OrdenarApellido(&ordenado[i+1]->apellido);
+		for (int j = 1; j < cantidad; j++){
+			if (orden->nota < (*ordenado)[j].nota){
+				orden = &(*ordenado)[j];
+			}
 		}
+	OrdenarNota(&ordenado[i],&orden);
 	}
-	//OrdenarApellido(&orden[i].apellido);
+
+	orden = ordenado[0];
+
+	for (int i = 0; i < cantidad; i++){
+		for (int j = 0; j < cantidad; j++){
+			if (strcmp((*orden)->apellido, (*ordenado)[j].apellido) < 0){
+				orden = &ordenado[j];
+			}
+		}		
+	OrdenarApellido(&orden[i].apellido);
+	}
 
 }
 
-void OrdenarNota(Estudiante ** OrdenNota){
-	float * n;
+void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor){
+	Estudiante * orden = *OrdenNota;
+	*OrdenNota = *NotaMayor;
+	*NotaMayor = *orden;
 }
 
 void OrdenarApellido(Estudiante ** OrdenApellido){
@@ -74,4 +81,10 @@ void añadir_alumno(Estudiante ** pupilo, int cantidad){
 		scanf("%f", &((*pupilo)[i].nota));
 	}
 
+}
+
+void imprimir_estudiantes(Estudiante * imprimir_alumnos){
+	for (int i = 0; i < cantidad; ++i){
+		printf("Estudiante %d:\n- Nombre: %s- Apellido: %s- Nota: %.2f\n", i+1, imprimir_alumnos[i].nombre, imprimir_alumnos[i].apellido, imprimir_alumnos[i].nota);
+	}
 }
