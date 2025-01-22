@@ -10,7 +10,11 @@ typedef struct{
 	float nota;
 }Estudiante;
 
+<<<<<<< HEAD
 void OrdenarApellido(Estudiante ** OrdenApellido);
+=======
+void OrdenarApellido(Estudiante ** OrdenApellido, Estudiante ** NotaMayor);
+>>>>>>> d3b8ed6c017ed0f072954a76e32b4cc918e5b908
 void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor);
 void Ordenar(Estudiante ** ordenado, int cantidad);
 void añadir_alumno(Estudiante ** pupilo, int cantidad);
@@ -42,6 +46,7 @@ void Ordenar(Estudiante ** ordenado, int cantidad){
 				orden = &(*ordenado)[j];
 			}
 		}
+<<<<<<< HEAD
 	OrdenarNota(&ordenado[i],&orden);
 	}
 
@@ -51,9 +56,18 @@ void Ordenar(Estudiante ** ordenado, int cantidad){
 		for (int j = 0; j < cantidad; j++){
 			if (strcmp((*orden)->apellido, (*ordenado)[j].apellido) < 0){
 				orden = &ordenado[j];
+======
+	OrdenarNota(ordenado[i],&orden);
+
+	}
+	for (int i = 0; i < cantidad; i++){
+		for (int j = 0; j < cantidad; j++){
+			if (strcmp(orden->apellido, (*ordenado)[j].apellido) < 0){
+				orden = &(*ordenado)[j];
+>>>>>>> d3b8ed6c017ed0f072954a76e32b4cc918e5b908
 			}
 		}		
-	OrdenarApellido(&orden[i].apellido);
+	OrdenarApellido(ordenado[i],&orden);
 	}
 
 }
@@ -61,11 +75,13 @@ void Ordenar(Estudiante ** ordenado, int cantidad){
 void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor){
 	Estudiante * orden = *OrdenNota;
 	*OrdenNota = *NotaMayor;
-	*NotaMayor = *orden;
+	*NotaMayor = *(*orden);
 }
 
-void OrdenarApellido(Estudiante ** OrdenApellido){
-
+void OrdenarApellido(Estudiante ** OrdenApellido, Estudiante ** ApellidoMenor){
+	Estudiante * orden = *OrdenarApellido;
+	*OrdenarApellido = *ApellidoMenor;
+	*ApellidoMenor = *(*orden);
 }
 
 void añadir_alumno(Estudiante ** pupilo, int cantidad){
