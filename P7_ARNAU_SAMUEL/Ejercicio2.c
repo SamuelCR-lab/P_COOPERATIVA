@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #define MAX_TAMANIO 50
-#define NOTA_MAXIMA 10
+
 typedef struct{
 	char nombre[MAX_TAMANIO];
 	char apellido[MAX_TAMANIO];
