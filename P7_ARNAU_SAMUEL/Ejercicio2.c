@@ -37,24 +37,30 @@ return 0;
 }
 
 void Ordenar(Estudiante ** ordenado, int cantidad){
-	Estudiante * orden = (*ordenado)[0];
-	for (int i = 1; i < cantidad; i++){
-		if (*orden.nota < ordenado[i]->nota){
-			*orden = &ordenado[i];
+	Estudiante * orden = ordenado[0];
+	for (int i = 0; i < cantidad; ++i){
+		for (int j = 1; j < cantidad; j++){
+			if (orden->nota < (*ordenado)[j].nota){
+				orden = &(*ordenado)[j];
+			}
 		}
-		OrdenarNota(&orden);
+	OrdenarNota(ordenado[i],&orden);
 	}
-	for (int i = 0; i < cantidad; i++){
-		if (strcmp){
-			OrdenarApellido(&ordenado[i+1].apellido);
-		}
+	for (int i = 0; i < cantidad; ++i){
+		for (int i = 0; i < cantidad; i++){
+			if (strcmp(*orden.apellido > (*ordenado)[i].apellido)){
+				*orden = &ordenado[i];
+			}
+		}		
+	OrdenarApellido(&orden[i].apellido);
 	}
-	OrdenarApellido(&orden[i].apellido)
 
 }
 
-void OrdenarNota(Estudiante ** OrdenNota){
-	float * n
+void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor){
+	Estudiante * orden = *OrdenNota;
+	*OrdenNota = *NotaMayor;
+	*NotaMayor = *orden;
 }
 
 void OrdenarApellido(Estudiante ** OrdenApellido){
