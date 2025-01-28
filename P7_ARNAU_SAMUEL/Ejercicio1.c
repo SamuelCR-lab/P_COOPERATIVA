@@ -6,6 +6,7 @@
 
 void ajustar_tamanio(int ** puntero_a_puntero, int tamanio){
 	*puntero_a_puntero = (int *) realloc(*puntero_a_puntero,tamanio * sizeof(int));
+	if(*puntero_a_puntero == NULL) return 1;
 }
 
 void intercambiarValores(int * primero, int * numero_m){

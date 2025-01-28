@@ -14,8 +14,8 @@ void OrdenarApellido(Estudiante ** OrdenApellido, Estudiante ** NotaMayor);
 void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor);
 void Ordenar(Estudiante ** ordenado, int cantidad);
 void añadir_alumno(Estudiante ** pupilo, int cantidad);
-void imprimir_estudiantes(Estudiante * imprimir_alumnos, int cantidad);
-
+void imprimir_estudiantes(Estudiante ** imprimir_alumnos, int cantidad);
+void Ordenar2(Estudiante ** ordenado_apellido, int cantidad);
 int main(){
 	Estudiante * alumnos;
 	int cantidad = 0;
@@ -28,8 +28,11 @@ int main(){
 	alumnos = (Estudiante *) malloc (sizeof(Estudiante) * cantidad);
 	if(alumnos == NULL) return 1;
 	añadir_alumno(&alumnos, cantidad);
+	imprimir_estudiantes(&alumnos, cantidad);
 	Ordenar(&alumnos, cantidad);
-	imprimir_estudiantes(alumnos,cantidad);
+	imprimir_estudiantes(&alumnos, cantidad);
+	Ordenar2(&alumnos, cantidad);
+	imprimir_estudiantes(&alumnos, cantidad);
 	free(alumnos);
 return 0;
 }
@@ -37,38 +40,34 @@ return 0;
 void Ordenar(Estudiante ** ordenado, int cantidad){
 	Estudiante * orden = ordenado[0];
 	for (int i = 0; i < cantidad; i++){
-		for (int j = 1; j < cantidad; j++){
-			if (orden->nota < (*ordenado)[j].nota){
-				orden = &(*ordenado)[j];
-			}
+		if ((*orden).nota < (*ordenado)[i].nota){
+			*orden = (*ordenado)[i];
 		}
 	OrdenarNota(&ordenado[i],&orden);
+
 	}
-
-	orden = ordenado[0];
-
-	for (int i = 0; i < cantidad; i++){
-		for (int j = 0; j < cantidad; j++){
-			if (strcmp((*orden)->apellido, (*ordenado)[j].apellido) < 0){
-				orden = &ordenado[j];
-
-			}
-		}		
-	OrdenarApellido(ordenado[i],&orden);
-	}
-
 }
+void Ordenar2(Estudiante ** ordenado_apellido, int cantidad){
+	Estudiante * orden = ordenado_apellido[0];
+	for (int i = 0; i < cantidad; i++){
+		if (strcmp((*orden).apellido, (*ordenado_apellido)[i].apellido) <= 0){
+			*orden = (*ordenado_apellido)[i];
+		}	
+		OrdenarApellido(&ordenado_apellido[i],&orden);
+		}
+	} 
+
 
 void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor){
 	Estudiante * orden = *OrdenNota;
 	*OrdenNota = *NotaMayor;
-	*NotaMayor = *(*orden);
+	*NotaMayor = orden;
 }
 
 void OrdenarApellido(Estudiante ** OrdenApellido, Estudiante ** ApellidoMenor){
-	Estudiante * orden = *OrdenarApellido;
-	*OrdenarApellido = *ApellidoMenor;
-	*ApellidoMenor = *(*orden);
+	Estudiante * orden = *OrdenApellido;
+	*OrdenApellido = *ApellidoMenor;
+	*ApellidoMenor = orden;
 }
 
 void añadir_alumno(Estudiante ** pupilo, int cantidad){
@@ -86,8 +85,8 @@ void añadir_alumno(Estudiante ** pupilo, int cantidad){
 
 }
 
-void imprimir_estudiantes(Estudiante * imprimir_alumnos,int cantidad){
-	for (int i = 0; i < cantidad; ++i){
-		printf("Estudiante %d:\n- Nombre: %s- Apellido: %s- Nota: %.2f\n", i+1, imprimir_alumnos[i].nombre, imprimir_alumnos[i].apellido, imprimir_alumnos[i].nota);
+void imprimir_estudiantes(Estudiante ** imprimir_alumnos, int cantidad){
+	for (int i = 0; i < cantidad; i++){
+		printf("Estudiante %d:\n- Nombre: %s- Apellido: %s- Nota: %.2f\n", i+1, (*imprimir_alumnos)[i].nombre, (*imprimir_alumnos)[i].apellido, (*imprimir_alumnos)[i].nota);
 	}
 }
