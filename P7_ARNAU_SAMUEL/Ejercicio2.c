@@ -14,7 +14,7 @@ void OrdenarApellido(Estudiante ** OrdenApellido, Estudiante ** NotaMayor);
 void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor);
 void Ordenar(Estudiante ** ordenado, int cantidad);
 void añadir_alumno(Estudiante ** pupilo, int cantidad);
-void imprimir_estudiantes(Estudiante * imprimir_alumnos);
+void imprimir_estudiantes(Estudiante * imprimir_alumnos, int cantidad);
 
 int main(){
 	Estudiante * alumnos;
@@ -29,7 +29,7 @@ int main(){
 	if(alumnos == NULL) return 1;
 	añadir_alumno(&alumnos, cantidad);
 	Ordenar(&alumnos, cantidad);
-	imprimir_estudiantes(alumnos);
+	imprimir_estudiantes(alumnos,cantidad);
 	free(alumnos);
 return 0;
 }
@@ -46,22 +46,17 @@ void Ordenar(Estudiante ** ordenado, int cantidad){
 	}
 
 	orden = ordenado[0];
+
 	for (int i = 0; i < cantidad; i++){
 		for (int j = 0; j < cantidad; j++){
 			if (strcmp((*orden)->apellido, (*ordenado)[j].apellido) < 0){
 				orden = &ordenado[j];
-			}
-			OrdenarNota(ordenado[i],&orden);
-	}
-	for (int i = 0; i < cantidad; i++){
-		for (int j = 0; j < cantidad; j++){
-			if (strcmp(orden->apellido, (*ordenado)[j].apellido) < 0){
-				orden = &(*ordenado)[j];
+
 			}
 		}		
-		OrdenarApellido(ordenado[i],&orden);
-		}
+	OrdenarApellido(ordenado[i],&orden);
 	}
+
 }
 
 void OrdenarNota(Estudiante ** OrdenNota, Estudiante ** NotaMayor){
@@ -91,7 +86,7 @@ void añadir_alumno(Estudiante ** pupilo, int cantidad){
 
 }
 
-void imprimir_estudiantes(Estudiante * imprimir_alumnos){
+void imprimir_estudiantes(Estudiante * imprimir_alumnos,int cantidad){
 	for (int i = 0; i < cantidad; ++i){
 		printf("Estudiante %d:\n- Nombre: %s- Apellido: %s- Nota: %.2f\n", i+1, imprimir_alumnos[i].nombre, imprimir_alumnos[i].apellido, imprimir_alumnos[i].nota);
 	}
