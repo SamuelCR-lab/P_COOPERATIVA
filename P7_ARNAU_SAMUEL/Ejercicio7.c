@@ -2,32 +2,41 @@
 #include <stdlib.h>
 
 void array(int m);
-void primos_encontrados(int m);
+int primos_totales(int m);
+void guardado_primos(int * primos_a_guardar, int m);
 
 int main(){
-	int m, primos, primos_encontrados;
-
+	int m, primos, arr;
+	int * arr_primos;
 	printf("Introduce un número cualquiera: ");
 	scanf(" %d",&m);
-	primos = primos_encontrados(m);
-	int * arr = array(primos);
-	guardado_primos(primos); 
-
+	primos = primos_totales(m);
+	arr_primos = (int*) malloc(primos * sizeof(int));
+	if(arr_primos == NULL) return 1;
+	guardado_primos(arr_primos, m); 
+	free(arr_primos);
 return 0;
 }
-void array(int m){
-	arr = (int*) malloc(m * sizeof(int));
-	if(arr == NULL) return 1;
-}
-void primos_encontrados(int m){
-	for(int i = 1; i = m ; i++){
-		primos = i/i;
-		if (primos = 1){
-			primos_encontrados = primos + primos_encontrados;
+
+int primos_totales(int m){
+	int primos_encontrados,primos;
+
+	for(int i = 0; i <= m ; i++){
+		for(int j = 2; j <= i/2; j++){
+			if (i % j == 0){
+				primos_encontrados++;
+			}
 		}
 	}
+	return primos_encontrados;
 }
-void guardado_primos(int primos){
-	for(int i = 1; i = m ; i++){
-		primos = i/i;
+void guardado_primos(int * primos_a_guardar, int m){
+	int numeros_primos;
+	for(int i = 0; i <= m ; i++){
+		for(int j = 2; j <= i/2; j++){
+			if (i % j != 0){
+				primos_a_guardar[i] = i;
+			}
+		}
+	}
 }
