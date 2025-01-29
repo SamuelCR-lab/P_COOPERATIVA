@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for fichero in $(ls);do
+if [[ -f "$fichero" == *.txt:Zone ]];then 
+	echo "Eliminando: $fichero"
+	rm -f -- "fichero"
+fi
+done
+	
