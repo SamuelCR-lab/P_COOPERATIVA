@@ -1,7 +1,8 @@
 #!/bin/bash
 
-for ARCHIVO in $(ls -R); do
+for ARCHIVO in $(find -path *.Identifier); do
 	if [[ "$ARCHIVO" == *.Identifier ]]; then
-		echo "$ARCHIVO"
+		echo "Vas a eliminar: $ARCHIVO
+		rm "$ARCHIVO"
 	fi
 done
