@@ -19,12 +19,12 @@ return 0;
 }
 
 int primos_totales(int m){
-	int primos_encontrados,primos;
-
-	for(int i = 0; i <= m ; i++){
-		for(int j = 2; j <= i/2; j++){
-			if (i % j == 0){
+	int primos_encontrados = 0;
+	for(int i = 1; i <= m ; i++){
+		for(int j = 2; j <= m; j++){
+			if (i % j != 1){
 				primos_encontrados++;
+				printf("%d",primos_encontrados);
 			}
 		}
 	}
@@ -32,9 +32,9 @@ int primos_totales(int m){
 }
 void guardado_primos(int * primos_a_guardar, int m){
 	int numeros_primos;
-	for(int i = 0; i <= m ; i++){
+	for(int i = 1; i <= m ; i++){
 		for(int j = 2; j <= i/2; j++){
-			if (i % j != 0){
+			if (i % j != 1){
 				primos_a_guardar[i] = i;
 			}
 		}
