@@ -6,7 +6,7 @@
 
 void ajustar_tamanio(int ** puntero_a_puntero, int tamanio){
 	*puntero_a_puntero = (int *) realloc(*puntero_a_puntero,tamanio * sizeof(int));
-	if(*puntero_a_puntero == NULL) return 1;
+	if(*puntero_a_puntero == NULL) return;
 }
 
 void intercambiarValores(int * primero, int * numero_m){
@@ -17,12 +17,13 @@ void intercambiarValores(int * primero, int * numero_m){
 
 int * encontrar_menor(int * numero1, int cantidad_num){
 	int * menor = &numero1[0];
-	for (int i = 1; i < cantidad_num; i++){//
+	for (int i = 1; i < cantidad_num; i++){
 		if (*menor > numero1[i]){
 			menor = &numero1[i];
 		}
 	}
 	return menor;
+}
 
 int main(){
 	int exit;
@@ -34,7 +35,7 @@ int main(){
 	do{
 		vueltas++;
 		ajustar_tamanio(&numeros, vueltas);
-		//numeros = (int *) realloc(numeros, vueltas * sizeof(int));
+		numeros = (int *) realloc(numeros, vueltas * sizeof(int));
 		exit = scanf(" %d", &numeros[vueltas-1]);
 	}while(exit != 0);
 	vueltas	-= 1;
@@ -45,5 +46,5 @@ int main(){
 	}
 	printf("\n");
 	free(numeros);
-return 0;
+	return 0;
 }
