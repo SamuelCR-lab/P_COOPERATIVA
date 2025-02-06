@@ -14,8 +14,8 @@ void añadir_alumno(Estudiante ** pupilo, int cantidad);
 void imprimir_estudiantes(Estudiante ** imprimir_alumnos, int cantidad);
 void OrdenarNota(Estudiante ** ordenado_nota, int cantidad);
 void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad);
-void IntercambiarEstudiante(Estudiante ** menor, Estudiante ** mayor);
-//void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad);
+void IntercambiarEstudiante(Estudiante ** menor, int posicion, Estudiante ** mayor);
+
 int main(){
 	Estudiante * alumnos;
 	int cantidad = 0;
@@ -47,11 +47,12 @@ void OrdenarNota(Estudiante ** ordenado_nota, int cantidad){
 	Estudiante * orden = *ordenado_nota+cantidad-1;
 	for (int i = 0; i < cantidad; i++){
 		if ((*orden).nota > (*ordenado_nota)[i].nota){
-			IntercambiarEstudiante((*ordenado_nota)+i, &orden);
+			IntercambiarEstudiante(ordenado_nota, i, &orden);
 		}
 	}
 	OrdenarNota(ordenado_nota, cantidad-1);
 }
+
 void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad){
 	if (cantidad <= 1){
 		return;
@@ -59,30 +60,26 @@ void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad){
 	Estudiante * orden = *ordenado_apellido+cantidad-1;
 	for (int i = 0; i < cantidad; i++){
 		if (strcmp((*orden).apellido, (*ordenado_apellido)[i].apellido) <= 0){
-			IntercambiarEstudiante((*ordenado_apellido)+i, &orden);
-			//*orden = (*ordenado_apellido)[i];
+			IntercambiarEstudiante(ordenado_apellido, i, &orden);
 		}
 	}
 	OrdenarApellido(ordenado_apellido, cantidad-1);
 } 
 
-void IntercambiarEstudiante(Estudiante ** menor, Estudiante ** mayor){
-	Estudiante * comodin = *menor;
-	memcpy(*menor, *mayor, sizeof(Estudiante));
-	memcpy(*mayor, comodin, sizeof(Estudiante));
-	//*menor = *mayor;
-	//*mayor = comodin;
+void IntercambiarEstudiante(Estudiante ** menor, int posicion, Estudiante ** mayor){
+	Estudiante comodin = *(*menor+posicion);
+	
+	strcpy((*menor+posicion)->nombre, (*mayor)->nombre);
+	strcpy((*menor+posicion)->apellido, (*mayor)->apellido);
+	(*menor+posicion)->nota = (*mayor)->nota;
+	
+	strcpy((*mayor)->nombre, comodin.nombre);
+	strcpy((*mayor)->apellido, comodin.apellido);
+	(*mayor)->nota = comodin.nota;
 }
-/*
-void IntercambiarEstudiante(Estudiante ** OrdenApellido, Estudiante ** ApellidoMenor){
-	Estudiante * orden = *OrdenApellido;
-	*OrdenApellido = *ApellidoMenor;
-	*ApellidoMenor = orden;
-}
-*/
+
 void añadir_alumno(Estudiante ** pupilo, int cantidad){
-	for (int i = 0; i < cantidad; i++)
-	{
+	for (int i = 0; i < cantidad; i++){
 		printf("Escribe el nombre del estudiante: ");
 		scanf(" ");
 		fgets((*pupilo)[i].nombre, MAX_TAMANIO, stdin);
