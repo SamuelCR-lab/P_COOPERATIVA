@@ -44,29 +44,34 @@ void OrdenarNota(Estudiante ** ordenado_nota, int cantidad){
 	if (cantidad <= 1){
 		return;
 	}
-	Estudiante * orden = *ordenado_nota+0;
-	for (int i = 1; i < cantidad; i++){
-		if ((*orden).nota < (*ordenado_nota)[i].nota){
-			IntercambiarEstudiante(&ordenado_nota[i], &orden);
+	Estudiante * orden = *ordenado_nota+cantidad-1;
+	for (int i = 0; i < cantidad; i++){
+		if ((*orden).nota > (*ordenado_nota)[i].nota){
+			IntercambiarEstudiante((*ordenado_nota)+i, &orden);
 		}
 	}
-	OrdenarNota((*ordenado_nota)+1, cantidad-1);
+	OrdenarNota(ordenado_nota, cantidad-1);
 }
 void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad){
-	Estudiante * orden = ordenado_apellido[0];
+	if (cantidad <= 1){
+		return;
+	}
+	Estudiante * orden = *ordenado_apellido+cantidad-1;
 	for (int i = 0; i < cantidad; i++){
 		if (strcmp((*orden).apellido, (*ordenado_apellido)[i].apellido) <= 0){
-			*orden = (*ordenado_apellido)[i];
-		}	
-		IntercambiarEstudiante(&ordenado_apellido[i],&orden);
+			IntercambiarEstudiante((*ordenado_apellido)+i, &orden);
+			//*orden = (*ordenado_apellido)[i];
 		}
-	} 
-
+	}
+	OrdenarApellido(ordenado_apellido, cantidad-1);
+} 
 
 void IntercambiarEstudiante(Estudiante ** menor, Estudiante ** mayor){
 	Estudiante * comodin = *menor;
-	*menor = *mayor;
-	*mayor = comodin;
+	memcpy(*menor, *mayor, sizeof(Estudiante));
+	memcpy(*mayor, comodin, sizeof(Estudiante));
+	//*menor = *mayor;
+	//*mayor = comodin;
 }
 /*
 void IntercambiarEstudiante(Estudiante ** OrdenApellido, Estudiante ** ApellidoMenor){
