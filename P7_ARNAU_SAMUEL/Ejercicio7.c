@@ -29,8 +29,8 @@ int primos_totales(int m){
 	int primos_encontrados = 0;
 	for(int i = 2; i <= m ; i++){
 		int busqueda_primos = 1;
-		for(int j = 2; j <= i; j++){
-			if (i % j == 1 || i/j+1 == 1){
+		for(int j = 2; j < i; j++){
+			if (i % j == 0){
 				busqueda_primos = 0;
 				break;
 			}
@@ -45,8 +45,8 @@ void guardado_primos(int * primos_a_guardar, int m){
 	int numeros_primos = 0;
 	for(int i = 2; i <= m ; i++){
 		int busqueda_primos = 1;
-		for(int j = 2; j <= i; j++){
-			if (i % j == 1){
+		for(int j = 2; j < i; j++){
+			if (i % j == 0){
 				busqueda_primos = 0;
 				break;
 			}
