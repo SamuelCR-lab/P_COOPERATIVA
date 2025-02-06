@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+	Trabajo realizado por Arnau y Samuel
+*/
+
 void array(int m);
 int primos_totales(int m);
 void guardado_primos(int * primos_a_guardar, int m);

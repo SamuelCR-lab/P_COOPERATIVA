@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+	Trabajo realizado por Arnau y Samuel
+*/
+
 #define MAX_TAMANIO 50
 
 typedef struct{

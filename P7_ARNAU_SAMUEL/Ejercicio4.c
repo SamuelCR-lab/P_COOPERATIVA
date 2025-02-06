@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+	Trabajo realizado por Arnau y Samuel
+*/
+
 int comprobar_palindromo(char * string, int longitud, int i);
 
 int main(){

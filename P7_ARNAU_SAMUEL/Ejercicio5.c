@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+	Trabajo realizado por Arnau y Samuel
+*/
+
 void matriz_rellena(int ** matriz_n,int n,int m);
 void mostrar_matriz(int ** mostrar,int n,int m);
 void mostrar_matriz(int ** mostrar,int n,int m);

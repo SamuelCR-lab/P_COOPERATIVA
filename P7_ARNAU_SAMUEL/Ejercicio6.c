@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+	Trabajo realizado por Arnau y Samuel
+*/
+
 char cifrado_cesar(char frase, int saltos);
 
 int main(){
