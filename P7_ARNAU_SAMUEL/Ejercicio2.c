@@ -95,8 +95,8 @@ void añadir_alumno(Estudiante ** pupilo, int cantidad){
 	}
 
 }
-
-void imprimir_estudiantes(Estudiante ** imprimir_alumnos, int cantidad){
+//Función para imprimir los estudiantes
+void imprimir_estudiantes(Estudiante ** imprimir_alumnos, int cantidad){//Le damos por referencia la direccion de memoria de la memoria reservada y la variable cantidad para que el bucle se detenga un alumno menos
 	for (int i = 0; i < cantidad; i++){
 		printf("Estudiante %d:\n- Nombre: %s- Apellido: %s- Nota: %.2f\n", i+1, (*imprimir_alumnos)[i].nombre, (*imprimir_alumnos)[i].apellido, (*imprimir_alumnos)[i].nota);
 	}
