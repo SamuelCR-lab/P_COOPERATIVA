@@ -97,24 +97,32 @@ void imprimir_tablero(char ** inicio, int n,int m){
 void movimiento(char ** movimiento,int * n,int * m, char sbid){
 	switch (sbid){
 		case 'w':
-			movimiento[*n][*m] = ' ';
-			(*n)--; // Para situarse en la línea de arriba
-			movimiento[*n][*m] = '#';
+			if(movimiento[*n-1][*m] != '*'){ // Si la casilla a la que me voy a mover hay un * no me muevo
+				movimiento[*n][*m] = ' ';
+				(*n)--; // Para situarse en la línea de arriba
+				movimiento[*n][*m] = '#';
+			}
 			break;
 		case 's':
-			movimiento[*n][*m] = ' ';
-			(*n)++; // Para situarse en la línea de abajo
-			movimiento[*n][*m] = '#';
+			if(movimiento[*n+1][*m] != '*'){
+				movimiento[*n][*m] = ' ';
+				(*n)++; // Para situarse en la línea de abajo
+				movimiento[*n][*m] = '#';
+			}
 			break;
 		case 'd':
-			movimiento[*n][*m] = ' ';
-			(*m)++; // Para situarse en la columna de la derecha
-			movimiento[*n][*m] = '#';
+			if(movimiento[*n][*m+1] != '*'){
+				movimiento[*n][*m] = ' ';
+				(*m)++; // Para situarse en la columna de la derecha
+				movimiento[*n][*m] = '#';
+			}
 			break;
 		case 'a':
-			movimiento[*n][*m] = ' ';
-			(*m)--; // Para situarse en la columna de la izquierda
-			movimiento[*n][*m] = '#';
+			if(movimiento[*n][*m-1] != '*'){
+				movimiento[*n][*m] = ' ';
+				(*m)--; // Para situarse en la columna de la izquierda
+				movimiento[*n][*m] = '#';
+			}
 			break;
 	}
 }
