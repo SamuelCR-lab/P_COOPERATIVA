@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /*
 	Trabajo realizado por Arnau y Samuel
@@ -34,13 +35,12 @@ return 0;
 }
 
 void matriz_rellena(int ** matriz_nm,int n,int m){
+	int r = 0;
+	srand(time(NULL));
 	for (int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
-			if (j > 0 && i % j == 0){
-				matriz_nm[i][j] = i+j+3 ;
-			}else{
-				matriz_nm[i][j] = i+j+1;
-			}
+			r = rand() % 9;
+			matriz_nm[i][j] = r+1;
 		}
 	}
 }

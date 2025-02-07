@@ -7,7 +7,7 @@
 char ** crear_tablero(int n,int m);
 void borde_tablero (char ** borde, int n, int m);
 void imprimir_tablero(char ** inicio, int n,int m);
-void movimiento(char ** movimiento,int n,int m);
+void movimiento(char ** movimiento,int n,int m, char sbid);
 
 int main(int argcount, char ** argvalue){
 	int n,m;//n son filas y m columnas
@@ -28,6 +28,10 @@ int main(int argcount, char ** argvalue){
 			m = (int) argvalue[2];
 			tablero = crear_tablero(n,m);
 			borde_tablero(tablero,n,m);
+
+			scanf("%c",&sbid);
+			movimiento(inicio,n,m,sbid);
+			imprimir_tablero(borde,n,m);
 		}
 
 	}else{
@@ -71,34 +75,24 @@ void imprimir_tablero(char ** inicio, int n,int m){
 		}
 		printf("\n");
 	}
-	movimiento(inicio,n,m);
 }
-void movimiento(char ** movimiento,int n,int m){
-	n = n/2;
-	m = m/2;
-	for (int i = 0; i >= 0 ; i++){
-		char sbid = 0;
-		scanf("%c",&sbid);
-		switch (sbid){
-			case 'w':
-				movimiento[n][m] = ' ';
-				movimiento[n-1][m] = '#';
-				break;
-			case 's':
-				movimiento[n][m] = ' ';
-				movimiento[n+1][m] = '#';
-				break;
-			case 'd':
-				movimiento[n][m] = ' ';
-				movimiento[n][m+1] = '#';
-				break;
-			case 'a':
-				movimiento[n][m] = ' ';
-				movimiento[n][m-1] = '#';
-				break;
-			default:
-				i = -2;
-		}
-		imprimir_tablero(movimiento,n*2,m*2);
+void movimiento(char ** movimiento,int n,int m, char sbid){
+	switch (sbid){
+		case 'w':
+			movimiento[n][m] = ' ';
+			movimiento[n-1][m] = '#';
+			break;
+		case 's':
+			movimiento[n][m] = ' ';
+			movimiento[n+1][m] = '#';
+			break;
+		case 'd':
+			movimiento[n][m] = ' ';
+			movimiento[n][m+1] = '#';
+			break;
+		case 'a':
+			movimiento[n][m] = ' ';
+			movimiento[n][m-1] = '#';
+			break;
 	}
 }
