@@ -6,8 +6,8 @@
 	Trabajo realizado por Arnau y Samuel
 */
 
-#define MAX_TAMANIO 50
-
+#define MAX_TAMANIO 50//le damos un tamaño a los nombres y apellidos para no ir 
+//Definicion de un struct para que la variable estudiante contenga cada uno de los tipos de datos
 typedef struct{
 	char nombre[MAX_TAMANIO];
 	char apellido[MAX_TAMANIO];
@@ -21,7 +21,7 @@ void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad);
 void IntercambiarEstudiante(Estudiante ** menor, int posicion, Estudiante ** mayor);
 
 int main(){
-	Estudiante * alumnos;
+	Estudiante * alumnos;//Es un puntero de tipo estudiante
 	int cantidad = 0;
 	printf("Cuántos alumnos quieres añadir? ");
 	int comprobacion = scanf("%d", &cantidad);
@@ -29,7 +29,7 @@ int main(){
 		printf("Error, introduce un número\n");
 		return 1;
 	}
-	alumnos = (Estudiante *) malloc (sizeof(Estudiante) * cantidad);
+	alumnos = (Estudiante *) malloc (sizeof(Estudiante) * cantidad);//Reservamos memoria para en la variable alumno que es de tipo estudiante y por ello le hacemos un cast al malloc para que tambien lo sea (Estudiante*)
 	if(alumnos == NULL) return 1;
 	añadir_alumno(&alumnos, cantidad);
 	printf("\nAlumnos que has añadido\n");
@@ -43,33 +43,33 @@ int main(){
 	free(alumnos);
 return 0;
 }
-
+//Esta función es ordena la nota dada por doble referencia por ello lo igualamos a una variable orden de tipo estudiante que es un puntero
 void OrdenarNota(Estudiante ** ordenado_nota, int cantidad){
 	if (cantidad <= 1){
 		return;
 	}
-	Estudiante * orden = *ordenado_nota+cantidad-1;
+	Estudiante * orden = *ordenado_nota+cantidad-1;//le restamos 1 para que comience por el ultimo, de los alumnos guardados
 	for (int i = 0; i < cantidad; i++){
-		if ((*orden).nota > (*ordenado_nota)[i].nota){
+		if ((*orden).nota > (*ordenado_nota)[i].nota){//realizamos la comparacion con cada uno de ellos y se lo damos a la función IntercambiarEstudiante
 			IntercambiarEstudiante(ordenado_nota, i, &orden);
 		}
 	}
 	OrdenarNota(ordenado_nota, cantidad-1);
 }
-
+//En esta función seguimos el mismo procedimiento de la funcion ordenar nota
 void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad){
 	if (cantidad <= 1){
 		return;
 	}
 	Estudiante * orden = *ordenado_apellido+cantidad-1;
 	for (int i = 0; i < cantidad; i++){
-		if (strcmp((*orden).apellido, (*ordenado_apellido)[i].apellido) <= 0){
+		if (strcmp((*orden).apellido, (*ordenado_apellido)[i].apellido) <= 0){//Realizamos la comparacion mediante el strcmp de las dos cadenas de caracteres que si es <= 0 se realizara el intercambio
 			IntercambiarEstudiante(ordenado_apellido, i, &orden);
 		}
 	}
 	OrdenarApellido(ordenado_apellido, cantidad-1);
 } 
-
+//Fúncion encargada de realizar los cambios de orden de los alumnos dependiendo del orden que queremos realizar
 void IntercambiarEstudiante(Estudiante ** menor, int posicion, Estudiante ** mayor){
 	Estudiante comodin = *(*menor+posicion);
 	
@@ -81,7 +81,7 @@ void IntercambiarEstudiante(Estudiante ** menor, int posicion, Estudiante ** may
 	strcpy((*mayor)->apellido, comodin.apellido);
 	(*mayor)->nota = comodin.nota;
 }
-
+//Función que llamamos para añadir cada uno de los alumnos
 void añadir_alumno(Estudiante ** pupilo, int cantidad){
 	for (int i = 0; i < cantidad; i++){
 		printf("Escribe el nombre del estudiante: ");
