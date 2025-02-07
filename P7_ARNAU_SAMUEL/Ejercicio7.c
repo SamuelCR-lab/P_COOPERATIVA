@@ -18,7 +18,6 @@ int main(){
 
 	primos = primos_totales(m);
 	arr_primos = (int*) malloc(primos * sizeof(int));
-
 	if(arr_primos == NULL) return 1;
 
 	guardado_primos(arr_primos, m);

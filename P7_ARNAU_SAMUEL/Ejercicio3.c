@@ -6,12 +6,12 @@
 */
 char ** crear_tablero(int n,int m);
 void borde_tablero (char ** borde, int n, int m);
-void imprimir_tablero(char ** inicio, int n, int m);
+void imprimir_tablero(char ** inicio, int n,int m);
+void movimiento(char ** movimiento,int n,int m, char sbid);
 
 int main(int argcount, char ** argvalue){
 	int n,m;
 	char ** tablero; 
-
 	if(argcount == 1){
 		n = 12;
 		m = 12;
@@ -21,15 +21,19 @@ int main(int argcount, char ** argvalue){
 	}else if(argcount == 3){
 		if (argvalue[1] < 0){
 			printf("Introduce un número positivo para el ancho y poder crear un tablero");
+		}else if (argvalue[2] < 0){
+			printf("Introduce un número positivo para el largo y poder crear un tablero");
 		}else{
-			n = argvalue[1];
+			n = (int) argvalue[1];
+			m = (int) argvalue[2];
+			tablero = crear_tablero(n,m);
+			borde_tablero(tablero,n,m);
+
+			scanf("%c",&sbid);
+			movimiento(inicio,n,m,sbid);
+			imprimir_tablero(borde,n,m);
 		}
-		if (argvalue[2] < 0){
-			printf("Introduce un número positivo para las filas y poder crear un tablero");
-		}else{
-			m = argvalue[2];
-		}
-		tablero = crear_tablero(n,m);
+
 	}else{
 		printf("Error pocos o demasiados argumentos por lineas de comandos, puedes escribir el ancho y largo del tablero\n");
         return 0;
@@ -42,25 +46,27 @@ return 0;
 }
 char ** crear_tablero(int n,int m){
 	char ** arr= (char**) malloc(n * sizeof(char*));
+		if(arr == NULL) return 0;
 		for(int i = 0; i < n; i++){
 			arr[i] = (char*) malloc(m * sizeof(char));
+			if(arr[i] == NULL) return 0;
 		}
 		return arr;
 }
 void borde_tablero(char ** borde, int n, int m){
 	for (int i = 0; i < n; i++){
-			for(int j = 0; j < m; j++){
-				if(i == 0 || i == n-1 || j == 0 || j == m-1){
-					borde[i][j] = '*';
-				}else{
-					borde[i][j] = ' ';
-				}
+		for(int j = 0; j < m; j++){
+			if(i == 0 || i == n-1 || j == 0 || j == m-1){
+				borde[i][j] = '*';
+			}else{
+				borde[i][j] = ' ';
 			}
 		}
+	}
 	borde[n/2][m/2] = '#';
 	imprimir_tablero(borde,n,m);
 }
-void imprimir_tablero(char ** inicio, int n, int m){
+void imprimir_tablero(char ** inicio, int n,int m){
 	system("clear");
 	for (int i = 0; i < n; i++){
 		printf("\t\t\t\t\t\t");
@@ -68,5 +74,25 @@ void imprimir_tablero(char ** inicio, int n, int m){
 			printf("%c", inicio[i][j]);
 		}
 		printf("\n");
+	}
+}
+void movimiento(char ** movimiento,int n,int m, char sbid){
+	switch (sbid){
+		case 'w':
+			movimiento[n][m] = ' ';
+			movimiento[n-1][m] = '#';
+			break;
+		case 's':
+			movimiento[n][m] = ' ';
+			movimiento[n+1][m] = '#';
+			break;
+		case 'd':
+			movimiento[n][m] = ' ';
+			movimiento[n][m+1] = '#';
+			break;
+		case 'a':
+			movimiento[n][m] = ' ';
+			movimiento[n][m-1] = '#';
+			break;
 	}
 }

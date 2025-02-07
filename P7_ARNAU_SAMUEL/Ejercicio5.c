@@ -18,8 +18,10 @@ int main(){
 	printf("Introduce las columnas que quieres que tenga una matriz: ");
 	scanf(" %d",&m);
 	int ** matriz = (int**) malloc(n * sizeof(int*));
+	if(matriz == NULL) return 1;
 	for (int i = 0; i < n; i++){
 		matriz[i] = (int*) malloc (m * sizeof(int));
+		if(matriz[i] == NULL) return 1;
 	}
 	matriz_rellena(matriz,n,m);
 	mostrar_matriz(matriz,n,m);
