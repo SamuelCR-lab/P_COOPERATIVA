@@ -10,7 +10,7 @@ void imprimir_tablero(char ** inicio, int n,int m);
 void movimiento(char ** movimiento,int n,int m);
 
 int main(int argcount, char ** argvalue){
-	int n,m;
+	int n,m;//n son filas y m columnas
 	char ** tablero; 
 	if(argcount == 1){
 		n = 12;
