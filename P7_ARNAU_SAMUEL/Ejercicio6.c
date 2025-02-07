@@ -37,7 +37,13 @@ int main(){
 char cifrado_cesar(char frase, int saltos){
 	int letras_saltar = 0;
 	letras_saltar = frase;
-	letras_saltar += saltos;
+	if(frase >= 65 && frase <= 90){
+		letras_saltar = (letras_saltar - 13 + saltos) % 26;
+		letras_saltar = letras_saltar + 65;
+	} else if(frase >= 97 && frase <= 122){
+		letras_saltar = (letras_saltar - 19 + saltos) % 26;
+		letras_saltar = letras_saltar + 97;
+	}
 	frase = letras_saltar;
 	return frase;
 }
