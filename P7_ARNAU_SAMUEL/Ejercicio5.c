@@ -16,7 +16,7 @@ int main(){
 	scanf(" %d",&n);
 	printf("Introduce las columnas que quieres que tenga una matriz: ");
 	scanf(" %d",&m);
-	int ** matriz = (int**) malloc(n * sizeof(int));
+	int ** matriz = (int**) malloc(n * sizeof(int*));
 	for (int i = 0; i < n; i++){
 		matriz[i] = (int*) malloc (m * sizeof(int));
 	}
@@ -24,6 +24,10 @@ int main(){
 	mostrar_matriz(matriz,n,m);
 	printf("La suma del contorno.\n");
 	suma_contorno(matriz,n,m,0);
+	for (int i = 0; i < n; i++){
+		free(matriz[i]);
+	}
+	free(matriz);
 return 0;
 }
 
