@@ -71,12 +71,12 @@ void OrdenarApellido(Estudiante ** ordenado_apellido, int cantidad){
 } 
 //Fúncion encargada de realizar los cambios de orden de los alumnos dependiendo del orden que queremos realizar
 void IntercambiarEstudiante(Estudiante ** menor, int posicion, Estudiante ** mayor){
-	Estudiante comodin = *(*menor+posicion);
-	
+	Estudiante comodin = *(*menor+posicion); // Guardamos los datos del estudiante menor en una variable comodin
+	// Copiamos los datos del estudiante mayor en el estudiante menor
 	strcpy((*menor+posicion)->nombre, (*mayor)->nombre);
 	strcpy((*menor+posicion)->apellido, (*mayor)->apellido);
 	(*menor+posicion)->nota = (*mayor)->nota;
-	
+	// Guardamos en mayor lo que había en menor que está en la variable comodín
 	strcpy((*mayor)->nombre, comodin.nombre);
 	strcpy((*mayor)->apellido, comodin.apellido);
 	(*mayor)->nota = comodin.nota;
