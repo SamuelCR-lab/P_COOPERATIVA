@@ -7,16 +7,29 @@
 char ** crear_tablero(int n,int m);
 void borde_tablero (char ** borde, int n, int m);
 void imprimir_tablero(char ** inicio, int n,int m);
-void movimiento(char ** movimiento,int n,int m, char sbid);
+void movimiento(char ** movimiento,int * n,int * m, char sbid);
 
 int main(int argcount, char ** argvalue){
 	int n,m;//n son filas y m columnas
+	int * x;
+	int * y;
+	int tmpx, tmpy;
 	char ** tablero; 
+	char sbid;
 	if(argcount == 1){
 		n = 12;
 		m = 12;
+		tmpx = n/2;
+		x = &tmpx;
+		tmpy = m/2;
+		y = &tmpy;
 		tablero = crear_tablero(n,m);
 		borde_tablero(tablero,n,m);
+		do{
+			scanf(" %c",&sbid);
+			movimiento(tablero,x,y,sbid);
+			imprimir_tablero(tablero,n,m);
+		} while (sbid == 'w' || sbid == 's' || sbid == 'd' || sbid == 'a');
 
 	}else if(argcount == 3){
 		if (argvalue[1] < 0){
@@ -24,14 +37,20 @@ int main(int argcount, char ** argvalue){
 		}else if (argvalue[2] < 0){
 			printf("Introduce un número positivo para el largo y poder crear un tablero");
 		}else{
-			n = (int) argvalue[1];
-			m = (int) argvalue[2];
+			n = atoi(argvalue[1]);
+			m = atoi(argvalue[2]);
+			tmpx = n/2;
+			x = &tmpx;
+			tmpy = m/2;
+			y = &tmpy;
 			tablero = crear_tablero(n,m);
 			borde_tablero(tablero,n,m);
-
-			scanf("%c",&sbid);
-			movimiento(inicio,n,m,sbid);
-			imprimir_tablero(borde,n,m);
+			do{
+				scanf(" %c",&sbid);
+				movimiento(tablero,x,y,sbid);
+				imprimir_tablero(tablero,n,m);
+			} while (sbid == 'w' || sbid == 's' || sbid == 'd' || sbid == 'a');
+			
 		}
 
 	}else{
@@ -76,23 +95,27 @@ void imprimir_tablero(char ** inicio, int n,int m){
 		printf("\n");
 	}
 }
-void movimiento(char ** movimiento,int n,int m, char sbid){
+void movimiento(char ** movimiento,int * n,int * m, char sbid){
 	switch (sbid){
 		case 'w':
-			movimiento[n][m] = ' ';
-			movimiento[n-1][m] = '#';
+			movimiento[*n][*m] = ' ';
+			(*n)--;
+			movimiento[*n][*m] = '#';
 			break;
 		case 's':
-			movimiento[n][m] = ' ';
-			movimiento[n+1][m] = '#';
+			movimiento[*n][*m] = ' ';
+			(*n)++;
+			movimiento[*n][*m] = '#';
 			break;
 		case 'd':
-			movimiento[n][m] = ' ';
-			movimiento[n][m+1] = '#';
+			movimiento[*n][*m] = ' ';
+			(*m)++;
+			movimiento[*n][*m] = '#';
 			break;
 		case 'a':
-			movimiento[n][m] = ' ';
-			movimiento[n][m-1] = '#';
+			movimiento[*n][*m] = ' ';
+			(*m)--;
+			movimiento[*n][*m] = '#';
 			break;
 	}
 }
