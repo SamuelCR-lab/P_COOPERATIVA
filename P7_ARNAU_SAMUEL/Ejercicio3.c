@@ -6,14 +6,15 @@
 */
 char ** crear_tablero(int n,int m);
 void borde_tablero (char ** borde, int n, int m);
+void imprimir_tablero(char ** inicio, int n, int m);
 
 int main(int argcount, char ** argvalue){
 	int n,m;
 	char ** tablero; 
 
 	if(argcount == 1){
-		n = 10;
-		m = 10;
+		n = 12;
+		m = 12;
 		tablero = crear_tablero(n,m);
 		borde_tablero(tablero,n,m);
 
@@ -29,7 +30,6 @@ int main(int argcount, char ** argvalue){
 			m = argvalue[2];
 		}
 		tablero = crear_tablero(n,m);
-
 	}else{
 		printf("Error pocos o demasiados argumentos por lineas de comandos, puedes escribir el ancho y largo del tablero\n");
         return 0;
@@ -57,11 +57,16 @@ void borde_tablero(char ** borde, int n, int m){
 				}
 			}
 		}
+	borde[n/2][m/2] = '#';
+	imprimir_tablero(borde,n,m);
+}
+void imprimir_tablero(char ** inicio, int n, int m){
+	system("clear");
 	for (int i = 0; i < n; i++){
 		printf("\t\t\t\t\t\t");
 		for(int j = 0; j < m; j++){
-			printf("%c", borde[i][j]);
+			printf("%c", inicio[i][j]);
 		}
 		printf("\n");
-	}	
+	}
 }
