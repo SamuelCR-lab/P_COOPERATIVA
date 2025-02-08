@@ -1,0 +1,37 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.5  0.1 165740 10952 ?        Ss   22:29   0:12 /sbin/init
+root           2  0.0  0.0   2776  1924 ?        Sl   22:29   0:00 /init
+root           8  0.0  0.0   3080  2132 ?        Sl   22:29   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          42  0.0  0.1  47828 15588 ?        S<s  22:30   0:00 /lib/systemd/systemd-journald
+root          62  0.0  0.0  22224  6052 ?        Ss   22:30   0:00 /lib/systemd/systemd-udevd
+root          81  0.0  0.0 152992  2208 ?        Ssl  22:30   0:00 snapfuse /var/lib/snapd/snaps/bare_5.snap /snap/bare/5 -o ro,nodev,allow_other,suid
+root          84  0.0  0.1 452048 14660 ?        Ssl  22:30   0:00 snapfuse /var/lib/snapd/snaps/core22_1748.snap /snap/core22/1748 -o ro,nodev,allow_other,suid
+root          85  0.0  0.0 152992  2244 ?        Ssl  22:30   0:00 snapfuse /var/lib/snapd/snaps/snapd_23258.snap /snap/snapd/23258 -o ro,nodev,allow_other,suid
+root          86  0.0  0.0 227888  2224 ?        Ssl  22:30   0:00 snapfuse /var/lib/snapd/snaps/gtk-common-themes_1535.snap /snap/gtk-common-themes/1535 -o ro,nodev,allow_other,suid
+root          94  0.0  0.0 152992  2200 ?        Ssl  22:30   0:00 snapfuse /var/lib/snapd/snaps/core22_1722.snap /snap/core22/1722 -o ro,nodev,allow_other,suid
+root          95  0.0  0.2 526812 17024 ?        Ssl  22:30   0:01 snapfuse /var/lib/snapd/snaps/snapd_23545.snap /snap/snapd/23545 -o ro,nodev,allow_other,suid
+root         105  0.0  0.0 152992  2200 ?        Ssl  22:30   0:00 snapfuse /var/lib/snapd/snaps/ubuntu-desktop-installer_1276.snap /snap/ubuntu-desktop-installer/1276 -o ro,nodev,allow_other,suid
+root         108  0.0  0.1 302520 13312 ?        Ssl  22:30   0:00 snapfuse /var/lib/snapd/snaps/ubuntu-desktop-installer_1286.snap /snap/ubuntu-desktop-installer/1286 -o ro,nodev,allow_other,suid
+systemd+     181  0.0  0.1  25664 12828 ?        Ss   22:30   0:00 /lib/systemd/systemd-resolved
+root         205  0.0  0.0   4308  2608 ?        Ss   22:30   0:00 /usr/sbin/cron -f -P
+message+     206  0.0  0.0   8524  4732 ?        Ss   22:30   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         210  0.0  0.2  30172 19304 ?        Ss   22:30   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog       212  0.0  0.1 222404  9252 ?        Ssl  22:30   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         214  0.0  0.5 1987076 44120 ?       Ssl  22:30   0:00 /usr/lib/snapd/snapd
+root         215  0.0  0.0  15336  7228 ?        Ss   22:30   0:00 /lib/systemd/systemd-logind
+root         249  0.0  0.0   4784  3360 ?        Ss   22:30   0:00 /bin/bash /snap/ubuntu-desktop-installer/1286/bin/subiquity-server
+root         257  0.0  0.2 107252 21228 ?        Ssl  22:30   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         260  0.0  0.0   3240  1144 hvc0     Ss+  22:30   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
+root         262  0.0  0.0   3196  1064 tty1     Ss+  22:30   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         268  0.0  0.1  15432  8680 ?        Ss   22:30   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         358  0.1  1.1 1180620 91092 ?       Sl   22:30   0:03 /snap/ubuntu-desktop-installer/1286/usr/bin/python3.10 -m subiquity.cmd.server --use-os-prober --storage-version=2 --postinst-hooks-dir=/snap/ubuntu-desktop-installer/1286/etc/subiquity/postinst.d
+root         385  0.0  0.0   2780   208 ?        Ss   22:30   0:00 /init
+root         386  0.0  0.0   2780   212 ?        S    22:30   0:00 /init
+arnau        387  0.0  0.0   6344  5540 pts/0    Ss   22:30   0:00 -bash
+root         389  0.0  0.0   7524  4892 pts/1    Ss   22:30   0:00 /bin/login -f
+arnau        467  0.0  0.1  16924  8768 ?        Ss   22:30   0:00 /lib/systemd/systemd --user
+arnau        468  0.0  0.0 168792  3408 ?        S    22:30   0:00 (sd-pam)
+arnau        474  0.0  0.0   6124  4912 pts/1    S+   22:30   0:00 -bash
+root         506  0.3  0.4  44184 37912 ?        S    22:30   0:07 python3 /snap/ubuntu-desktop-installer/1286/usr/bin/cloud-init status --wait
+arnau      16144  0.0  0.0   4784  3188 pts/0    S+   23:11   0:00 /bin/bash ./ej10.sh
+arnau      16145  0.0  0.0   7484  3124 pts/0    R+   23:11   0:00 ps aux
