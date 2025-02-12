@@ -36,19 +36,13 @@ int caballeros(){
 	}
 	switch (elegir){
 	case 1:
-		printf("\t\tUn estratega nato y un líder inspirador, Cid es la imagen misma del honor y la caballería. ");
-		printf("Nacido en una familia de nobles guerreros, su espada ha protegido Eldoria desde su juventud. ");
-		printf("Maneja con destreza la espada y el escudo, equilibrando defensa y ataque con maestría.\n");
-		printf("\t\tSe dice que su armadura brilla con un resplandor dorado en la batalla, y que su voz es capaz de alzar el ánimo de sus aliados incluso en los momentos más oscuros. ");
-		printf("Sin embargo, Cid no solo lucha con acero, sino con su ingenio, siempre buscando el mejor camino para vencer sin caer en la brutalidad o la imprudencia.\n");
-		printf("\t\tHabilidades: Balance perfecto entre ataque, defensa y agilidad. ");
-		printf("Su liderazgo y estrategia lo convierten en el alma del equipo.\n");
-
+		printf("%s",CABALLERO1);
+		break;
 	case 2:
-		printf("");
+		printf("%s",CABALLERO2);
+		break;
 	default:
-		printf("");
-
+		printf("%s",CABALLERO3);
 	}
 	return elegir;
 
