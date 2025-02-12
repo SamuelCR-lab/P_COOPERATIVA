@@ -25,24 +25,23 @@ int caballeros(){
 	int elegir,errores;
 	printf("\tQue nombre le quieres dar a tu caballero: ");
 	scanf(" %[^\n]",nombre_c);
-	printf("\tElige que caballero quieres ser: \n\n");
-	printf(BLUE "\t1. LANCELOT\n"); 
-	printf(RED "\t2. LA MONTAÑA\n");	
-	printf(WHITE "\t3. CID\n");
-	errores = scanf("%d",&elegir);
-	if (errores == 0 || elegir < 1 || elegir > 3){
+	while (errores == 0 || elegir < 1 || elegir > 3){
+		printf("\tElige que caballero quieres ser: \n\n");
+		printf(BLUE "\t1. LANCELOT\n"); 
+		printf(RED "\t2. LA MONTAÑA\n");	
+		printf(WHITE "\t3. CID\n");
+		errores = scanf("%d",&elegir);
 		printf("No has introducido un número o has introducido mas/menos de los caballeros que tenemos");
-		return EXIT_FAILURE;
 	}
 	switch (elegir){
-	case 1:
-		printf("%s",CABALLERO1);
-		break;
-	case 2:
-		printf("%s",CABALLERO2);
-		break;
-	default:
-		printf("%s",CABALLERO3);
+		case 1:
+			printf("%s",CABALLERO1);
+			break;
+		case 2:
+			printf("%s",CABALLERO2);
+			break;
+		default:
+			printf("%s",CABALLERO3);
 	}
 	return elegir;
 
