@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
 #include "dragon.h"
 
 // Pasamos los dragones por referencia, que seran copiados en la reserva
@@ -31,10 +32,10 @@ Dragon* CrearBalerion(Dragon* Balerion){
 }
 
 Dragon* CrearCahrizar(Dragon* Charizar){
-	strcpy(Charizar->nombre,"Charizar");
-	Charizar->vida =  120;
-	Charizar->ataque = 100;
-	Charizar->velocidad = 20;
-	return Charizar;
+    strcpy(Charizar->nombre, "Charizar");
+    Charizar->vida = 120;
+    Charizar->ataque = 100;
+    Charizar->velocidad = 20;
+    return Charizar;
 }
 

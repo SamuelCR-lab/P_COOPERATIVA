@@ -8,3 +8,8 @@ typedef struct{
 	int ataque;
 	int velocidad;
 }Dragon;
+
+Dragon* CrearMushu(Dragon* Mushu);
+Dragon* CrearShenlong(Dragon* Shenlong);
+Dragon* CrearBalerion(Dragon* Balerion);
+Dragon* CrearCahrizar(Dragon* Charizar);

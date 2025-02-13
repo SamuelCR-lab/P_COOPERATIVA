@@ -5,12 +5,14 @@
 #include "colors.h"
 #include "textos.h"
 #include "caballero.h"
-#include "dragon.h" 
+#include "dragon.h"
 
 #define NOMBRE_MAX 100
+#define MAX_DRAGONES 4
 
 
 int elegir_caballero(char ** nombre_c);
+int dificultad();
 
 
 int main(){
@@ -26,14 +28,12 @@ int main(){
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (eleccion == 1){
-		Jugador = CrearBoromir(Jugador); // No hace flata el
-											// & ya que es un punte
+		Jugador = *CrearBoromir(Jugador);
+		// A jugador se le asigna una copia del caballero.
 	}else if (eleccion == 2){
-		Jugador = CrearLa_Montana(Jugador); // No hace flata el
-											// & ya que es un punte
+		Jugador = *CrearLa_Montana(Jugador); 
 	}else {
-		Jugador = CrearEl_Cid(Jugador); // No hace flata el
-											// & ya que es un punte
+		Jugador = *CrearEl_Cid(Jugador);
 	}
 
 	// Reserva de memoria para los 4 dragones.
@@ -61,12 +61,13 @@ int main(){
 	// Eleccion de dificultad.
 	// TODO: crear la batalla.
 	eleccion_opo = dificultad();
+
 	if(eleccion_opo == 1){
 		printf("\tHas decidido enfrentarte a Mushu, el dragón travieso y pequeño, con un corazón valiente. Aunque no es muy grande, su ingenio lo convierte en un oponente formidable.\n");
 	}else if(eleccion_opo == 2){
 		printf("\tHas decidido enfrentarte a Shenlong, el dragón ancestral de las leyendas. Su poder es inmenso, capaz de controlar los elementos con un solo rugido. ¡Solo los valientes se atreven a desafiarlo!.\n");
 	}else if(eleccion_opo == 3){
-		printf("\tHas decidido enfrentarte a Balerion, conocido como el terror de los cielos. Su tamaño y fuerza son legendarios, su aliento de fuego arrasa con todo a su paso. Desafiarlo es un acto de valentía, o de locura...\n")
+		printf("\tHas decidido enfrentarte a Balerion, conocido como el terror de los cielos. Su tamaño y fuerza son legendarios, su aliento de fuego arrasa con todo a su paso. Desafiarlo es un acto de valentía, o de locura...\n");
 	}else if(eleccion_opo == 4){
 		printf("\tHas decidido enfrentarte a Charizar, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n");
 	}
@@ -75,7 +76,7 @@ int main(){
 
 	free(alias);
 	free(Jugador);
-	free(Caballero);
+	free(Oponente);
 	return 0;
 }
 
@@ -129,6 +130,7 @@ int elegir_caballero(char ** nombre_c){
 	return elegir;
 }
 
+// Función para elegir la dificultad.
 int dificultad(){
 	int elegir_opo, errores_opo;
 	 do{
@@ -137,14 +139,14 @@ int dificultad(){
 	 	printf(MAGENTA"\t 3. Balerion \n");
 	 	printf(RED"\t 4. Charizar \n");
 	 	printf(WHITE "\n\n");
-	 	printf("¿A que dragón te vas a enfrentar?\n");
-		errores = scanf("%d",&elegir_opo);
-		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+	 	printf("¿A que dragón te vas a enfrentar?: ");
+		errores_opo = scanf("%d",&elegir_opo);
+		if (errores_opo==0){ // Entra en el condicional si ha escrito una letra.
 			printf("No has introducido un número o has introducido un número que no está asignado a ningún dragón\n");
 			char buffer[50]; 
 			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
 		}
-	 }while (elegir_opo < 1 || elegir_opo > 3 || errores_opo==0);
-	 return elegir_opo;
+	 }while (elegir_opo < 1 || elegir_opo > 4 || errores_opo==0);
 
+	 return elegir_opo;
 }
