@@ -19,7 +19,9 @@ int main(){
 	system("clear");
 	printf("%s",TXT_INTRO_01);
 
-	eleccion = caballeros();
+	eleccion = elegir_caballero(&alias);
+	printf("Ya estás listo para pelear %s\n", alias);
+
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (eleccion == 1){
 		Jugador = CrearBoromir(&Jugador);
@@ -32,7 +34,7 @@ int main(){
 		break;
 	}
 
-	/ Reserva de memoria para los 4 dragones.
+	// Reserva de memoria para los 4 dragones.
 	Dragon* Oponente = (Dragon*) malloc (MAX_DRAGONES * sizeof(Dragon));
 	if (Oponente == NULL){
 		printf("Ha ocurrido un error con la memoria de lso dragones\n");
@@ -57,11 +59,6 @@ int main(){
 		}
 	
 	}
-	
-
-
-	eleccion = elegir_caballero(&alias);
-	printf("Ya estás listo para pelear %s\n", alias);
 
 
 	free(alias);
@@ -72,7 +69,7 @@ int elegir_caballero(char ** nombre_c){
 	int elegir,errores,elegir_alias;
 	char respuesta[5];
 	do{ // Es un do while porque siempre se va a ejecutar mínimo una vez y las variables aún no tienen ningún valor asignado.
-		printf(BLUE "\n\n\t1. LANCELOT\n"); 
+		printf(BLUE "\n\n\t1. LANCELOT\n"); // TODO: Estadísticas de los personajes
 		printf(RED "\t2. LA MONTAÑA\n");	
 		printf(GREEN "\t3. CID");
 		printf(WHITE "\n\n"); // Pongo WHITE para que se resetee el color para los próximos printfs.
@@ -119,6 +116,6 @@ int elegir_caballero(char ** nombre_c){
 }
 
 int dificultad(){
-	// To do Funcion de elegir dificultad.
+	// TODO: Funcion de elegir dificultad.
 
 }
