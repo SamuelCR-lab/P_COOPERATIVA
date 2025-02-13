@@ -9,7 +9,7 @@
 
 #define NOMBRE_MAX 100
 
-int elegir_caballero();
+int elegir_caballero(char ** nombre_c);
 
 int main(){
 	int eleccion;
