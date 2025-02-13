@@ -4,6 +4,8 @@
 #include <time.h>
 #include "colors.h"
 #include "textos.h"
+#include "caballero.h"
+#include "dragon.h" 
 
 #define NOMBRE_MAX 100
 
@@ -14,7 +16,18 @@ int main(){
 	system("clear");
 	printf("%s",TXT_INTRO_01);
 	eleccion = caballeros();
-
+	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
+	if (eleccion == 1){
+		Jugador = CrearBoromir(&Jugador);
+		break;
+	}else if (eleccion == 2){
+		Jugador = CrearLa_Montana(&Jugador);
+		break;
+	}else {
+		Jugador = CrearEl_Cid(&Jugador);
+		break;
+	}
+	
 
 
 
