@@ -4,7 +4,7 @@
 
 typedef struct{
 	char nombre[50];
-	int salud;
+	int vida;
 	int ataque;
 	int velocidad;
 }Caballero;

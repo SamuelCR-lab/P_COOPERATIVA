@@ -3,8 +3,8 @@
 
 
 typedef struct{
-	char nombre[10];
+	char nombre[50];
 	int vida;
-	int daño;
+	int ataque;
 	int velocidad;
-}dragon;
+}Dragon;
