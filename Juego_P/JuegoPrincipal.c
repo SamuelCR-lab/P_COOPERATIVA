@@ -28,12 +28,12 @@ int main(){
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (eleccion == 1){
-		Jugador = *CrearBoromir(Jugador);
+		Jugador = CrearBoromir(Jugador);
 		// A jugador se le asigna una copia del caballero.
 	}else if (eleccion == 2){
-		Jugador = *CrearLa_Montana(Jugador); 
+		Jugador = CrearLa_Montana(Jugador); 
 	}else {
-		Jugador = *CrearEl_Cid(Jugador);
+		Jugador = CrearEl_Cid(Jugador);
 	}
 
 	// Reserva de memoria para los 4 dragones.
