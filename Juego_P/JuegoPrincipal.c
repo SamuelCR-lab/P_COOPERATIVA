@@ -14,7 +14,7 @@ int elegir_caballero(char ** nombre_c);
 
 
 int main(){
-	int eleccion;
+	int eleccion, eleccion_opo;
 	char * alias;
 	alias = (char *) malloc(NOMBRE_MAX);
 	if (alias==NULL) return 1;
@@ -58,6 +58,20 @@ int main(){
 	
 	}
 
+	// Eleccion de dificultad.
+	// TODO: crear la batalla.
+	eleccion_opo = dificultad();
+	if(eleccion_opo == 1){
+		printf("\tHas decidido enfrentarte a Mushu, el dragón travieso y pequeño, con un corazón valiente. Aunque no es muy grande, su ingenio lo convierte en un oponente formidable.\n");
+	}else if(eleccion_opo == 2){
+		printf("\tHas decidido enfrentarte a Shenlong, el dragón ancestral de las leyendas. Su poder es inmenso, capaz de controlar los elementos con un solo rugido. ¡Solo los valientes se atreven a desafiarlo!.\n");
+	}else if(eleccion_opo == 3){
+		printf("\tHas decidido enfrentarte a Balerion, conocido como el terror de los cielos. Su tamaño y fuerza son legendarios, su aliento de fuego arrasa con todo a su paso. Desafiarlo es un acto de valentía, o de locura...\n")
+	}else if(eleccion_opo == 4){
+		printf("\tHas decidido enfrentarte a Charizar, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n");
+	}
+
+
 
 	free(alias);
 	free(Jugador);
@@ -69,9 +83,9 @@ int elegir_caballero(char ** nombre_c){
 	int elegir,errores,elegir_alias;
 	char respuesta[5];
 	do{ // Es un do while porque siempre se va a ejecutar mínimo una vez y las variables aún no tienen ningún valor asignado.
-		printf(BLUE "\n\n\t1. LANCELOT\n"); // TODO: Estadísticas de los personajes
+		printf(BLUE "\n\n\t1. BOROMIR\n"); // TODO: Estadísticas de los personajes
 		printf(RED "\t2. LA MONTAÑA\n");	
-		printf(GREEN "\t3. CID");
+		printf(GREEN "\t3. CID CAMPEADOR");
 		printf(WHITE "\n\n"); // Pongo WHITE para que se resetee el color para los próximos printfs.
 		printf("Elige que caballero quieres ser: ");
 		errores = scanf("%d",&elegir);
@@ -95,7 +109,7 @@ int elegir_caballero(char ** nombre_c){
 	switch (elegir){
 		case 1:
 			if (elegir_alias){
-				strcpy(*nombre_c,"Lancelot");
+				strcpy(*nombre_c,"Boromir");
 			}
 			printf("%s",CABALLERO1);
 			break;
@@ -116,6 +130,21 @@ int elegir_caballero(char ** nombre_c){
 }
 
 int dificultad(){
-	// TODO: Funcion de elegir dificultad.
+	int elegir_opo, errores_opo;
+	 do{
+	 	printf(GREEN"\n\n\t 1. Mushu\n"); // TODO: Asignar las estadísticas a cada dragón.
+	 	printf(YELLOW"\t 2. Shenlong \n");
+	 	printf(MAGENTA"\t 3. Balerion \n");
+	 	printf(RED"\t 4. Charizar \n");
+	 	printf(WHITE "\n\n");
+	 	printf("¿A que dragón te vas a enfrentar?\n");
+		errores = scanf("%d",&elegir_opo);
+		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+			printf("No has introducido un número o has introducido un número que no está asignado a ningún dragón\n");
+			char buffer[50]; 
+			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
+		}
+	 }while (elegir_opo < 1 || elegir_opo > 3 || errores_opo==0);
+	 return elegir_opo;
 
 }
