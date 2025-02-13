@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include "caballeros.h"
 
-caballero * facil(){
-	caballero.vida = 
-}
-caballero * medio(){
-
-}
-caballero * dificil(){
+Caballero * facil(){
 	caballero.vida = 
 }

@@ -3,9 +3,8 @@
 
 
 typedef struct{
-	char nombre[10];
-	char alias[20];
-	int vida;
-	int daño;
+	char nombre[50];
+	int salud;
+	int ataque;
 	int velocidad;
-}caballero;
+}Caballero;

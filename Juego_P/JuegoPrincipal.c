@@ -7,7 +7,7 @@
 
 #define NOMBRE_MAX 100
 
-int caballeros();
+int elegir_caballeros();
 
 int main(){
 	int eleccion;
@@ -20,7 +20,7 @@ int main(){
 
 	return 0;
 }
-int caballeros(){
+int elegir_caballeros(){
 	char nombre_c[NOMBRE_MAX];
 	int elegir,errores;
 	printf("\tQue nombre le quieres dar a tu caballero: ");
