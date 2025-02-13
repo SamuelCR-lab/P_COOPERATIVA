@@ -26,14 +26,14 @@ int main(){
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (eleccion == 1){
-		Jugador = CrearBoromir(&Jugador);
-		break;
+		Jugador = CrearBoromir(Jugador); // No hace flata el
+											// & ya que es un punte
 	}else if (eleccion == 2){
-		Jugador = CrearLa_Montana(&Jugador);
-		break;
+		Jugador = CrearLa_Montana(Jugador); // No hace flata el
+											// & ya que es un punte
 	}else {
-		Jugador = CrearEl_Cid(&Jugador);
-		break;
+		Jugador = CrearEl_Cid(Jugador); // No hace flata el
+											// & ya que es un punte
 	}
 
 	// Reserva de memoria para los 4 dragones.
@@ -47,23 +47,21 @@ int main(){
 	// Inicializacion de los cuatro dragones.
 	for (int i = 0; i < MAX_DRAGONES; i++){
 		if (i == 0){
-			Oponente[0] = CrearMushu(Oponente);
-			break;
+			Oponente[0] = *CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
 		}else if( i == 1){
-			Oponente[1] = CrearShenlong(Oponente);
-			break;
+			Oponente[1] = *CrearShenlong(&Oponente[1]);
 		}else if(i == 2){
-			Oponente[2] = CrearBalerion(Oponente);
-			break;
+			Oponente[2] = *CrearBalerion(&Oponente[2]);
 		}else if(i == 3){
-			Oponente[3] = CrearCahrizar(Oponente);
-			break;
+			Oponente[3] = *CrearCahrizar(&Oponente[3]);
 		}
 	
 	}
 
 
 	free(alias);
+	free(Jugador);
+	free(Caballero);
 	return 0;
 }
 

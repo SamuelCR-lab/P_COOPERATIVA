@@ -2,36 +2,39 @@
 #include <stdlib.h>
 #include "dragon.h"
 
+// Pasamos los dragones por referencia, que seran copiados en la reserva
+// de memoria dinámica del main, lo cual cualquier cambio solo se vera afectado 
+// en la copia que haremos de los dragones en el malloc.
 
 Dragon* CrearMushu(Dragon* Mushu){
-	Dragon.nombre = "Mushu";
-	Dragon.vida =  60;
-	Dragon.ataque = 25;
-	Dragon.vleocidad = 10;
+	strcpy(Mushu->nombre,"Mushu");
+	Mushu->vida =  60;
+	Mushu->ataque = 25;
+	Mushu->velocidad = 10;
 	return Mushu;
 }
 
 Dragon* CrearShenlong(Dragon* Shenlong){
-	Dragon.nombre = "Shenlong";
-	Dragon.vida =  70;
-	Dragon.ataque = 50;
-	Dragon.vleocidad = 13;
+	strcpy(Shenlong->nombre,"Shenlong");
+	Shenlong->vida =  70;
+	Shenlong->ataque = 50;
+	Shenlong->velocidad = 13;
 	return Shenlong;
 }
 
 Dragon* CrearBalerion(Dragon* Balerion){
-	Dragon.nombre = "Balerion";
-	Dragon.vida =  85;
-	Dragon.ataque = 72;
-	Dragon.vleocidad = 16;
+	strcpy(Balerion->nombre,"Balerion");
+	Balerion->vida =  85;
+	Balerion->ataque = 72;
+	Balerion->velocidad = 16;
 	return Balerion;
 }
 
 Dragon* CrearCahrizar(Dragon* Charizar){
-	Dragon.nombre = "Charizar";
-	Dragon.vida =  120;
-	Dragon.ataque = 100;
-	Dragon.vleocidad = 20;
+	strcpy(Charizar->nombre,"Charizar");
+	Charizar->vida =  120;
+	Charizar->ataque = 100;
+	Charizar->velocidad = 20;
 	return Charizar;
 }
 
