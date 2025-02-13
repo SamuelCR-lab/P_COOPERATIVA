@@ -7,4 +7,4 @@ typedef struct{
 	int vida;
 	int daño;
 	int velocidad;
-}dragon;
+}Dragon;
