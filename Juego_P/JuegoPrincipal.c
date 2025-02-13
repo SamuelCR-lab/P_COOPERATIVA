@@ -31,6 +31,32 @@ int main(){
 		Jugador = CrearEl_Cid(&Jugador);
 		break;
 	}
+
+	/ Reserva de memoria para los 4 dragones.
+	Dragon* Oponente = (Dragon*) malloc (MAX_DRAGONES * sizeof(Dragon));
+	if (Oponente == NULL){
+		printf("Ha ocurrido un error con la memoria de lso dragones\n");
+		return EXIT_FAILURE;
+
+	}
+
+	// Inicializacion de los cuatro dragones.
+	for (int i = 0; i < MAX_DRAGONES; i++){
+		if (i == 0){
+			Oponente[0] = CrearMushu(Oponente);
+			break;
+		}else if( i == 1){
+			Oponente[1] = CrearShenlong(Oponente);
+			break;
+		}else if(i == 2){
+			Oponente[2] = CrearBalerion(Oponente);
+			break;
+		}else if(i == 3){
+			Oponente[3] = CrearCahrizar(Oponente);
+			break;
+		}
+	
+	}
 	
 
 
@@ -90,4 +116,9 @@ int elegir_caballero(char ** nombre_c){
 			break;
 	}
 	return elegir;
+}
+
+int dificultad(){
+	// To do Funcion de elegir dificultad.
+
 }
