@@ -7,6 +7,4 @@ typedef struct{
 	int vida;
 	int daño;
 	int velocidad;
-}Dragon
-
-Dragon * inicializar();
+}dragon;

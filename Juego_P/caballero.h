@@ -3,9 +3,9 @@
 
 
 typedef struct{
+	char nombre[10];
+	char alias[20];
 	int vida;
 	int daño;
 	int velocidad;
-}Caballero
-
-Caballero * inicializar();
+}caballero;
