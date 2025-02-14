@@ -6,6 +6,7 @@
 #include "textos.h"
 #include "caballero.h"
 #include "dragon.h"
+#include "tienda.h"
 
 #define NOMBRE_MAX 100
 #define MAX_DRAGONES 4
@@ -16,7 +17,7 @@ int dificultad();
 
 
 int main(){
-	int eleccion, eleccion_opo;
+	int eleccion, eleccion_opo, monedas;
 	char * alias;
 	alias = (char *) malloc(NOMBRE_MAX);
 	if (alias==NULL) return 1;
@@ -35,11 +36,11 @@ int main(){
 	}else {
 		Jugador = CrearEl_Cid(Jugador);
 	}
-
+	// TODO: Menú Jugar/Tienda/Exit
 	// Reserva de memoria para los 4 dragones.
 	Dragon* Oponente = (Dragon*) malloc (MAX_DRAGONES * sizeof(Dragon));
 	if (Oponente == NULL){
-		printf("Ha ocurrido un error con la memoria de lso dragones\n");
+		printf("Ha ocurrido un error con la memoria de los dragones\n");
 		return EXIT_FAILURE;
 
 	}
@@ -72,7 +73,9 @@ int main(){
 		printf("\tHas decidido enfrentarte a Charizar, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n");
 	}
 
-
+	printf("\n\n");
+	monedas = 50;
+	mejorar_stats(&Jugador, &monedas);
 
 	free(alias);
 	free(Jugador);
@@ -84,21 +87,23 @@ int elegir_caballero(char ** nombre_c){
 	int elegir,errores,elegir_alias;
 	char respuesta[5];
 	do{ // Es un do while porque siempre se va a ejecutar mínimo una vez y las variables aún no tienen ningún valor asignado.
-		printf(BLUE "\n\n\t1. BOROMIR\n"); // TODO: Estadísticas de los personajes
-		printf(RED "\t2. LA MONTAÑA\n");	
-		printf(GREEN "\t3. CID CAMPEADOR");
+		printf(BLUE "\n\n\t1. BOROMIR\n\t\tAtaque: 30\n\t\tSalud: 55\n\t\tVelocidad: 18\n");
+		printf(RED "\t2. LA MONTAÑA\n\t\tAtaque: 50\n\t\tSalud: 50\n\t\tVelocidad: 12\n");	
+		printf(GREEN "\t3. CID CAMPEADOR\n\t\tAtaque: 38\n\t\tSalud: 58\n\t\tVelocidad: 15");
 		printf(WHITE "\n\n"); // Pongo WHITE para que se resetee el color para los próximos printfs.
 		printf("Elige que caballero quieres ser: ");
 		errores = scanf("%d",&elegir);
 		if (errores==0){ // Entra en el condicional si ha escrito una letra.
-			printf("No has introducido un número o has introducido mas/menos de los caballeros que tenemos\n");
+			printf("No has introducido un número\n");
 			char buffer[50]; 
 			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
+		} else if(elegir<1 || elegir>3){
+			printf("Has introducido un número erróneo\n");
 		}
 	}while (elegir < 1 || elegir > 3 || errores==0);
 
 	printf("¿Quieres personalizar el nombre de tu caballero? ");
-	scanf("%s", respuesta);
+	scanf(" %s", respuesta);
 	if (strcmp(respuesta, "si")==0 ||strcmp(respuesta, "Si")==0 ||strcmp(respuesta, "sí")==0 ||strcmp(respuesta, "Sí")==0){
 		printf("\tQue nombre le quieres dar a tu caballero: ");
 		scanf(" %[^\n]", *nombre_c);
