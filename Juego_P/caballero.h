@@ -9,7 +9,4 @@ typedef struct{
 	int velocidad;
 }Caballero;
 
-// Declaraciones de las funciones
-Caballero* CrearBoromir(Caballero* Boromir);
-Caballero* CrearLa_Montana(Caballero* La_Montana);
-Caballero* CrearEl_Cid(Caballero* El_Cid);
+

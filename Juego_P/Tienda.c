@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include "Objetos.h"
 #include "caballero.h"
-#include "tienda.h"
 
-void mejorar_stats(Caballero ** stats, int * monedas){
+void mejorar_stats(Caballero * stats, int * monedas){
 	int eleccion,errores;
 	printf("Tienes %d monedas\n",*monedas);
-	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d\n\tAtaque = %d\n\t Velocidad = %d\n\n",(*stats)->nombre,(*stats)->vida,(*stats)->ataque,(*stats)->velocidad);
+	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d\n\tAtaque = %d\n\t Velocidad = %d\n\n",stats->nombre,stats->vida,stats->ataque,stats->velocidad);
 	printf("%s",TIENDA);
 	printf("\t1. Poción --> te incrementa la vida +20 --> por 15 monedas\n");
 	printf("\t2. Botas --> te incrementa la velocidad +3,1 --> por 25 monedas\n");
@@ -23,23 +22,23 @@ void mejorar_stats(Caballero ** stats, int * monedas){
 	switch(eleccion){
 		case 1:
 			printf("%s",POCION);
-			(*stats)->vida += 20; 
+			stats->vida += 20; 
 			break;
 		case 2:
 			printf("%s",BOTAS);
-			(*stats)->velocidad += 3;
+			stats->velocidad += 3;
 			break;
 		case 3:
 			printf("%s",ESPADA);
-			(*stats)->ataque += 10;
+			stats->ataque += 10;
 			break;
 		case 4:
 			printf("%s",HACHA);
-			(*stats)->ataque += 15;
+			stats->ataque += 15;
 			break;
 		case 5:
 			printf("%s",ARCO);
-			(*stats)->ataque += 5;
+			stats->ataque += 5;
 			break;
 		default:
 			break;
