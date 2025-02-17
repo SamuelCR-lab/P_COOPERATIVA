@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
 #include "caballero.h"
 #include "dragon.h"
 
@@ -8,7 +9,7 @@ void batalla(Caballero * jugador, Dragon * npc){
     int randomCri, randomAtaque, critico, ronda = 1;
     srand(time(NULL)); // crea una llista de numeros random en funcion de los segundos del PC
                        // Cada vez que hace rand() selecciona el siguiente número de la lista.
-	while (jugador->vida <= 0 || npc->vida <= 0){
+	while (jugador->vidaActual >= 0 || npc->vidaActual >= 0){
         critico = 0;
         randomAtaque = 0;
         printf("Ronda %d: \n", ronda);
@@ -54,7 +55,8 @@ void batalla(Caballero * jugador, Dragon * npc){
                 sleep(2);
                 printf("\tEl caballero %s ataca al dragon %s", jugador->nombre, npc->nombre);
                 printf("\tSalud de %s: %d / %d totales", npc->nombre, npc->vidaActual, npc->vida);
+            }
+            ronda ++;
         }
-        ronda ++;
     }
 }
