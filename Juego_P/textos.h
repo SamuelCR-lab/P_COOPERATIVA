@@ -19,7 +19,7 @@
 #define ESPADA_lore "La espada de azrael te dara mucho poder divino para derrotar a los dragones venideros...\n"
 #define HACHA_lore "El Hacha creada para thor despues de ser destruido su martillo durante el Ragnarok te dara la potencia del dios del Trueno...\n"
 #define ARCO_lore "El Arco de Legolas te dar la distancia y punteria del su dueño para derrotar a los dragones sin despeinarte...\n"
-#define TIENDA "\t\tAcabas de entrar en la tienda de BADULAQUE DE IULIAN_DRACARIS. \n\tPuedes Comprar en la tienda estos objetos para mejorar tus estadisticas: \n\t"
+#define TIENDA "\tAcabas de entrar en la tienda de BADULAQUE DE IULIAN_DRACARIS. \n\tPuedes Comprar en la tienda estos objetos para mejorar tus estadisticas: \n"
 
 
 #define D_MUSHU "\tHas decidido enfrentarte a Mushu, el dragón travieso y pequeño, con un corazón valiente. Aunque no es muy grande, su ingenio lo convierte en un oponente formidable.\n"
@@ -27,9 +27,9 @@
 #define D_BALERION "\tHas decidido enfrentarte a Balerion, conocido como el terror de los cielos. Su tamaño y fuerza son legendarios, su aliento de fuego arrasa con todo a su paso. Desafiarlo es un acto de valentía, o de locura...\n"
 #define D_CHARIZAR "\tHas decidido enfrentarte a Charizar, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n"
 
-#define POCION "\t1. POCION --> te incrementa la vida +20 --> por 15 monedas\n"
-#define BOTAS "\t2. Botas --> te incrementa la velocidad +3,1 --> por 25 monedas\n"
-#define ESPADA "\t3. Espada --> te incrementa el ataque +10 --> por 35 monedas\n"
-#define HACHA "\t4. Hacha --> te incrementa el ataque +15 --> por 45 monedas\n"
-#define ARCO "\t5. Arco --> te incrementa el ataque +5 --> por 25 monedas\n"
-#define SALIR_TIENDA "\t6. Salir\n"
+#define POCION "\t\t1. POCION --> te incrementa la vida +20 --> por 15 monedas\n"
+#define BOTAS "\t\t2. Botas --> te incrementa la velocidad +3,1 --> por 25 monedas\n"
+#define ESPADA "\t\t3. Espada --> te incrementa el ataque +10 --> por 35 monedas\n"
+#define HACHA "\t\t4. Hacha --> te incrementa el ataque +15 --> por 45 monedas\n"
+#define ARCO "\t\t5. Arco --> te incrementa el ataque +5 --> por 25 monedas\n"
+#define SALIR_TIENDA "\t\t6. Salir\n"

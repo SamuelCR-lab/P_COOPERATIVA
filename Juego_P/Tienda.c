@@ -6,7 +6,7 @@
 void mejorar_stats(Caballero * stats, int * monedas){
 	int eleccion,errores;
 	printf("Tienes %d monedas\n",*monedas);
-	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d\n\tAtaque = %d\n\t Velocidad = %d\n\n",stats->nombre,stats->vida,stats->ataque,stats->velocidad);
+	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d\n\tAtaque = %d\n\tVelocidad = %d\n\n",stats->alias,stats->vida,stats->ataque,stats->velocidad);
 	printf("%s",TIENDA);
 	printf("%s",POCION);
 	printf("%s",BOTAS);

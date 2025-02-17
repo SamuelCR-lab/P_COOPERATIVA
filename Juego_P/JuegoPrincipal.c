@@ -48,12 +48,9 @@ int main(){
 	CrearBalerion(&Oponente[2]);
 	CrearCharizar(&Oponente[3]);
 
-	
-	
 
 	// Eleccion de dificultad.
 	monedas = 50;
-	mejorar_stats(Jugador, &monedas);
 	for (int i = 0; i <= 2000; i++){
 		accion = menu();
 		if (accion == 1){
@@ -69,9 +66,9 @@ int main(){
 			}
 			batalla(Jugador, Dragon[eleccion_opo]);
 		}else if(accion == 2){
-			eleccion_opo = dificultad();
-		}else if(accion == 3){
 			mejorar_stats(Jugador, &monedas);
+		}else if(accion == 3){
+			break;
 		}
 	}
 
