@@ -12,7 +12,7 @@ void mejorar_stats(Caballero * stats, int * monedas){
 	printf("%s",BOTAS);
 	printf("%s",ESPADA);
 	printf("%s",HACHA);
-	printf("%s"ARCO);
+	printf("%s",ARCO);
 	printf("%s",SALIR_TIENDA);
 	printf("Opción: ");
 	errores = scanf("%d",&eleccion);

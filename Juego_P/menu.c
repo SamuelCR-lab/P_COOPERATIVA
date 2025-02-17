@@ -11,9 +11,11 @@ int menu(){
 		errores = scanf(" %d",&accion);
 		if (errores == 0){ // Entra en el condicional si ha escrito una letra.
 			printf("No has introducido un número\n");
+			char buffer[BUFFER]; 
+			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
 		} else if(accion < 1 || accion > 3){
 			printf("Has introducido un número erróneo\n");
 		}
-	}while(accion < 1 || accion > 3 || errores==0);
+	}while(accion < 1 || accion > 3 || errores == 0);
 	return accion;
 }
