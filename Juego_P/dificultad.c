@@ -8,10 +8,14 @@
 int dificultad(){
 	int elegir_opo, errores_opo;
 	 do{
-	 	printf(GREEN"\n\n\t 1. Mushu\n"); // TODO: Asignar las estadísticas a cada dragón.
-	 	printf(YELLOW"\t 2. Shenlong \n");
+	 	printf(RED"\n\n\t 1. Mushu\n"); // TODO: Asignar las estadísticas a cada dragón.
+	 	system("cat < Mushu.txt");
+	 	printf(GREEN"\t 2. Shenlong \n");
+	 	system("cat < Shenlong.txt");
 	 	printf(MAGENTA"\t 3. Balerion \n");
-	 	printf(RED"\t 4. Charizar \n");
+	 	system("cat < Balerion.txt");
+	 	printf(ORANGE"\t 4. Charizar \n");
+	 	system("cat < Charizard.txt");
 	 	printf(WHITE "\n\n");
 	 	printf("¿A que dragón te vas a enfrentar?: ");
 		errores_opo = scanf("%d",&elegir_opo);
