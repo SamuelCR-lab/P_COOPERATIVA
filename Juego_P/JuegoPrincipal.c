@@ -6,7 +6,7 @@
 #include "textos.h"
 #include "caballero.h"
 #include "dragon.h"
-
+#include "JuegoPrincipal.h"
 
 #define NOMBRE_MAX 100
 #define MAX_DRAGONES 4
@@ -25,12 +25,12 @@ int main(){
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (eleccion == 1){
-		CrearBoromir(&Jugador, alias);
+		CrearBoromir(Jugador, alias);
 		// A jugador se le asigna una copia del caballero.
 	}else if (eleccion == 2){
-		CrearLa_Montana(&Jugador, alias); 
+		CrearLa_Montana(Jugador, alias); 
 	}else {
-		CrearEl_Cid(&Jugador, alias);
+		CrearEl_Cid(Jugador, alias);
 	}
 	// TODO: Menú Jugar/Tienda/Exit
 	// Reserva de memoria para los 4 dragones.
@@ -72,15 +72,15 @@ int main(){
 	printf("\n\n");
 	
 	monedas = 50;
-	mejorar_stats(&Jugador, &monedas);
+	mejorar_stats(Jugador, &monedas);
 	for (int i = 0; i <= 2000; i++){
 		accion = menu();
 		if (accion == 1){
-			batalla(&Jugador, &Dragon[eleccion_opo]);
+			batalla(Jugador, Dragon[eleccion_opo]);
 		}else if(accion == 2){
 			eleccion_opo = dificultad();
 		}else if(accion == 3){
-			mejorar_stats(&Jugador, &monedas);
+			mejorar_stats(Jugador, &monedas);
 		}
 	}
 

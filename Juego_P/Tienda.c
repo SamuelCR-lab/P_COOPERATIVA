@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Objetos.h"
+#include "textos.h"
 #include "caballero.h"
 
 void mejorar_stats(Caballero * stats, int * monedas){

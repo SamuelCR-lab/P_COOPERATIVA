@@ -16,7 +16,7 @@ void CrearBoromir(Caballero* Boromir, char* alias){
 }
 void CrearLa_Montana(Caballero* La_Montana, char* alias){
 	strcpy(La_Montana->nombre,"La_Montaña");
-	strcpy(La_Montaña->alias, alias);
+	strcpy(La_Montana->alias, alias);
 	La_Montana->vida =  50;
 	La_Montana->ataque = 47;
 	La_Montana->velocidad = 12;

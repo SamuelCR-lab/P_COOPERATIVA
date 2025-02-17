@@ -3,6 +3,6 @@
 #include "caballero.h"
 #include "dragon.h"
 
-void batalla(Cabllero * jugador, Dragon * npc){
+void batalla(Caballero * jugador, Dragon * npc){
 	
 }

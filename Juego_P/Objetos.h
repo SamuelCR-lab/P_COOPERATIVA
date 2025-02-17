@@ -1,6 +1,0 @@
-#define TIENDA "Tienda"
-#define POCION "Pocion"
-#define BOTAS "Botas"
-#define ESPADA "Espada"
-#define HACHA "Hacha"
-#define ARCO "Arco"

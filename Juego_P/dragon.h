@@ -13,3 +13,4 @@ void CrearMushu(Dragon * Mushu);
 void CrearShenlong(Dragon * Shenlong);
 void CrearBalerion(Dragon * Balerion);
 void CrearCharizar(Dragon * Charizar);
+int dificultad();
