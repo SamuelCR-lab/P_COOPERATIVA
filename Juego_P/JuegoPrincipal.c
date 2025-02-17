@@ -64,7 +64,7 @@ int main(){
 			}else if(eleccion_opo == 4){
 				printf("%s",D_CHARIZAR);
 			}
-			batalla(Jugador, &Oponente[eleccion_opo-1]);
+			batalla(&Jugador, &Oponente[eleccion_opo-1]);
 		}else if(accion == 2){
 			mejorar_stats(Jugador, &monedas);
 		}else if(accion == 3){

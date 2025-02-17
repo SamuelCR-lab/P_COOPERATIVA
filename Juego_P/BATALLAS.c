@@ -8,7 +8,7 @@ void batalla(Caballero * jugador, Dragon * npc){
     int randomCri, randomAtaque, critico, ronda = 1;
     srand(time(NULL)); // crea una llista de numeros random en funcion de los segundos del PC
                        // Cada vez que hace rand() selecciona el siguiente número de la lista.
-	while (jugador->vida <= 0 || npc->vida <= 0){
+	while (jugador->vida >= 0 || npc->vida >= 0){
         critico = 0;
         randomAtaque = 0;
         printf("Ronda %d: \n", ronda);
