@@ -6,8 +6,10 @@ typedef struct{
 	char nombre[50];
 	char alias[50];
 	int vida;
+	int vidaActual;
 	int ataque;
 	int velocidad;
+	int monedas;
 }Caballero;
 
 

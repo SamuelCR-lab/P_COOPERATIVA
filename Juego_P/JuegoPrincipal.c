@@ -43,7 +43,7 @@ int main(){
 
 	// Inicializacion de los cuatro dragones.
 
-	CrearMushu(&Oponente[0]);
+	CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
 	CrearShenlong(&Oponente[1]);
 	CrearBalerion(&Oponente[2]);
 	CrearCharizar(&Oponente[3]);
@@ -64,7 +64,7 @@ int main(){
 			}else if(eleccion_opo == 4){
 				printf("%s",D_CHARIZAR);
 			}
-			batalla(Jugador, Dragon[eleccion_opo]);
+			batalla(Jugador, &Oponente[eleccion_opo-1]);
 		}else if(accion == 2){
 			mejorar_stats(Jugador, &monedas);
 		}else if(accion == 3){
