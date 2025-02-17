@@ -9,4 +9,6 @@ typedef struct{
 	int velocidad;
 }Caballero;
 
-
+void CrearBoromir(Caballero* Boromir);
+void CrearLa_Montana(Caballero* La_Montana);
+void CrearEl_Cid(Caballero* El_Cid);
