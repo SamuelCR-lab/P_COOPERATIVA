@@ -42,39 +42,44 @@ int main(){
 	}
 
 	// Inicializacion de los cuatro dragones.
+
 	CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
 	CrearShenlong(&Oponente[1]);
 	CrearBalerion(&Oponente[2]);
 	CrearCharizar(&Oponente[3]);
 
+
 	// Eleccion de dificultad.
-	// TODO: crear la batalla.
-	eleccion_opo = dificultad();
-
-	if(eleccion_opo == 1){
-		printf("%s",D_MUSHU);
-	}else if(eleccion_opo == 2){
-		printf("%s",D_SHENLONG);
-	}else if(eleccion_opo == 3){
-		printf("%s",D_BALERION);
-	}else if(eleccion_opo == 4){
-		printf("%s",D_CHARIZAR);
-	}
-
-	printf("\n\n");
-	
 	monedas = 50;
-	mejorar_stats(Jugador, &monedas);
 	for (int i = 0; i <= 2000; i++){
 		accion = menu();
 		if (accion == 1){
+			eleccion_opo = dificultad();
+			if(eleccion_opo == 1){
+				printf("%s",D_MUSHU);
+			}else if(eleccion_opo == 2){
+				printf("%s",D_SHENLONG);
+			}else if(eleccion_opo == 3){
+				printf("%s",D_BALERION);
+			}else if(eleccion_opo == 4){
+				printf("%s",D_CHARIZAR);
+			}
 			batalla(Jugador, &Oponente[eleccion_opo-1]);
 		}else if(accion == 2){
-			eleccion_opo = dificultad();
-		}else if(accion == 3){
 			mejorar_stats(Jugador, &monedas);
+		}else if(accion == 3){
+			break;
 		}
 	}
+
+
+
+	// TODO: crear la batalla.
+
+
+	printf("\n\n");
+	
+
 
 	free(alias);
 	free(Jugador);
