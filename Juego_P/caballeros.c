@@ -34,4 +34,16 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 	El_Cid->velocidad = 15;
 	El_Cid->monedas = 0; 
 }
+void ataqueCaballero(Caballero* jugador, Dragon* npc){
+	randomCri = rand() % 8;
+            if (randomCri == 1){
+                critico = jugador->ataque;
+                critico /= 3;
+            }
+            randomAtaque = rand() % 5; 
+            npc->vidaActual -= jugador->ataque + critico + randomAtaque;
+            sleep(2);
+            printf("\tEl caballero %s ataca al dragon %s", jugador->nombre, npc->nombre);
+            printf("\tSalud de %s: %d / %d totales", npc->nombre, npc->vidaActual, npc->vida);
+}
 
