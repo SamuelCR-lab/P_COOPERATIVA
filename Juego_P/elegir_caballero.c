@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "textos.h"
+#include "colors.h"
+#include "caballero.h"
 
 int elegir_caballero(char ** nombre_c){
 	int elegir,errores,elegir_alias;

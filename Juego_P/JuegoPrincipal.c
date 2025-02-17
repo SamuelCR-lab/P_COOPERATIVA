@@ -6,7 +6,7 @@
 #include "textos.h"
 #include "caballero.h"
 #include "dragon.h"
-
+#include "JuegoPrincipal.h"
 
 #define NOMBRE_MAX 100
 #define MAX_DRAGONES 4
@@ -25,12 +25,12 @@ int main(){
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (eleccion == 1){
-		CrearBoromir(&Jugador);
+		CrearBoromir(Jugador, alias);
 		// A jugador se le asigna una copia del caballero.
 	}else if (eleccion == 2){
-		CrearLa_Montana(&Jugador); 
+		CrearLa_Montana(Jugador, alias); 
 	}else {
-		CrearEl_Cid(&Jugador);
+		CrearEl_Cid(Jugador, alias);
 	}
 	// TODO: Menú Jugar/Tienda/Exit
 	// Reserva de memoria para los 4 dragones.
@@ -42,22 +42,18 @@ int main(){
 	}
 
 	// Inicializacion de los cuatro dragones.
-	for (int i = 0; i < MAX_DRAGONES; i++){
-		if (i == 0){
-			CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
-		}else if( i == 1){
-			CrearShenlong(&Oponente[1]);
-		}else if(i == 2){
-			CrearBalerion(&Oponente[2]);
-		}else if(i == 3){
-			CrearCharizar(&Oponente[3]);
-		}
+
+	CrearMushu(&Oponente[0]);
+	CrearShenlong(&Oponente[1]);
+	CrearBalerion(&Oponente[2]);
+	CrearCharizar(&Oponente[3]);
+
 	
-	}
+	
 
 	// Eleccion de dificultad.
 	monedas = 50;
-	mejorar_stats(&Jugador, &monedas);
+	mejorar_stats(Jugador, &monedas);
 	for (int i = 0; i <= 2000; i++){
 		accion = menu();
 		if (accion == 1){
@@ -71,11 +67,11 @@ int main(){
 			}else if(eleccion_opo == 4){
 				printf("%s",D_CHARIZAR);
 			}
-			batalla(&Jugador, &Dragon[eleccion_opo]);
+			batalla(Jugador, Dragon[eleccion_opo]);
 		}else if(accion == 2){
 			eleccion_opo = dificultad();
 		}else if(accion == 3){
-			mejorar_stats(&Jugador, &monedas);
+			mejorar_stats(Jugador, &monedas);
 		}
 	}
 

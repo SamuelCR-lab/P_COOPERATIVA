@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int menu();
+void mejorar_stats(Caballero * stats, int * monedas);
+void batalla(Caballero * jugador, Dragon * npc);
