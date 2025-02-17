@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<string.h>
+#include <string.h>
 #include "dragon.h"
 
 // Pasamos los dragones por referencia, que seran copiados en la reserva
@@ -38,4 +38,16 @@ void CrearCharizar(Dragon * Charizar){
     Charizar->ataque = 100;
     Charizar->velocidad = 20;
 }
+void ataqueDragon(Caballero * jugador, Dragon * npc){
+	randomCri = rand() % 10;
+    if (randomCri == 3){
+    	critico = npc->ataque;
+        critico /= 5;
+    }
+    jugador->vidaActual -= npc->ataque + critico;
+    sleep(2);
+    printf("\tEl dragon %s, ataca al caballero %s",npc->nombre, jugador->nombre);
+    printf("\tSalud de %s: %d / %d totales", jugador->nombre, jugador->vidaActual, jugador->vida);
 
+
+}
