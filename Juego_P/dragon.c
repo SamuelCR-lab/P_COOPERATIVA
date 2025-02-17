@@ -10,6 +10,7 @@
 void CrearMushu(Dragon * Mushu){
 	strcpy(Mushu->nombre,"Mushu");
 	Mushu->vida =  60;
+	Mushu->vidaActual = 60;
 	Mushu->ataque = 25;
 	Mushu->velocidad = 10;
 }
@@ -17,6 +18,7 @@ void CrearMushu(Dragon * Mushu){
 void CrearShenlong(Dragon * Shenlong){
 	strcpy(Shenlong->nombre,"Shenlong");
 	Shenlong->vida =  70;
+	Shenlong->vidaActual = 70;
 	Shenlong->ataque = 50;
 	Shenlong->velocidad = 13;
 }
@@ -24,6 +26,7 @@ void CrearShenlong(Dragon * Shenlong){
 void CrearBalerion(Dragon * Balerion){
 	strcpy(Balerion->nombre,"Balerion");
 	Balerion->vida =  85;
+	Balerion->vidaActual = 55;
 	Balerion->ataque = 72;
 	Balerion->velocidad = 16;
 }
@@ -31,6 +34,7 @@ void CrearBalerion(Dragon * Balerion){
 void CrearCharizar(Dragon * Charizar){
     strcpy(Charizar->nombre, "Charizar");
     Charizar->vida = 120;
+	Charizar->vidaActual = 55;
     Charizar->ataque = 100;
     Charizar->velocidad = 20;
 }

@@ -48,8 +48,6 @@ int main(){
 	CrearBalerion(&Oponente[2]);
 	CrearCharizar(&Oponente[3]);
 
-	
-	}
 
 	// Eleccion de dificultad.
 	// TODO: crear la batalla.
