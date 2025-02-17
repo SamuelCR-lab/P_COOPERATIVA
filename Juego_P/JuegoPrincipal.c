@@ -25,12 +25,12 @@ int main(){
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (eleccion == 1){
-		CrearBoromir(&Jugador);
+		CrearBoromir(&Jugador, alias);
 		// A jugador se le asigna una copia del caballero.
 	}else if (eleccion == 2){
-		CrearLa_Montana(&Jugador); 
+		CrearLa_Montana(&Jugador, alias); 
 	}else {
-		CrearEl_Cid(&Jugador);
+		CrearEl_Cid(&Jugador, alias);
 	}
 	// TODO: Menú Jugar/Tienda/Exit
 	// Reserva de memoria para los 4 dragones.
