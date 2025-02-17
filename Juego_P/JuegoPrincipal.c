@@ -42,16 +42,12 @@ int main(){
 	}
 
 	// Inicializacion de los cuatro dragones.
-	for (int i = 0; i < MAX_DRAGONES; i++){
-		if (i == 0){
-			CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
-		}else if( i == 1){
-			CrearShenlong(&Oponente[1]);
-		}else if(i == 2){
-			CrearBalerion(&Oponente[2]);
-		}else if(i == 3){
-			CrearCharizar(&Oponente[3]);
-		}
+
+	CrearMushu(&Oponente[0]);
+	CrearShenlong(&Oponente[1]);
+	CrearBalerion(&Oponente[2]);
+	CrearCharizar(&Oponente[3]);
+
 	
 	}
 
