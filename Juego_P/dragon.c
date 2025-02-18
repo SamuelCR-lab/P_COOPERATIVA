@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "dragon.h"
+#include "caballero.h"
 
 // Pasamos los dragones por referencia, que seran copiados en la reserva
 // de memoria dinámica del main, lo cual cualquier cambio solo se vera afectado 
@@ -48,6 +50,5 @@ void ataqueDragon(Caballero * jugador, Dragon * npc){
     sleep(2);
     printf("\tEl dragon %s, ataca al caballero %s",npc->nombre, jugador->nombre);
     printf("\tSalud de %s: %d / %d totales", jugador->nombre, jugador->vidaActual, jugador->vida);
-
 
 }
