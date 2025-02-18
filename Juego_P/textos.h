@@ -5,8 +5,7 @@
 #define MENU "Estas en el menu de batalla, ¿que acción quieres realizar?: "
 #define ELECCION1 "1. Batallar." 
 #define ELECCION2 "2. Entrar en la tienda BADULAQUE DE IULIAN_DRACARIS." 
-#define ELECCION3 "3. Salir del Juegp"
-
+#define ELECCION3 "3. Salir del Juego."
 #define CABALLERO1 "\tBoromir es la sombra entre las llamas, el filo que ataca antes de ser visto. Rápido, ágil y mortal, confía en su velocidad y astucia para superar a sus enemigos. Hijo de un capitán de la guardia real, se entrenó desde niño en la esgrima y el arco, convirtiéndose en un guerrero tan letal como escurridizo.\n\tNo usa armadura pesada, sino cuero reforzado que le permite moverse con total libertad. Su espada corta y su arco son extensiones de su propio cuerpo. Sus enemigos rara vez ven venir su ataque… hasta que es demasiado tarde.\n\t Habilidades: Velocidad extrema, reflejos afilados y ataques precisos. Puede esquivar golpes con facilidad, pero su resistencia es menor.\n\n"
 #define CABALLERO2 "\tPocos hombres han nacido con la fuerza de La Montaña. Un coloso cuya sola presencia intimida hasta a los dragones más feroces. Su historia está envuelta en sangre y misterio; algunos dicen que proviene de un linaje maldito, otros aseguran que fue criado por gigantes en los páramos del norte.\n\tManeja un mandoble titánico, una espada tan pesada que solo él puede blandirla. Su armadura es tan gruesa como el acero de un castillo, y sus enemigos caen como moscas ante su brutalidad. Pero su gran poder viene con un precio: su velocidad es reducida, y su furia en combate a veces nubla su juicio.\n\t Habilidades: Fuerza descomunal, resistencia inquebrantable. Puede soportar el fuego de los dragones y partir rocas con sus golpes, pero su velocidad es limitada.\n\n"
 #define CABALLERO3 "\t\tUn estratega nato y un líder inspirador, Cid es la imagen misma del honor y la caballería. Nacido en una familia de nobles guerreros, su espada ha protegido Eldoria desde su juventud. Maneja con destreza la espada y el escudo, equilibrando defensa y ataque con maestría.\n\t\tSe dice que su armadura brilla con un resplandor dorado en la batalla, y que su voz es capaz de alzar el ánimo de sus aliados incluso en los momentos más oscuros. Sin embargo, Cid no solo lucha con acero, sino con su ingenio, siempre buscando el mejor camino para vencer sin caer en la brutalidad o la imprudencia.\n\t\tHabilidades: Balance perfecto entre ataque, defensa y agilidad. Su liderazgo y estrategia lo convierten en el alma del equipo.\n\n"
@@ -30,4 +29,4 @@
 #define ESPADA "\t\t3. Espada --> te incrementa el ataque +10 --> por 35 monedas\n"
 #define HACHA "\t\t4. Hacha --> te incrementa el ataque +15 --> por 45 monedas\n"
 #define ARCO "\t\t5. Arco --> te incrementa el ataque +5 --> por 25 monedas\n"
-#define SALIR_TIENDA "\t\t6. Salir\n"
+#define SALIR_TIENDA "\t\t6. Salir al menú.\n"

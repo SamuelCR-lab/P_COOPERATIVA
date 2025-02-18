@@ -41,7 +41,7 @@ void CrearCharizar(Dragon * Charizar){
     Charizar->velocidad = 20;
 }
 void ataqueDragon(Caballero * jugador, Dragon * npc){
-	randomCri = rand() % 10;
+	int randomCri = rand() % 10;
     if (randomCri == 3){
     	critico = npc->ataque;
         critico /= 5;

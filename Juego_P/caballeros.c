@@ -37,7 +37,7 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 	El_Cid->monedas = 0; 
 }
 void ataqueCaballero(Caballero* jugador, Dragon* npc){
-	int critico, randomAtaque;
+	int critico = 0, randomAtaque = 0;
 	int randomCri = rand() % 8;
             if (randomCri == 1){
                 critico = jugador->ataque;
