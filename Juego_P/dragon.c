@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "dragon.h"
+#include <unistd.h>
+#include <time.h>
+#include "JuegoPrincipal.h"
 
 // Pasamos los dragones por referencia, que seran copiados en la reserva
 // de memoria dinámica del main, lo cual cualquier cambio solo se vera afectado 
@@ -39,7 +41,8 @@ void CrearCharizar(Dragon * Charizar){
     Charizar->velocidad = 20;
 }
 void ataqueDragon(Caballero * jugador, Dragon * npc){
-	randomCri = rand() % 10;
+	int critico;
+	int randomCri = rand() % 10;
     if (randomCri == 3){
     	critico = npc->ataque;
         critico /= 5;

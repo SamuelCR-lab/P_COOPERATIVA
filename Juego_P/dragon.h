@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 typedef struct{
 	char nombre[50];
 	int vida;
@@ -15,4 +14,3 @@ void CrearShenlong(Dragon * Shenlong);
 void CrearBalerion(Dragon * Balerion);
 void CrearCharizar(Dragon * Charizar);
 int dificultad();
-void ataqueDragon(Caballero * jugador, Dragon * npc);

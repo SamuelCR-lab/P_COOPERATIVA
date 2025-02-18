@@ -4,8 +4,6 @@
 #include <time.h>
 #include "colors.h"
 #include "textos.h"
-#include "caballero.h"
-#include "dragon.h"
 #include "JuegoPrincipal.h"
 
 
@@ -56,7 +54,7 @@ int main(){
 	CrearCharizar(&Oponente[3]);
 
 	// Eleccion de dificultad.
-	Jugador.monedas = 50;
+	Jugador->monedas = 50;
 	do{
 		accion = menu();
 		if (accion == 1){
@@ -70,11 +68,11 @@ int main(){
 			}else if(eleccion_opo == 4){
 				printf("%s",D_CHARIZAR);
 			}
-			batalla(&Jugador, &Oponente[eleccion_opo-1]);
+			batalla(Jugador, &Oponente[eleccion_opo-1]);
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		}
-	} while (accion != 3)
+	} while (accion != 3);
 
 	// TODO: crear la batalla.
 
