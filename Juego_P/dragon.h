@@ -5,6 +5,7 @@
 typedef struct{
 	char nombre[50];
 	int vida;
+	int vidaActual;
 	int ataque;
 	int velocidad;
 }Dragon;

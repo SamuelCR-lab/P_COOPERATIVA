@@ -10,7 +10,7 @@
 void CrearBoromir(Caballero* Boromir, char* alias){
 	strcpy(Boromir->nombre,"Boromir");
 	strcpy(Boromir->alias, alias);
-	Boromir->vidaTotal =  55;
+	Boromir->vida =  55;
 	Boromir->vidaActual = 55;
 	Boromir->ataque = 27;
 	Boromir->velocidad = 18;
