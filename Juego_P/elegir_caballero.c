@@ -10,9 +10,12 @@ int elegir_caballero(char ** nombre_c){
 	char respuesta[5];
 	do{ // Es un do while porque siempre se va a ejecutar mínimo una vez y las variables aún no tienen ningún valor asignado.
 		printf(BLUE "\n\n\t1. BOROMIR\n\t\tAtaque: 30\n\t\tSalud: 55\n\t\tVelocidad: 18\n");
-		printf(RED "\t2. LA MONTAÑA\n\t\tAtaque: 50\n\t\tSalud: 50\n\t\tVelocidad: 12\n");	
-		printf(GREEN "\t3. CID CAMPEADOR\n\t\tAtaque: 38\n\t\tSalud: 58\n\t\tVelocidad: 15");
-		printf(WHITE "\n\n"); // Pongo WHITE para que se resetee el color para los próximos printfs.
+	 	system("cat < Boromir.txt");
+		printf(RED "\t2. LA MONTAÑA\n\t\tAtaque: 50\n\t\tSalud: 50\n\t\tVelocidad: 12\n");
+	 	system("cat < La_Montana.txt");
+		printf(GREEN "\t3. CID CAMPEADOR\n\t\tAtaque: 38\n\t\tSalud: 58\n\t\tVelocidad: 15\n");
+	 	system("cat < El_Cid.txt");
+		printf(WHITE "\n"); // Pongo WHITE para que se resetee el color para los próximos printfs.
 		printf("Elige que caballero quieres ser: ");
 		errores = scanf("%d",&elegir);
 		if (errores==0){ // Entra en el condicional si ha escrito una letra.

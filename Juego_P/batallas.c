@@ -59,4 +59,5 @@ void batalla(Caballero * jugador, Dragon * npc){
             ronda ++;
         }
     }
+    system("cat < Muerte.txt");
 }

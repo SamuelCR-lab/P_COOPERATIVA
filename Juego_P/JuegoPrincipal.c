@@ -18,6 +18,7 @@ int main(){
 	alias = (char *) malloc(NOMBRE_MAX);
 	if (alias==NULL) return 1;
 	system("clear");
+	system("cat < Demonio.txt");
 	printf("%s",TXT_INTRO_01);
 
 	eleccion = elegir_caballero(&alias);
@@ -78,6 +79,7 @@ int main(){
 
 
 	printf("\n\n");
+	system("cat < Beso.txt");
 	
 
 
