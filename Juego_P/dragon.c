@@ -51,4 +51,5 @@ void ataqueDragon(Caballero * jugador, Dragon * npc){
     printf("\tEl dragon %s, ataca al caballero %s",npc->nombre, jugador->nombre);
     printf("\tSalud de %s: %d / %d totales", jugador->nombre, jugador->vidaActual, jugador->vida);
 
+
 }

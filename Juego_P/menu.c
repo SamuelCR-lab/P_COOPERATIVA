@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "textos.h"
-
+#include "JuegoPrincipal.h"
 
 int menu(){
 	int accion, errores;

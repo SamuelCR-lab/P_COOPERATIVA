@@ -1,11 +1,6 @@
 //Texto introducctorio del juego
 #define TXT_INTRO_01 "\t\t\t\t\t\t\tBienvenidos a nuestro juego de Dragos y Caballeros.\n\n\tHace siglos, en el reino de Eldoria, la paz fue quebrantada cuando los Dragones Oscuros de Valtheria emergieron de las profundidades de las montañas. Su líder, el despiadado Drakthor el Devastador, atacó el castillo real y secuestró a la princesa Evelyn, última heredera del trono sagrado.\n\tEl rey, desesperado por recuperar a su hija y salvar el reino, envió a sus mejores guerreros a la batalla, pero ninguno regresó. \nCon la esperanza desvaneciéndose, los sabios del reino anunciaron una antigua profecía: 'Solo un caballero de corazón puro, armado con la Espada de la Luz, podrá desafiar a las bestias y restaurar el equilibrio.\n''Tú, un joven caballero con un pasado misterioso, has decidido enfrentar este desafío.\n Para salvar a la princesa y devolver la paz a Eldoria, deberás viajar a través de oscuros bosques encantados, ruinas olvidadas y cuevas infestadas de dragones.\n En tu camino, descubrirás secretos ancestrales, forjarás alianzas inesperadas y enfrentarás pruebas mortales.\nPero ten cuidado… los dragones todos tienen su complejidad y habilidad predominante.\n En las sombras, traidores y fuerzas oscuras conspiran para aprovechar el caos.\n ¿Serás el héroe que el reino necesita o perecerás como tantos antes que tú? El destino de Eldoria está en tus manos.\n\n"
 
-//Variables globales
-#define BUFFER 50
-#define NOMBRE_MAX 100
-#define MAX_DRAGONES 4
-
 //Menu de batalla depues de elegir
 #define MENU "Estas en el menu de batalla, ¿que acción quieres realizar?: "
 #define ELECCION1 "1. Batallar." 

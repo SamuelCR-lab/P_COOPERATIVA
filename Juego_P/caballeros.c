@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<string.h>
-#include "caballero.h"
+#include <string.h>
+#include <unistd.h>
+#include <time.h>
+#include "JuegoPrincipal.h"
 
 // Pasamos los Caballeros por referencia, que sera copiado en la reserva de memoria
 // del main, así, cualquier cambio solo se vera reflejado en la copia que hagamos 
@@ -35,7 +37,8 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 	El_Cid->monedas = 0; 
 }
 void ataqueCaballero(Caballero* jugador, Dragon* npc){
-	randomCri = rand() % 8;
+	int critico, randomAtaque;
+	int randomCri = rand() % 8;
             if (randomCri == 1){
                 critico = jugador->ataque;
                 critico /= 3;

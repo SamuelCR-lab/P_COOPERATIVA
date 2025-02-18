@@ -4,19 +4,17 @@
 #include <time.h>
 #include "colors.h"
 #include "textos.h"
-#include "caballero.h"
-#include "dragon.h"
 #include "JuegoPrincipal.h"
 
-#define NOMBRE_MAX 100
-#define MAX_DRAGONES 4
 
 
 int main(){
-	int eleccion, eleccion_opo, monedas, accion;
+	int eleccion, eleccion_opo, accion;
 	char * alias;
+
 	alias = (char *) malloc(NOMBRE_MAX);
-	if (alias==NULL) return 1;
+	if (alias==NULL) return EXIT_FAILURE;
+
 	system("clear");
 	system("cat < Demonio.txt");
 	printf("%s",TXT_INTRO_01);
@@ -25,6 +23,12 @@ int main(){
 	printf("Ya estás listo para pelear %s\n", alias);
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
+	if (Jugador == NULL){
+		printf("Ha ocurrido un error con la memoria del caballero\n");
+		free(alias);
+		return EXIT_FAILURE;
+	}
+
 	if (eleccion == 1){
 		CrearBoromir(Jugador, alias);
 		// A jugador se le asigna una copia del caballero.
@@ -33,26 +37,25 @@ int main(){
 	}else {
 		CrearEl_Cid(Jugador, alias);
 	}
-	// TODO: Menú Jugar/Tienda/Exit
+
 	// Reserva de memoria para los 4 dragones.
 	Dragon* Oponente = (Dragon*) malloc (MAX_DRAGONES * sizeof(Dragon));
 	if (Oponente == NULL){
 		printf("Ha ocurrido un error con la memoria de los dragones\n");
+		free(alias);
+		free(Jugador);
 		return EXIT_FAILURE;
-
 	}
 
 	// Inicializacion de los cuatro dragones.
-
 	CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
 	CrearShenlong(&Oponente[1]);
 	CrearBalerion(&Oponente[2]);
 	CrearCharizar(&Oponente[3]);
 
-
 	// Eleccion de dificultad.
-	monedas = 50;
-	for (int i = 0; i <= 2000; i++){
+	Jugador->monedas = 50;
+	do{
 		accion = menu();
 		if (accion == 1){
 			eleccion_opo = dificultad();
@@ -65,23 +68,16 @@ int main(){
 			}else if(eleccion_opo == 4){
 				printf("%s",D_CHARIZAR);
 			}
-			batalla(&Jugador, &Oponente[eleccion_opo-1]);
+			batalla(Jugador, &Oponente[eleccion_opo-1]);
 		}else if(accion == 2){
-			mejorar_stats(Jugador, &monedas);
-		}else if(accion == 3){
-			break;
+			mejorar_stats(Jugador);
 		}
-	}
-
-
+	} while (accion != 3);
 
 	// TODO: crear la batalla.
 
-
 	printf("\n\n");
 	system("cat < Beso.txt");
-	
-
 
 	free(alias);
 	free(Jugador);
