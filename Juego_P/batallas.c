@@ -36,10 +36,10 @@ void batalla(Caballero * jugador, Dragon * npc){
             if(npc->vidaActual <= 0){
                 printf("El caballero %s ha ganado la batalla\n", jugador->nombre);
                 break;
+            
             }
-            }
-            ronda ++;
         }
+        ronda ++;
     }
     system("cat < Muerte.txt");
 }
