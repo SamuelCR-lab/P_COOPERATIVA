@@ -11,13 +11,13 @@
 #define CABALLERO3 "\t\tUn estratega nato y un líder inspirador, Cid es la imagen misma del honor y la caballería. Nacido en una familia de nobles guerreros, su espada ha protegido Eldoria desde su juventud. Maneja con destreza la espada y el escudo, equilibrando defensa y ataque con maestría.\n\t\tSe dice que su armadura brilla con un resplandor dorado en la batalla, y que su voz es capaz de alzar el ánimo de sus aliados incluso en los momentos más oscuros. Sin embargo, Cid no solo lucha con acero, sino con su ingenio, siempre buscando el mejor camino para vencer sin caer en la brutalidad o la imprudencia.\n\t\tHabilidades: Balance perfecto entre ataque, defensa y agilidad. Su liderazgo y estrategia lo convierten en el alma del equipo.\n\n"
 
 
-#define POCION_lore "Esta posicion es un votaje milenario, lleno de cosas que por separado serian repugnantes...\n"
-#define BOTAS_lore "Estas Botas fueron dejadas por el mismisimo Hermes y te haran paraecer ligero como la seda...\n"
+#define POCION_lore "Esta pocion es un votaje milenario, lleno de cosas que por separado serian repugnantes...\n"
+#define BOTAS_lore "Estas botas fueron dejadas por el mismisimo Hermes y te haran paraecer ligero como la seda...\n"
 #define ESPADA_lore "La espada de azrael te dara mucho poder divino para derrotar a los dragones venideros...\n"
-#define HACHA_lore "El Hacha creada para thor despues de ser destruido su martillo durante el Ragnarok te dara la potencia del dios del Trueno...\n"
-#define ARCO_lore "El Arco de Legolas te dar la distancia y punteria del su dueño para derrotar a los dragones sin despeinarte...\n"
+#define HACHA_lore "El hacha 'Rompe tormentas' creada por Eitri para thor, despues de ser destruido su martillo durante el Ragnarok te dara la potencia del dios del Trueno...\n"
+#define ARCO_lore "El arco de Legolas te dar la distancia y punteria del su dueño para derrotar a los dragones sin despeinarte...\n"
 #define TIENDA "\tAcabas de entrar en la tienda de BADULAQUE DE IULIAN_DRACARIS. \n\tPuedes Comprar en la tienda estos objetos para mejorar tus estadisticas: \n"
-
+#define POBREZA "No tienes tantas monedas para comprar este increble articulo, pelea con draqgones y recoge los botines por sus cabezas para que puedas comprarlo nos veremos despues ;)\n"
 
 #define D_MUSHU "\tHas decidido enfrentarte a Mushu, el dragón travieso y pequeño, con un corazón valiente. Aunque no es muy grande, su ingenio lo convierte en un oponente formidable.\n"
 #define D_SHENLONG "\tHas decidido enfrentarte a Shenlong, el dragón ancestral de las leyendas. Su poder es inmenso, capaz de controlar los elementos con un solo rugido. ¡Solo los valientes se atreven a desafiarlo!.\n"
