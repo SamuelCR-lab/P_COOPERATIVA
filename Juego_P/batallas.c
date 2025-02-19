@@ -14,6 +14,13 @@ void batalla(Caballero * jugador, Dragon * npc){
            ataqueCaballero(jugador, npc);
             if(npc->vidaActual <= 0){
                 printf("El caballero %s ha ganado la batalla\n", jugador->nombre);
+                if (strcmp(npc->nombre, "Mushu")==0){
+                    jugador->monedas += 20;
+                }else if(strcmp(npc->nombre, "Shenglong")==0){
+                    jugador->monedas += 40;
+                }else if(strcmp(npc->nombre, "Balerion")==0){
+                    jugador->monedas += 80;
+                }
                 break;
             }
             ataqueDragon(jugador, npc);
