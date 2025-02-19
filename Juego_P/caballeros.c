@@ -55,6 +55,12 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
     }else if (strcmp(jugador->nombre, "El_Cid")==0){
     	system("cat < El_Cid.txt");
     }
-    printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);
+    if(npc->vidaActual > 0){
+    	printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);
+	}else{
+		npc->vidaActual = 0;
+		printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);
+
+	}
 }
 

@@ -32,7 +32,7 @@ void CrearShenlong(Dragon * Shenlong){
 void CrearBalerion(Dragon * Balerion){
 	strcpy(Balerion->nombre,"Balerion");
 	Balerion->vida =  85;
-	Balerion->vidaActual = 55;
+	Balerion->vidaActual = 85;
 	Balerion->ataque = 72;
 	Balerion->velocidad = 16;
 	Balerion->monedas = 80;
@@ -41,15 +41,14 @@ void CrearBalerion(Dragon * Balerion){
 void CrearCharizard(Dragon * Charizard){
     strcpy(Charizard->nombre, "Charizard");
     Charizard->vida = 120;
-	Charizard->vidaActual = 55;
+	Charizard->vidaActual = 120;
     Charizard->ataque = 100;
     Charizard->velocidad = 20;
 	Charizard->monedas = 0;
 }
 void ataqueDragon(Caballero * jugador, Dragon * npc){ // Necesitamos que se pase por referencia para que la vida se reste y se vea reflejado en la batalla
-	int critico;
+	int critico = 0; // Inicializo critico a 0
 	int randomCri = rand() % 10;
-	int critico;
     if (randomCri == 3){
     	printf("El dragón ha hecho un ataque crítico!!\n");
     	critico = npc->ataque;

@@ -27,7 +27,9 @@ void mejorar_stats(Caballero * stats){
 				break;
 			}else{
 				stats->vidaActual += 20;
-			stats->vidaActual = stats->vida;
+				if (stats->vidaActual > stats->vida){
+					stats->vida = stats->vidaActual;
+				}
 				stats->monedas -=15;
 				printf("La pocion te ha aumentado 20 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
 				printf("La pocion te ha costado 15 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
@@ -44,7 +46,7 @@ void mejorar_stats(Caballero * stats){
 				stats->velocidad += 3;
 				stats->monedas -=25;
 				printf("Las botas te ha aumentado 3 de velocidad y ahora tu velocidad es = %d\n\n",stats->velocidad);
-				printf("La pocion te ha costado 25 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
+				printf("Las botas te ha costado 25 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
 				break;
 			}
 			
@@ -57,7 +59,7 @@ void mejorar_stats(Caballero * stats){
 				stats->ataque += 10;
 				stats->monedas -=35;
 				printf("La espada te ha aumentado 10 de ataque y ahora tu ataque es = %d\n\n",stats->ataque);
-				printf("La pocion te ha costado 35 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
+				printf("La espada te ha costado 35 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
 				break;
 			}
 		case 4:
@@ -69,7 +71,7 @@ void mejorar_stats(Caballero * stats){
 				stats->ataque += 15;
 				stats->monedas -=45;
 				printf("El hacha te ha aumentado 15 en ataque y ahora tu ataque es = %d\n\n",stats->ataque);
-				printf("La pocion te ha costado 45 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
+				printf("El hacha te ha costado 45 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
 				break;
 			}
 		case 5:
@@ -81,7 +83,7 @@ void mejorar_stats(Caballero * stats){
 				stats->ataque += 5;
 				stats->monedas -=25;
 				printf("El hacha te ha aumentado 5 en ataque y ahora tu ataque es = %d\n\n",stats->ataque);
-				printf("La pocion te ha costado 25 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
+				printf("El arco te ha costado 25 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
 				break;
 			}
 		default:
