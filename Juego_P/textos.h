@@ -11,22 +11,22 @@
 #define CABALLERO3 "\t\tUn estratega nato y un líder inspirador, Cid es la imagen misma del honor y la caballería. Nacido en una familia de nobles guerreros, su espada ha protegido Eldoria desde su juventud. Maneja con destreza la espada y el escudo, equilibrando defensa y ataque con maestría.\n\t\tSe dice que su armadura brilla con un resplandor dorado en la batalla, y que su voz es capaz de alzar el ánimo de sus aliados incluso en los momentos más oscuros. Sin embargo, Cid no solo lucha con acero, sino con su ingenio, siempre buscando el mejor camino para vencer sin caer en la brutalidad o la imprudencia.\n\t\tHabilidades: Balance perfecto entre ataque, defensa y agilidad. Su liderazgo y estrategia lo convierten en el alma del equipo.\n\n"
 
 
-#define POCION_lore "Esta posicion es un votaje milenario, lleno de cosas que por separado serian repugnantes...\n"
-#define BOTAS_lore "Estas Botas fueron dejadas por el mismisimo Hermes y te haran paraecer ligero como la seda...\n"
+#define POCION_lore "Esta pocion es un votaje milenario, lleno de cosas que por separado serian repugnantes...\n"
+#define BOTAS_lore "Estas botas fueron dejadas por el mismisimo Hermes y te haran paraecer ligero como la seda...\n"
 #define ESPADA_lore "La espada de azrael te dara mucho poder divino para derrotar a los dragones venideros...\n"
-#define HACHA_lore "El Hacha creada para thor despues de ser destruido su martillo durante el Ragnarok te dara la potencia del dios del Trueno...\n"
-#define ARCO_lore "El Arco de Legolas te dar la distancia y punteria del su dueño para derrotar a los dragones sin despeinarte...\n"
+#define HACHA_lore "El hacha 'Rompe tormentas' creada por Eitri para thor, despues de ser destruido su martillo durante el Ragnarok te dara la potencia del dios del Trueno...\n"
+#define ARCO_lore "El arco de Legolas te dar la distancia y punteria del su dueño para derrotar a los dragones sin despeinarte...\n"
 #define TIENDA "\tAcabas de entrar en la tienda de BADULAQUE DE IULIAN_DRACARIS. \n\tPuedes Comprar en la tienda estos objetos para mejorar tus estadisticas: \n"
-
+#define POBREZA "No tienes tantas monedas para comprar este increble articulo, pelea con draqgones y recoge los botines por sus cabezas para que puedas comprarlo nos veremos despues ;)\n"
 
 #define D_MUSHU "\tHas decidido enfrentarte a Mushu, el dragón travieso y pequeño, con un corazón valiente. Aunque no es muy grande, su ingenio lo convierte en un oponente formidable.\n"
 #define D_SHENLONG "\tHas decidido enfrentarte a Shenlong, el dragón ancestral de las leyendas. Su poder es inmenso, capaz de controlar los elementos con un solo rugido. ¡Solo los valientes se atreven a desafiarlo!.\n"
 #define D_BALERION "\tHas decidido enfrentarte a Balerion, conocido como el terror de los cielos. Su tamaño y fuerza son legendarios, su aliento de fuego arrasa con todo a su paso. Desafiarlo es un acto de valentía, o de locura...\n"
 #define D_CHARIZARD "\tHas decidido enfrentarte a Charizard, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n"
 
-#define POCION "\t\t1. POCION --> te incrementa la vida +20 --> por 15 monedas\n"
-#define BOTAS "\t\t2. Botas --> te incrementa la velocidad +3,1 --> por 25 monedas\n"
-#define ESPADA "\t\t3. Espada --> te incrementa el ataque +10 --> por 35 monedas\n"
-#define HACHA "\t\t4. Hacha --> te incrementa el ataque +15 --> por 45 monedas\n"
-#define ARCO "\t\t5. Arco --> te incrementa el ataque +5 --> por 25 monedas\n"
+#define POCION "\t\t1. POCION\tte incrementa la vida +20 --> por 15 monedas\n"
+#define BOTAS "\t\t2. Botas\t\tte incrementa la velocidad +3,1 --> por 25 monedas\n"
+#define ESPADA "\t\t3. Espada\tte incrementa el ataque +10 --> por 35 monedas\n"
+#define HACHA "\t\t4. Hacha\t\tte incrementa el ataque +15 --> por 45 monedas\n"
+#define ARCO "\t\t5. Arco\t\tte incrementa el ataque +5 --> por 25 monedas\n"
 #define SALIR_TIENDA "\t\t6. Salir al menú.\n"

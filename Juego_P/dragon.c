@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include <unistd.h>
 #include "dragon.h"
 #include "caballero.h"
 
@@ -48,6 +49,7 @@ void CrearCharizard(Dragon * Charizard){
 void ataqueDragon(Caballero * jugador, Dragon * npc){ // Necesitamos que se pase por referencia para que la vida se reste y se vea reflejado en la batalla
 	int critico;
 	int randomCri = rand() % 10;
+	int critico;
     if (randomCri == 3){
     	printf("El dragón ha hecho un ataque crítico!!\n");
     	critico = npc->ataque;
@@ -66,6 +68,4 @@ void ataqueDragon(Caballero * jugador, Dragon * npc){ // Necesitamos que se pase
     	system("cat < Charizard.txt");
     }
     printf("\tSalud de %s: %d / %d\n", jugador->alias, jugador->vidaActual, jugador->vida);
-
-
 }
