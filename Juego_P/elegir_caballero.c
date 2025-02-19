@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include "textos.h"
 #include "colors.h"
 #include "caballero.h"
@@ -11,11 +12,14 @@ int elegir_caballero(char ** nombre_c){
 	do{ // Es un do while porque siempre se va a ejecutar mínimo una vez y las variables aún no tienen ningún valor asignado.
 		printf(BLUE "\n\n\t1. BOROMIR\n\t\tAtaque: 30\n\t\tSalud: 55\n\t\tVelocidad: 18\n");
 	 	system("cat < Boromir.txt");
+    	sleep(1);
 		printf(RED "\t2. LA MONTAÑA\n\t\tAtaque: 50\n\t\tSalud: 50\n\t\tVelocidad: 12\n");
 	 	system("cat < La_Montana.txt");
+    	sleep(1);
 		printf(GREEN "\t3. CID CAMPEADOR\n\t\tAtaque: 38\n\t\tSalud: 58\n\t\tVelocidad: 15\n");
 	 	system("cat < El_Cid.txt");
 		printf(WHITE "\n"); // Pongo WHITE para que se resetee el color para los próximos printfs.
+    	sleep(1);
 		printf("Elige que caballero quieres ser: ");
 		errores = scanf("%d",&elegir);
 		if (errores==0){ // Entra en el condicional si ha escrito una letra.
@@ -43,18 +47,21 @@ int elegir_caballero(char ** nombre_c){
 				strcpy(*nombre_c,"Boromir");
 			}
 			printf("%s",CABALLERO1);
+    		sleep(1);
 			break;
 		case 2:
 			if (elegir_alias){
 				strcpy(*nombre_c,"La Montaña");
 			}
 			printf("%s",CABALLERO2);
+    		sleep(1);
 			break;
 		case 3:
 			if (elegir_alias){
 				strcpy(*nombre_c,"Cid Campeador");
 			}
 			printf("%s",CABALLERO3);
+    		sleep(1);
 			break;
 	}
 	return elegir;

@@ -7,10 +7,11 @@ typedef struct{
 	int vidaActual;
 	int ataque;
 	int velocidad;
+	int monedas;
 }Dragon;
 
 void CrearMushu(Dragon * Mushu);
 void CrearShenlong(Dragon * Shenlong);
 void CrearBalerion(Dragon * Balerion);
-void CrearCharizar(Dragon * Charizar);
+void CrearCharizard(Dragon * Charizard);
 int dificultad();

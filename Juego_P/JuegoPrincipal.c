@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <time.h>
 #include "colors.h"
 #include "textos.h"
@@ -18,6 +19,7 @@ int main(){
 	system("clear");
 	system("cat < Demonio.txt");
 	printf("%s",TXT_INTRO_01);
+    sleep(5);
 
 	eleccion = elegir_caballero(&alias);
 	printf("Ya estás listo para pelear %s\n", alias);
@@ -51,7 +53,7 @@ int main(){
 	CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
 	CrearShenlong(&Oponente[1]);
 	CrearBalerion(&Oponente[2]);
-	CrearCharizar(&Oponente[3]);
+	CrearCharizard(&Oponente[3]);
 
 	// Eleccion de dificultad.
 	Jugador->monedas = 50;
@@ -61,14 +63,18 @@ int main(){
 			eleccion_opo = dificultad();
 			if(eleccion_opo == 1){
 				printf("%s",D_MUSHU);
+    			sleep(1);
 			}else if(eleccion_opo == 2){
 				printf("%s",D_SHENLONG);
+    			sleep(1);
 			}else if(eleccion_opo == 3){
 				printf("%s",D_BALERION);
+    			sleep(1);
 			}else if(eleccion_opo == 4){
-				printf("%s",D_CHARIZAR);
+				printf("%s",D_CHARIZARD);
+    			sleep(1);
 			}
-			batalla(Jugador, &Oponente[eleccion_opo-1]);
+			batalla(Jugador, Oponente[eleccion_opo-1]);
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		}

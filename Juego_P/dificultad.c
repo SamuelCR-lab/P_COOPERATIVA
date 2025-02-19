@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "colors.h"
 #include "dragon.h"
 
@@ -10,13 +11,17 @@ int dificultad(){
 	 do{
 	 	printf(RED"\n\n\t 1. Mushu\n"); // TODO: Asignar las estadísticas a cada dragón.
 	 	system("cat < Mushu.txt");
+    	sleep(1);
 	 	printf(GREEN"\t 2. Shenlong \n");
 	 	system("cat < Shenlong.txt");
+    	sleep(1);
 	 	printf(MAGENTA"\t 3. Balerion \n");
 	 	system("cat < Balerion.txt");
-	 	printf(ORANGE"\t 4. Charizar \n");
+    	sleep(1);
+	 	printf(ORANGE"\t 4. Charizard \n");
 	 	system("cat < Charizard.txt");
 	 	printf(WHITE "\n\n");
+    	sleep(1);
 	 	printf("¿A que dragón te vas a enfrentar?: ");
 		errores_opo = scanf("%d",&elegir_opo);
 		if (errores_opo==0){ // Entra en el condicional si ha escrito una letra.

@@ -6,13 +6,13 @@
 void mejorar_stats(Caballero * stats){
 	int eleccion,errores;
 	printf("Tienes %d monedas\n",stats->monedas);
-	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d\n\tAtaque = %d\n\tVelocidad = %d\n\n",stats->alias,stats->vida,stats->ataque,stats->velocidad);
+	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d/%d\n\tAtaque = %d\n\tVelocidad = %d\n\n",stats->alias,stats->vidaActual,stats->vida,stats->ataque,stats->velocidad);
 	printf("%s",TIENDA);
 	printf("%s",POCION);
 	printf("%s",BOTAS);
-	printf("%s",ARCO);
 	printf("%s",ESPADA);
 	printf("%s",HACHA);
+	printf("%s",ARCO);
 	printf("%s",SALIR_TIENDA);
 	printf("Opción: ");
 	errores = scanf("%d",&eleccion);
@@ -22,7 +22,8 @@ void mejorar_stats(Caballero * stats){
 	switch(eleccion){
 		case 1:
 			printf("%s",POCION_lore);
-			stats->vida += 20; 
+			stats->vida += 20;
+			stats->vidaActual = stats->vida;
 			stats->monedas -=15;
 			break;
 		case 2:

@@ -39,14 +39,22 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 void ataqueCaballero(Caballero* jugador, Dragon* npc){
 	int critico = 0, randomAtaque = 0;
 	int randomCri = rand() % 8;
-            if (randomCri == 1){
-                critico = jugador->ataque;
-                critico /= 3;
-            }
-            randomAtaque = rand() % 5; 
-            npc->vidaActual -= jugador->ataque + critico + randomAtaque;
-            sleep(2);
-            printf("\tEl caballero %s ataca al dragon %s", jugador->nombre, npc->nombre);
-            printf("\tSalud de %s: %d / %d totales", npc->nombre, npc->vidaActual, npc->vida);
+    if (randomCri == 1){
+    	printf("El caballero ha hecho un ataque crítico!!\n");
+        critico = jugador->ataque;
+        critico /= 3;
+    }
+    randomAtaque = rand() % 5; 
+    npc->vidaActual -= jugador->ataque + critico + randomAtaque;
+    sleep(1);
+    printf("\tEl caballero %s ataca al dragon %s\n", jugador->alias, npc->nombre);
+    if (strcmp(jugador->nombre, "Boromir")==0){
+    	system("cat < Boromir.txt");
+    }else if (strcmp(jugador->nombre, "La_Montaña")==0){
+    	system("cat < La_Montana.txt");
+    }else if (strcmp(jugador->nombre, "El_Cid")==0){
+    	system("cat < El_Cid.txt");
+    }
+    printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);
 }
 

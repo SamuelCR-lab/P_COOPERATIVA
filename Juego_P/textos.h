@@ -22,7 +22,7 @@
 #define D_MUSHU "\tHas decidido enfrentarte a Mushu, el dragón travieso y pequeño, con un corazón valiente. Aunque no es muy grande, su ingenio lo convierte en un oponente formidable.\n"
 #define D_SHENLONG "\tHas decidido enfrentarte a Shenlong, el dragón ancestral de las leyendas. Su poder es inmenso, capaz de controlar los elementos con un solo rugido. ¡Solo los valientes se atreven a desafiarlo!.\n"
 #define D_BALERION "\tHas decidido enfrentarte a Balerion, conocido como el terror de los cielos. Su tamaño y fuerza son legendarios, su aliento de fuego arrasa con todo a su paso. Desafiarlo es un acto de valentía, o de locura...\n"
-#define D_CHARIZAR "\tHas decidido enfrentarte a Charizar, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n"
+#define D_CHARIZARD "\tHas decidido enfrentarte a Charizard, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n"
 
 #define POCION "\t\t1. POCION --> te incrementa la vida +20 --> por 15 monedas\n"
 #define BOTAS "\t\t2. Botas --> te incrementa la velocidad +3,1 --> por 25 monedas\n"
