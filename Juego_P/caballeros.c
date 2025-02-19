@@ -46,7 +46,7 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
             randomAtaque = rand() % 5; 
             npc->vidaActual -= jugador->ataque + critico + randomAtaque;
             sleep(2);
-            printf("\tEl caballero %s ataca al dragon %s", jugador->nombre, npc->nombre);
-            printf("\tSalud de %s: %d / %d totales", npc->nombre, npc->vidaActual, npc->vida);
+            printf("\tEl caballero %s ataca al dragon %s\n", jugador->nombre, npc->nombre);
+            printf("\tSalud de %s: %d / %d totales\n", npc->nombre, npc->vidaActual, npc->vida);
 }
 
