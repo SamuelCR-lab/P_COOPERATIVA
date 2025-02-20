@@ -82,7 +82,7 @@ void mejorar_stats(Caballero * stats){
 			}else{
 				stats->ataque += 5;
 				stats->monedas -=25;
-				printf("El hacha te ha aumentado 5 en ataque y ahora tu ataque es = %d\n\n",stats->ataque);
+				printf("El arco te ha aumentado 5 en ataque y ahora tu ataque es = %d\n\n",stats->ataque);
 				printf("El arco te ha costado 25 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
 				break;
 			}

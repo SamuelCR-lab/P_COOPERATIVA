@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <time.h>
 #include "JuegoPrincipal.h"
+#include "colors.h"
 
 // Pasamos los Caballeros por referencia, que sera copiado en la reserva de memoria
 // del main, así, cualquier cambio solo se vera reflejado en la copia que hagamos 
@@ -49,18 +50,23 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
     sleep(1);
     printf("\tEl caballero %s ataca al dragon %s\n", jugador->alias, npc->nombre);
     if (strcmp(jugador->nombre, "Boromir")==0){
+    	printf(BLUE " ");
     	system("cat < Boromir.txt");
+    	printf(WHITE "\n");
     }else if (strcmp(jugador->nombre, "La_Montaña")==0){
-    	system("cat < La_Montana.txt");
+    	printf(RED " ");
+	 	system("cat < La_Montana.txt");
+    	printf(WHITE "\n");
     }else if (strcmp(jugador->nombre, "El_Cid")==0){
+    	printf(GREEN " ");
     	system("cat < El_Cid.txt");
+    	printf(WHITE "\n");
     }
-    if(npc->vidaActual > 0){
-    	printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);
-	}else{
-		npc->vidaActual = 0;
-		printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);
-
-	}
+    
+    if(npc->vidaActual < 0){
+    	npc->vidaActual = 0;
+    }
+    printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);	
+	
 }
 

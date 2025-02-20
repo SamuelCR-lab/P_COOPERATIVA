@@ -7,7 +7,7 @@ int menu(){
 	int accion, errores;
 	do{
 		printf("%s\n",MENU);
-		printf("\t%s\n \t%s\n \t%s\n",ELECCION1,ELECCION2,ELECCION3);
+		printf("%s\n %s\n %s\n",ELECCION1,ELECCION2,ELECCION3);
 		printf("¿Que acción quieres realizar? ");
 		errores = scanf(" %d",&accion);
 		if (errores == 0){ // Entra en el condicional si ha escrito una letra.

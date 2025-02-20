@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include "dragon.h"
 #include "caballero.h"
+#include "colors.h"
 
 // Pasamos los dragones por referencia, que seran copiados en la reserva
 // de memoria dinámica del main, lo cual cualquier cambio solo se vera afectado 
@@ -58,13 +59,26 @@ void ataqueDragon(Caballero * jugador, Dragon * npc){ // Necesitamos que se pase
     sleep(1);
     printf("\tEl dragon %s, ataca al caballero %s\n",npc->nombre, jugador->nombre);
     if (strcmp(npc->nombre, "Mushu")==0){
-    	system("cat < Mushu.txt");
+  		printf(RED" "); // TODO: Asignar las estadísticas a cada dragón.
+	 	system("cat < Mushu.txt");
+	 	printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Shenlong")==0){
-    	system("cat < Shenlong.txt");
+    	printf(GREEN" ");
+	 	system("cat < Shenlong.txt");
+		printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Balerion")==0){
-    	system("cat < Balerion.txt");
+    	printf(MAGENTA" ");
+	 	system("cat < Balerion.txt");
+	 	printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Charizard")==0){
-    	system("cat < Charizard.txt");
+    	printf(ORANGE" ");
+	 	system("cat < Charizard.txt");
+	 	printf(WHITE "\n");
+    }
+
+    if(jugador->vidaActual < 0){
+    	jugador->vidaActual = 0;
     }
     printf("\tSalud de %s: %d / %d\n", jugador->alias, jugador->vidaActual, jugador->vida);
+
 }
