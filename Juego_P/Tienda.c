@@ -14,7 +14,7 @@ void mejorar_stats(Caballero * stats){
 	printf("%s",HACHA);
 	printf("%s",ARCO);
 	printf("%s",SALIR_TIENDA);
-	printf("Opción: \n");
+	printf("Opción: ");
 	errores = scanf(" %d",&eleccion);
 	if(errores == 0){
 		printf("Has elegindo mal\n");
@@ -86,6 +86,81 @@ void mejorar_stats(Caballero * stats){
 				printf("El arco te ha costado 25 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
 				break;
 			}
+		default:
+			break;
+	}
+}
+
+void tienda_inframundo(Caballero * stats){
+	int eleccion,errores;
+	printf("Tienes %d monedas de oro\n\n",stats->monedas);
+	// TODO: lore tienda
+	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d/%d\n\tAtaque = %d\n\tVelocidad = %d\n\n",stats->alias,stats->vidaActual,stats->vida,stats->ataque,stats->velocidad);
+	
+	printf("%s",ALMA1);
+	printf("%s",ALMA2);
+	printf("%s",ALMA3);
+	printf("%s",SALIR_TIENDA);
+	printf("Opción: ");
+	errores = scanf(" %d",&eleccion);
+	if(errores == 0){
+		printf("Has elegindo mal\n");
+	}
+	switch(eleccion){
+		case 1:
+			printf("%s",POCION_lore);
+			if (stats->monedas < 10){
+				printf("%s",POBREZA);
+				break;
+			}else{
+				stats->vidaActual += 20;
+				stats->ataque -= 5;
+				stats->velocidad -= 5;
+				if (stats->vidaActual > stats->vida){
+					stats->vida = stats->vidaActual;
+				}
+				stats->monedas -=10;
+				printf("La pocion te ha aumentado 20 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
+				printf("La pocion te ha costado 10 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
+				break;
+			}
+			break;
+		case 2:
+			printf("%s",POCION_lore);
+			if (stats->monedas < 20){
+				printf("%s",POBREZA);
+				break;
+			}else{
+				stats->vidaActual += 50;
+				stats->ataque -= 10;
+				stats->velocidad -= 7;
+				if (stats->vidaActual > stats->vida){
+					stats->vida = stats->vidaActual;
+				}
+				stats->monedas -=20;
+				printf("La pocion te ha aumentado 50 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
+				printf("La pocion te ha costado 75 monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
+				break;
+			}
+			break;
+		case 3:
+			printf("%s",POCION_lore);
+			if (stats->monedas < 30){
+				printf("%s",POBREZA);
+				break;
+			}else{
+				stats->vidaActual += 120;
+				stats->ataque -= 15;
+				stats->velocidad -= 9;
+				if (stats->vidaActual > stats->vida){
+					stats->vida = stats->vidaActual;
+				}
+				stats->monedas = 0;
+				printf("La pocion te ha aumentado 120 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
+				printf("La pocion te ha costado todas tus monedas y ahora tu riqueza se remonta a %d monedas de oro\n\n",stats->monedas);
+				break;
+			}
+			break;
 		default:
 			break;
 	}

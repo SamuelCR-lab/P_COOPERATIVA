@@ -10,7 +10,7 @@
 
 
 int main(){
-	int eleccion, eleccion_opo, accion;
+	int eleccion, eleccion_opo, accion, resultado;
 	char * alias;
 
 	alias = (char *) malloc(NOMBRE_MAX);
@@ -74,13 +74,14 @@ int main(){
 				printf("%s",D_CHARIZARD);
     			sleep(1);
 			}
-			batalla(Jugador, Oponente[eleccion_opo-1]);
+			resultado = batalla(Jugador, Oponente[eleccion_opo-1]);
+			// TODO: ifs de lo que devuelve batalla: 0-> seguir luchando 1-> tienda inframundo 2-> si has derrotado a charizard y break
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		}
 	} while (accion != 3);
 
-	// TODO: crear la batalla.
+	// TODO: si has ganado lore
 
 	printf("\n\n");
 	system("cat < Beso.txt");

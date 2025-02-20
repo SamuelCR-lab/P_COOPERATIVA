@@ -24,9 +24,13 @@
 #define D_BALERION "\tHas decidido enfrentarte a Balerion, conocido como el terror de los cielos. Su tamaño y fuerza son legendarios, su aliento de fuego arrasa con todo a su paso. Desafiarlo es un acto de valentía, o de locura...\n"
 #define D_CHARIZARD "\tHas decidido enfrentarte a Charizard, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n"
 
-#define POCION "\t\t1. POCION\tte incrementa la vida +20 --> por 15 monedas\n"
-#define BOTAS "\t\t2. Botas\t\tte incrementa la velocidad +3,1 --> por 25 monedas\n"
-#define ESPADA "\t\t3. Espada\tte incrementa el ataque +10 --> por 35 monedas\n"
-#define HACHA "\t\t4. Hacha\t\tte incrementa el ataque +15 --> por 45 monedas\n"
-#define ARCO "\t\t5. Arco\t\tte incrementa el ataque +5 --> por 25 monedas\n"
+#define POCION "\t\t1. Pocion\tte incrementa la vida +20\t\tpor 15 monedas\n"
+#define BOTAS "\t\t2. Botas\tte incrementa la velocidad +3\t\tpor 25 monedas\n"
+#define ESPADA "\t\t3. Espada\tte incrementa el ataque +10\t\tpor 35 monedas\n"
+#define HACHA "\t\t4. Hacha\tte incrementa el ataque +15\t\tpor 45 monedas\n"
+#define ARCO "\t\t5. Arco\t\tte incrementa el ataque +5\t\tpor 25 monedas\n"
 #define SALIR_TIENDA "\t\t6. Salir al menú.\n"
+
+#define ALMA1 "1. El alma 1"
+#define ALMA2 "2. El alma 2"
+#define ALMA3 "3. El alma 3"
