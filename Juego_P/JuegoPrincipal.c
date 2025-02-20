@@ -75,16 +75,22 @@ int main(){
     			sleep(1);
 			}
 			resultado = batalla(Jugador, Oponente[eleccion_opo-1]);
-			// TODO: ifs de lo que devuelve batalla: 0-> seguir luchando 1-> tienda inframundo 2-> si has derrotado a charizard y break
+			if (resultado == 0){
+				continue;
+			}else if(resultado == 1){
+				// Tienda del inframundo y lore.
+			}else if(resultado == 2){
+				break;
+			}else if(resultado == 3){
+				// Lore de la princesa
+				printf("\n\n");
+				system("cat < Beso.txt");
+				break;
+			}
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		}
 	} while (accion != 3);
-
-	// TODO: si has ganado lore
-
-	printf("\n\n");
-	system("cat < Beso.txt");
 
 	free(alias);
 	free(Jugador);
