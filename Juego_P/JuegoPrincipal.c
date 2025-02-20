@@ -10,7 +10,7 @@
 
 
 int main(){
-	int eleccion, eleccion_opo, accion;
+	int eleccion, eleccion_opo, accion, resultado;
 	char * alias;
 
 	alias = (char *) malloc(NOMBRE_MAX);
@@ -74,16 +74,23 @@ int main(){
 				printf("%s",D_CHARIZARD);
     			sleep(1);
 			}
-			batalla(Jugador, Oponente[eleccion_opo-1]);
+			resultado = batalla(Jugador, Oponente[eleccion_opo-1]);
+			if (resultado == 0){
+				continue;
+			}else if(resultado == 1){
+				// Tienda del inframundo y lore.
+			}else if(resultado == 2){
+				break;
+			}else if(resultado == 3){
+				// Lore de la princesa
+				printf("\n\n");
+				system("cat < Beso.txt");
+				break;
+			}
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		}
 	} while (accion != 3);
-
-	// TODO: crear la batalla.
-
-	printf("\n\n");
-	system("cat < Beso.txt");
 
 	free(alias);
 	free(Jugador);

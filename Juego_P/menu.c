@@ -16,7 +16,7 @@ int menu(){
 			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
 		} else if(accion < 1 || accion > 3){
 			printf("Has introducido un número erróneo\n");
-		}
+		} // TODO: Opcion de información.
 	}while(accion < 1 || accion > 3 || errores == 0);
 	return accion;
 }

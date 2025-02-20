@@ -28,11 +28,14 @@
 #define POBREZA "No tienes tantas monedas para comprar este increble articulo, pelea con dragones y recoge los botines por sus cabezas para que puedas comprarlo nos veremos despues ;)\n"
 
 
-//Objetos de venta en tienda
-#define POCION "\t\t1. POCION\tte incrementa la vida +20 --> por 15 monedas\n"
-#define BOTAS "\t\t2. Botas\tte incrementa la velocidad +3,1 --> por 25 monedas\n"
-#define ESPADA "\t\t3. Espada\tte incrementa el ataque +10 --> por 35 monedas\n"
-#define HACHA "\t\t4. Hacha\tte incrementa el ataque +15 --> por 45 monedas\n"
-#define ARCO "\t\t5. Arco\tte incrementa el ataque +5 --> por 25 monedas\n"
+
+#define POCION "\t\t1. Pocion\tte incrementa la vida +20\t\tpor 15 monedas\n"
+#define BOTAS "\t\t2. Botas\tte incrementa la velocidad +3\t\tpor 25 monedas\n"
+#define ESPADA "\t\t3. Espada\tte incrementa el ataque +10\t\tpor 35 monedas\n"
+#define HACHA "\t\t4. Hacha\tte incrementa el ataque +15\t\tpor 45 monedas\n"
+#define ARCO "\t\t5. Arco\t\tte incrementa el ataque +5\t\tpor 25 monedas\n"
 #define SALIR_TIENDA "\t\t6. Salir al menú.\n"
-#define
+
+#define ALMA1 "1. El alma 1"
+#define ALMA2 "2. El alma 2"
+#define ALMA3 "3. El alma 3"
