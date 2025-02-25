@@ -62,7 +62,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                     printf("lore");
                     return 1;
                 }else{
-                    printf("Ya no hay mas intentos, GAME OVER");
+                    printf("Ya no hay mas intentos, GAME OVER\n");
                     return 2;
                 }
             }
@@ -84,6 +84,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
     if (jugador->vidaActual > jugador->vida){
         jugador->vidaActual = jugador->vida;
     }
+	return 0;
 }
 
 // TODO: si te mata un dragon, viene dios y te revive con la mitad de la vida.
