@@ -59,19 +59,19 @@ void ataqueDragon(Caballero * jugador, Dragon * npc){ // Necesitamos que se pase
     sleep(1);
     printf("\tEl dragon %s, ataca al caballero %s\n",npc->nombre, jugador->nombre);
     if (strcmp(npc->nombre, "Mushu")==0){
-  		printf(RED" "); // TODO: Asignar las estadísticas a cada dragón.
+  		printf(RED " "); // TODO: Asignar las estadísticas a cada dragón.
 	 	system("cat < Mushu.txt");
 	 	printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Shenlong")==0){
-    	printf(GREEN" ");
+    	printf(GREEN " ");
 	 	system("cat < Shenlong.txt");
 		printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Balerion")==0){
-    	printf(MAGENTA" ");
+    	printf(MAGENTA " ");
 	 	system("cat < Balerion.txt");
 	 	printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Charizard")==0){
-    	printf(ORANGE" ");
+    	printf(ORANGE " ");
 	 	system("cat < Charizard.txt");
 	 	printf(WHITE "\n");
     }
