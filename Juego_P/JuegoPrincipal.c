@@ -55,6 +55,10 @@ int main(){
 	CrearBalerion(&Oponente[2]);
 	CrearCharizard(&Oponente[3]);
 
+	if (strcmp(Jugador->alias,"Víctor de Juan") == 0){
+		// TODO: Easter egg por nuestro profe <3
+	}
+
 	// Eleccion de dificultad.
 	Jugador->monedas = 50;
 	do{
@@ -89,7 +93,7 @@ int main(){
 			}
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
-		}
+		} // TODO: Si la opción es 3 que guarde la partida.
 	} while (accion != 3);
 
 	free(alias);

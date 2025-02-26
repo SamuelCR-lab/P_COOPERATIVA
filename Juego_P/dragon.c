@@ -57,21 +57,21 @@ void ataqueDragon(Caballero * jugador, Dragon * npc){ // Necesitamos que se pase
     }
     jugador->vidaActual -= npc->ataque + critico;
     sleep(1);
-    printf("\tEl dragon %s, ataca al caballero %s\n",npc->nombre, jugador->nombre);
+    printf("\tEl dragon %s, ataca al caballero %s\n",npc->nombre, jugador->alias);
     if (strcmp(npc->nombre, "Mushu")==0){
-  		printf(RED " "); // TODO: Asignar las estadísticas a cada dragón.
+  		printf(RED"\n"); // TODO: Asignar las estadísticas a cada dragón.
 	 	system("cat < Mushu.txt");
 	 	printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Shenlong")==0){
-    	printf(GREEN " ");
+    	printf(GREEN"\n");
 	 	system("cat < Shenlong.txt");
 		printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Balerion")==0){
-    	printf(MAGENTA " ");
+    	printf(MAGENTA"\n");
 	 	system("cat < Balerion.txt");
 	 	printf(WHITE "\n");
     }else if (strcmp(npc->nombre, "Charizard")==0){
-    	printf(ORANGE " ");
+    	printf(ORANGE"\n");
 	 	system("cat < Charizard.txt");
 	 	printf(WHITE "\n");
     }

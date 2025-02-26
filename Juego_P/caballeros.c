@@ -49,16 +49,16 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
     npc->vidaActual -= jugador->ataque + critico + randomAtaque;
     sleep(1);
     printf("\tEl caballero %s ataca al dragon %s\n", jugador->alias, npc->nombre);
-    if (strcmp(jugador->alias, "Boromir")==0){
-    	printf(BLUE " ");
+    if (strcmp(jugador->nombre, "Boromir")==0){
+    	printf(BLUE "\n");
     	system("cat < Boromir.txt");
     	printf(WHITE "\n");
-    }else if (strcmp(jugador->alias, "La_Montaña")==0){
-    	printf(RED " ");
+    }else if (strcmp(jugador->nombre, "La_Montaña")==0){
+    	printf(RED "\n");
 	 	system("cat < La_Montana.txt");
     	printf(WHITE "\n");
-    }else if (strcmp(jugador->alias, "El_Cid")==0){
-    	printf(GREEN " ");
+    }else if (strcmp(jugador->nombre, "El_Cid")==0){
+    	printf(GREEN "\n");
     	system("cat < El_Cid.txt");
     	printf(WHITE "\n");
     }
