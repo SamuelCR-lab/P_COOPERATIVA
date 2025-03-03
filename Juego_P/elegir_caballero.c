@@ -31,9 +31,9 @@ int elegir_caballero(char ** nombre_c){
 		}
 	}while (elegir < 1 || elegir > 3 || errores == 0);
 
-	printf("¿Quieres personalizar el nombre de tu caballero? ");
+	printf("¿Quieres personalizar el nombre de tu caballero? Si o NO: ");
 	scanf(" %s", respuesta);
-	if (strcmp(respuesta, "si")==0 ||strcmp(respuesta, "Si")==0 ||strcmp(respuesta, "sí")==0 ||strcmp(respuesta, "Sí")==0){
+	if (strcmp(respuesta, "si") ==0 ||strcmp(respuesta, "Si") ==0 ||strcmp(respuesta, "sí")==0 ||strcmp(respuesta, "Sí")==0){
 		printf("\tQue nombre le quieres dar a tu caballero: ");
 		scanf(" %[^\n]", *nombre_c);
 		elegir_alias=0; // Para saber que sí ha cambiado el nombre al caballero.
