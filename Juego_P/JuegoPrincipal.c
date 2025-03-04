@@ -19,6 +19,7 @@ int main(){
 	system("clear");
 	system("cat < Demonio.txt");
 	printf("%s",TXT_INTRO_01);
+	system("cat < Princesa.txt");
     sleep(5);
 
 	eleccion = elegir_caballero(&alias);
@@ -65,39 +66,52 @@ int main(){
 		accion = menu();
 		if (accion == 1){
 			eleccion_opo = dificultad();
-			if(eleccion_opo == 1){
-				printf("%s",D_MUSHU);
-    			sleep(1);
-			}else if(eleccion_opo == 2){
-				printf("%s",D_SHENLONG);
-    			sleep(1);
-			}else if(eleccion_opo == 3){
-				printf("%s",D_BALERION);
-    			sleep(1);
-			}else if(eleccion_opo == 4){
+			switch(eleccion_opo){
+				case 1:
+					printf("%s",D_MUSHU);
+	    			sleep(1);
+	    			break;
+	    		case 2:
+					printf("%s",D_SHENLONG);
+	    			sleep(1);
+	    			break;
+				case 3:
+					printf("%s",D_BALERION);
+	    			sleep(1);
+	    			break;
+				default:
 				printf("%s",D_CHARIZARD);
     			sleep(1);
 			}
 			resultado = batalla(Jugador, Oponente[eleccion_opo-1]);
-			if (resultado == 0){
-				continue;
-			}else if(resultado == 1){
-				tienda_inframundo(Jugador);
-				continue;
-				// Tienda del inframundo y lore.
-			}else if(resultado == 2){
-				break;
-			}else if(resultado == 3){
-				// Lore de la princesa
-				printf("\n\n");
-				system("cat < Beso.txt");
-				break;
-			}
+			switch(resultado){
+				case 0:
+					break;
+				case 1:
+					printf("%s",TXT_CAMINO_INFRA);
+					printf("%s",TXT_TIENDA_INFRA);
+					sleep(2);
+					tienda_inframundo(Jugador);
+					break;
+				case 2:
+					break;
+
+				default:
+					// Lore de la princesa
+					printf("\n\n");
+					system("cat < Beso.txt");
+			}   
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		} // TODO: Si la opción es 3 que guarde la partida.
 	} while (accion != 3);
-
+	printf("Saliendo");
+	sleep(1);
+	printf(".");
+	sleep(1);
+	printf(".");
+	sleep(1);
+	printf(".\n");
 	free(alias);
 	free(Jugador);
 	free(Oponente);
