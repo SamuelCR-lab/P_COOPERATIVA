@@ -5,6 +5,8 @@
 
 int menu(){
 	int accion, errores;
+	//system("clear");
+	system("cat < Menu.txt");
 	do{
 		printf("%s\n",MENU);
 		printf("%s\n %s\n %s\n",ELECCION1,ELECCION2,ELECCION3);

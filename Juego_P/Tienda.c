@@ -5,6 +5,8 @@
 
 void mejorar_stats(Caballero * stats){
 	int eleccion,errores;
+	//system("clear");
+	system("cat < Tienda.txt");
 	printf("Tienes %d monedas de oro\n\n",stats->monedas);
 	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d/%d\n\tAtaque = %d\n\tVelocidad = %d\n\n",stats->alias,stats->vidaActual,stats->vida,stats->ataque,stats->velocidad);
 	printf("%s",TIENDA);
@@ -93,6 +95,8 @@ void mejorar_stats(Caballero * stats){
 
 void tienda_inframundo(Caballero * stats){
 	int eleccion,errores;
+	//system("clear");
+	system("cat < Tienda_inframundo.txt");
 	printf("Tienes %d monedas de oro\n\n",stats->monedas);
 	// TODO: lore tienda
 	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d/%d\n\tAtaque = %d\n\tVelocidad = %d\n\n",stats->alias,stats->vidaActual,stats->vida,stats->ataque,stats->velocidad);
