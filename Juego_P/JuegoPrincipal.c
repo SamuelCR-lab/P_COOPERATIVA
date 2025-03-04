@@ -82,6 +82,8 @@ int main(){
 			if (resultado == 0){
 				continue;
 			}else if(resultado == 1){
+				tienda_inframundo(Jugador);
+				continue;
 				// Tienda del inframundo y lore.
 			}else if(resultado == 2){
 				break;

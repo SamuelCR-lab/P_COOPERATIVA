@@ -14,4 +14,4 @@ int menu();
 int batalla(Caballero * jugador, Dragon npc);
 void ataqueCaballero(Caballero* jugador, Dragon* npc);
 void ataqueDragon(Caballero * jugador, Dragon * npc);
-
+void tienda_inframundo(Caballero * stats);
