@@ -36,6 +36,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                     system("cat < Dios.txt");
                     printf("lore");
                     jugador->monedas /= 2;
+                    jugador->vidaActual = jugador->vida;
                     return 0;
                 }else if(vidas == 0){
                     vidas--;

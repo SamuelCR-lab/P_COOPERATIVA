@@ -10,7 +10,7 @@
 
 
 int main(){
-	int eleccion, eleccion_opo, accion, resultado;
+	int eleccion, eleccion_opo, accion, resultado, mostrar_princesa = 0;
 	char * alias;
 
 	alias = (char *) malloc(NOMBRE_MAX);
@@ -74,6 +74,12 @@ int main(){
 	do{
 		accion = menu();
 		if (accion == 1){
+			mostrar_princesa++;
+			if (mostrar_princesa = 1){
+				system("cat < Princesa.txt");
+				printf("%s",TXT_PRINCESA_INTRO);
+				sleep(2);
+			}
 			eleccion_opo = dificultad();
 			switch(eleccion_opo){
 				case 1:
