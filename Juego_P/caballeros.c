@@ -37,7 +37,6 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 	El_Cid->velocidad = 15;
 	El_Cid->monedas = 0; 
 }
-void CrearCaballeroNuevo(Caballero* Nuevo, char* alias)
 void ataqueCaballero(Caballero* jugador, Dragon* npc){
 	int critico = 0, randomAtaque = 0;
 	int randomCri = rand() % 8;
@@ -70,4 +69,12 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
     printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);	
 	
 }
-
+void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
+	strcpy(Nuevo->nombre, alias);
+	strcpy(Nuevo->alias, alias);
+	Nuevo->vida =  58;
+	Nuevo->vidaActual = 58;
+	Nuevo->ataque = 35;
+	Nuevo->velocidad = 15;
+	Nuevo->monedas = 0;
+}

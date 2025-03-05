@@ -17,3 +17,4 @@ void CrearLa_Montana(Caballero* La_Montana, char* alias);
 void CrearEl_Cid(Caballero* El_Cid, char* alias);
 void mejorar_stats(Caballero * stats);
 int elegir_caballero(char ** nombre_c);
+void CrearCaballeroNuevo(Caballero* Nuevo, char* alias);
