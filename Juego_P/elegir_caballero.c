@@ -67,7 +67,7 @@ int elegir_caballero(char ** nombre_c){
     		sleep(1);
 			break;
 		case 4:
-			if (elegir_alias)
+			if (elegir_alias);
 	}
 	return elegir;
 }
