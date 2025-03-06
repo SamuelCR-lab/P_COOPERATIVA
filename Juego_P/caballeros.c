@@ -37,6 +37,61 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 	El_Cid->velocidad = 15;
 	El_Cid->monedas = 0; 
 }
+void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
+	int puntos = 110, vida, ataque, velocidad, errores, bandera;
+	strcpy(Nuevo->nombre, alias);
+	strcpy(Nuevo->alias, alias);
+	printf("Tienes un máximo de 110 puntos que puedes reartir entre las tres estadísticas:\n");
+	do {
+		bandera = 0;
+		Nuevo->vida =  0;
+		Nuevo->vidaActual = 0;
+		Nuevo->ataque = 0;
+		Nuevo->velocidad = 0;
+		printf("¿Cuánta vida quieres?: ");
+		errores = scanf("%d", &vida);
+		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+			printf("No has introducido un número\n");
+			char buffer[50]; 
+			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
+			bandera ++;
+		} else if(puntos < vida){
+			printf("La suma de tus estadísticas supera el máximo permitido (110)\n");
+			bandera ++;
+		} else {
+			Nuevo->vida =  vida;
+			Nuevo->vidaActual = vida;
+		}
+		printf("¿Cuánto ataque quieres?: ");
+		errores = scanf("%d", &ataque);
+		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+			printf("No has introducido un número\n");
+			char buffer[50]; 
+			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
+			bandera ++;
+		} else if(puntos < vida+ataque){
+			printf("La suma de tus estadísticas supera el máximo permitido (110)\n");
+			bandera ++;
+		} else {
+			Nuevo->ataque =  ataque;
+		}
+		printf("¿Cuánta velocidad quieres?: ");
+		errores = scanf("%d", &velocidad);
+		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+			printf("No has introducido un número\n");
+			char buffer[50]; 
+			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
+			bandera ++;
+		} else if(puntos < vida+ataque+velocidad){
+			printf("La suma de tus estadísticas supera el máximo permitido (110)\n");
+			bandera ++;
+		} else {
+			Nuevo->velocidad = velocidad;
+		}
+		Nuevo->monedas = 0;
+		printf("\n\n");
+	} while (bandera != 0);
+}
 void ataqueCaballero(Caballero* jugador, Dragon* npc){
 	int critico = 0, randomAtaque = 0;
 	int randomCri = rand() % 8;
@@ -67,14 +122,5 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
     	npc->vidaActual = 0;
     }
     printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);	
+}
 	
-}
-void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
-	strcpy(Nuevo->nombre, alias);
-	strcpy(Nuevo->alias, alias);
-	Nuevo->vida =  58;
-	Nuevo->vidaActual = 58;
-	Nuevo->ataque = 35;
-	Nuevo->velocidad = 15;
-	Nuevo->monedas = 0;
-}
