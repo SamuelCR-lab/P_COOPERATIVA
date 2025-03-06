@@ -19,11 +19,11 @@ int main(){
 	system("clear");
 	system("cat < Demonio.txt");
 	printf("%s",TXT_INTRO_01);
-	//system("cat < Princesa.txt");
     sleep(5);
 
 	eleccion = elegir_caballero(&alias);
-	printf("Ya estás listo para pelear %s\n", alias);
+	printf("%s",TXT_INTRO_02);
+    sleep(5);
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (Jugador == NULL){
@@ -67,6 +67,7 @@ int main(){
 
 	if (strcmp(Jugador->alias,"Víctor de Juan") == 0){
 		// TODO: Easter egg por nuestro profe <3
+		// Eres el heredero de un antiguo caballero que murió en una honorable misión secreta, ahora que ya lo sabes puedes heredar su fortuna (+100 de oro)
 	}
 
 	// Eleccion de dificultad.
