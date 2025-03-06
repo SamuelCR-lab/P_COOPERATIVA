@@ -1,9 +1,12 @@
 //Texto introducctorio del juego
-#define TXT_INTRO_01 "\t\t\t\t\t\t\tBienvenidos a nuestro juego de Dragos y Caballeros.\n\n\tHace siglos, en el reino de Eldoria, la paz fue quebrantada cuando los Dragones Oscuros de Valtheria emergieron de las profundidades de las montañas. Su líder, el despiadado Drakthor el Devastador, atacó el castillo real y secuestró a la princesa Evelyn, última heredera del trono sagrado.\n\tEl rey, desesperado por recuperar a su hija y salvar el reino, envió a sus mejores guerreros a la batalla, pero ninguno regresó. \nCon la esperanza desvaneciéndose, los sabios del reino anunciaron una antigua profecía: 'Solo un caballero de corazón puro, armado con la Espada de la Luz, podrá desafiar a las bestias y restaurar el equilibrio.\n''Tú, un joven caballero con un pasado misterioso, has decidido enfrentar este desafío.\n Para salvar a la princesa y devolver la paz a Eldoria, deberás viajar a través de oscuros bosques encantados, ruinas olvidadas y cuevas infestadas de dragones.\n En tu camino, descubrirás secretos ancestrales, forjarás alianzas inesperadas y enfrentarás pruebas mortales.\nPero ten cuidado… los dragones todos tienen su complejidad y habilidad predominante.\n En las sombras, traidores y fuerzas oscuras conspiran para aprovechar el caos.\n ¿Serás el héroe que el reino necesita o perecerás como tantos antes que tú? El destino de Eldoria está en tus manos.\n\n"
+#define TXT_INTRO_01 "\t\t\t\t\t\t\tBienvenidos a nuestro juego de Dragos y Caballeros.\n\n\tHace siglos, en el reino de Eldoria, la paz fue quebrantada cuando los Dragones Oscuros de Valtheria emergieron de las profundidades de las montañas. Su líder, el despiadado Drakthor el Devastador, atacó el castillo real y secuestró a la princesa Evelyn, última heredera del trono sagrado.\n\tEl rey, desesperado por recuperar a su hija y salvar el reino, envió a sus mejores guerreros a la batalla, pero ninguno regresó. \nCon la esperanza desvaneciéndose, los sabios del reino anunciaron una antigua profecía: 'Solo un caballero de corazón puro y armado con valentía, podrá desafiar a las bestias y restaurar el equilibrio.'\n\n"
+#define TXT_INTRO_02 "\t\tTú, un joven caballero con un pasado misterioso, has decidido enfrentar este desafío.\n Para salvar a la princesa y devolver la paz a Eldoria, deberás viajar a través de oscuros bosques encantados, ruinas olvidadas y cuevas infestadas de dragones.\n En tu camino, descubrirás secretos ancestrales, forjarás alianzas inesperadas y enfrentarás pruebas mortales.\nPero ten cuidado… los dragones todos tienen su complejidad y habilidad predominante.\n En las sombras, traidores y fuerzas oscuras conspiran para aprovechar el caos.\n ¿Serás el héroe que el reino necesita o perecerás como tantos antes que tú? El destino de Eldoria está en tus manos.\n\n"
 #define TXT_DIOS "\t\t\tDios, en su infinita misericordia, observa las acciones de los mortales y, al presenciar la valentía de un caballero caído, decide intervenir. Envía a su ángel mensajero para devolverle la vida, brindándole una nueva oportunidad para enfrentar su destino.\n\t Sin embargo, esta intervención es única; si el caballero sucumbe nuevamente, su alma será conducida al inframundo.\n\n"
 #define TXT_CAMINO_INFRA "\t\t\tTras una segunda caída, el alma del caballero es llevada al inframundo, donde reside Lucifer, el ángel caído que se rebeló contra Dios y fue expulsado del cielo.\n Lucifer, siempre en busca de almas valientes para sus propios fines, ofrece al caballero una oportunidad para regresar al mundo de los vivos.\n\n"
 #define TXT_TIENDA_INFRA "\t\t\tEn las profundidades del inframundo, Lucifer ha establecido una enigmática tienda donde comercia con 'Esencias de Vida'. Estas esencias permiten al caballero resucitar y continuar su misión en Eldoria.\n Sin embargo, este regalo tiene un costo significativo: al adquirir una Esencia de Vida, el caballero debe ceder una parte de sus habilidades innatas, como su fuerza, agilidad o resistencia.\n Este sacrificio refleja el pacto oscuro entre el caballero y Lucifer, donde nada se obtiene sin un precio equivalente.\n\n"
-
+#define TXT_FINAL1 "\tTras una batalla feroz contra Charizard, el último y más temible de los dragones, te alzas victorioso. El cielo, antes oscurecido por el fuego y la desesperanza, comienza a despejarse, y los primeros rayos de sol acarician las ruinas de la torre donde la princesa Evelyn estuvo cautiva durante todos este tiempo.\n\tHerido y exhausto, pero con el deber cumplido, avanzas por la escalera de piedra hasta la cámara más alta de la fortaleza. Al empujar las puertas con tus últimas fuerzas, la encuentras: Evelyn, de pie junto a la ventana, con su vestido ondeando por la brisa nocturna, sus ojos reflejando asombro y alivio.\n\n"
+#define TXT_FINAL2 "\tEn ese instante, el tiempo parece detenerse. La brisa nocturna es cálida, el silencio solo interrumpido por el latido de sus corazones. Entonces, sin esperar más, Evelyn se inclina y une sus labios con los tuyos en un beso lleno de gratitud y amor.\n\n"
+#define TXT_FINAL3 "\n\tEl reino de Eldoria ha sido salvado. La profecía se ha cumplido. \n\tJuntos, cabalgáis de regreso al castillo, donde el rey y el pueblo entero celebran tu hazaña. Grandes festines, cánticos y bailes inundan la ciudad durante días, y con el tiempo, la historia de tu valentía se convierte en leyenda.\n\tY así, el caballero y la princesa vivieron felices… y comieron perdices.\n\n"
 
 //Menu de batalla depues de elegir
 #define MENU "\t\t\t\t\t\t\tEstas en el menu de batalla, ¿que acción quieres realizar?: "
@@ -19,23 +22,24 @@
 #define D_CHARIZARD "\tHas decidido enfrentarte a Charizard, el dragón primordial, el destructor de mundos. Con su poder descomunal y su fuego incontrolable, ha arrasado imperios enteros. Solo los más valientes, o los más desesperados, se atreven a desafiarlo.\n"
 
 //Lore tienda y objetos
-#define POCION_lore "Esta pocion es un votaje milenario, lleno de cosas que por separado serian repugnantes...\n"
-#define BOTAS_lore "Estas botas fueron dejadas por el mismisimo Hermes y te haran paraecer ligero como la seda...\n"
-#define ESPADA_lore "La espada de azrael te dara mucho poder divino para derrotar a los dragones venideros...\n"
-#define HACHA_lore "El hacha 'Rompe tormentas' creada por Eitri para thor, despues de ser destruido su martillo durante el Ragnarok te dara la potencia del dios del Trueno...\n"
-#define ARCO_lore "El arco de Legolas te dar la distancia y punteria del su dueño para derrotar a los dragones sin despeinarte...\n"
+#define POCION_lore "\tEsta pocion es un votaje milenario, lleno de cosas que por separado serian repugnantes...\n"
+#define BOTAS_lore "\tEstas botas fueron dejadas por el mismisimo Hermes y te haran paraecer ligero como la seda...\n"
+#define ESPADA_lore "\tLa espada de azrael te dara mucho poder divino para derrotar a los dragones venideros...\n"
+#define HACHA_lore "\tEl hacha 'Rompe tormentas' creada por Eitri para thor, despues de ser destruido su martillo durante el Ragnarok te dara la potencia del dios del Trueno...\n"
+#define ARCO_lore "\tEl arco de Legolas te dar la distancia y punteria del su dueño para derrotar a los dragones sin despeinarte...\n"
 #define TIENDA "\tAcabas de entrar en la tienda de BADULAQUE DE IULIAN_DRACARIS. \n\tPuedes Comprar en la tienda estos objetos para mejorar tus estadisticas: \n"
-#define POBREZA "No tienes tantas monedas para comprar este increble articulo, pelea con dragones y recoge los botines por sus cabezas para que puedas comprarlo nos veremos despues ;)\n"
+#define POBREZA "\tNo tienes tantas monedas para comprar este increble articulo, pelea con dragones y recoge los botines por sus cabezas para que puedas comprarlo nos veremos despues ;)\n"
+#define ALMA1_lore "\tLucifer toma un frasco pequeño y lo deja girar sobre su palma. Dentro, una llama tenue arde en la penumbra.\n\t'Esta es el alma de un guerrero que desafió su destino, un pobre infeliz que pensó que podría engañarme. Con ella, tu cuerpo sanará lo suficiente para seguir adelante, pero sentirás su arrepentimiento en cada golpe que des y en cada paso que des un poco más lento.'\n\n"
+#define ALMA2_lore "\tLucifer sostiene un frasco de cristal agrietado, del cual emana una neblina oscura.\n\t'Esta es el alma de un hombre que traicionó su fe, vendiendo su honor a cambio de poder. Su destino fue la eterna agonía, pero tú puedes aprovechar su sacrificio. Te dará más vida, pero el peso de su culpa ralentizará tu mano y debilitará tu filo.'\n\n"
+#define ALMA3_lore "\tLucifer toma un frasco ennegrecido por dentro, con grietas de las que se filtran llamas carmesí.\n\t'Ah… esta es una joya especial. El alma de un ángel caído, un ser que desafió al cielo y pagó el precio con una eternidad de sufrimiento. Su poder es inmenso, pero el dolor de su caída te hará más pesado, más torpe. Podrás continuar, sí… pero cada golpe que des llevará el peso del arrepentimiento eterno.'"
 
-
-
-#define POCION "\t\t1. Pocion\tte incrementa la vida +20\t\tpor 15 monedas\n"
-#define BOTAS "\t\t2. Botas\tte incrementa la velocidad +3\t\tpor 25 monedas\n"
-#define ESPADA "\t\t3. Espada\tte incrementa el ataque +10\t\tpor 35 monedas\n"
-#define HACHA "\t\t4. Hacha\tte incrementa el ataque +15\t\tpor 45 monedas\n"
-#define ARCO "\t\t5. Arco\t\tte incrementa el ataque +5\t\tpor 25 monedas\n"
+#define POCION "\t\t1. Pocion\tte incrementa 🩸+20 Vida\t\tpor 15 monedas\n"
+#define BOTAS "\t\t2. Botas\tte incrementa la ⚡Velocidad +3\t\tpor 25 monedas\n"
+#define ESPADA "\t\t3. Espada\tte incrementa el ⚔️Ataque +10\t\tpor 35 monedas\n"
+#define HACHA "\t\t4. Hacha\tte incrementa el ⚔️Ataque +15\t\tpor 45 monedas\n"
+#define ARCO "\t\t5. Arco\t\tte incrementa el ⚔️Ataque +5\t\tpor 25 monedas\n"
 #define SALIR_TIENDA "\t\t6. Salir al menú.\n"
 
-#define ALMA1 "1. El alma 1"
-#define ALMA2 "2. El alma 2"
-#define ALMA3 "3. El alma 3"
+#define ALMA1 "\t\t1. Alma del Condenado\t\t (🩸+20 Salud | ⚔️-5 Ataque | ⚡-5 Velocidad)\n"
+#define ALMA2 "\t\t2. Alma del Hereje\t\t (🩸+50 Salud | ⚔️-10 Ataque | ⚡-7 Velocidad)\n"
+#define ALMA3 "\t\t3. Alma del Caído\t\t (🩸+120 Salud | ⚔️-15 Ataque | ⚡-9 Velocidad)\n"

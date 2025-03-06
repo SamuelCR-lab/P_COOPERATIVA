@@ -65,6 +65,11 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
     
     if(npc->vidaActual < 0){
     	npc->vidaActual = 0;
+    	if (jugador->vidaActual < jugador->vida){
+        	jugador->vidaActual += jugador->vida * 0.3;
+        	if(jugador->vidaActual > jugador->vida)
+        		jugador->vidaActual = jugador->vida;
+    	}
     }
     printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);	
 	

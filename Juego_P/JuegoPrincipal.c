@@ -10,20 +10,23 @@
 
 
 int main(){
-	int eleccion, eleccion_opo, accion, resultado, mostrar_princesa = 0;
+	int eleccion, eleccion_opo, accion, resultado;
 	char * alias;
 
 	alias = (char *) malloc(NOMBRE_MAX);
-	if (alias==NULL) return EXIT_FAILURE;
+	if (alias == NULL) return EXIT_FAILURE;
 
 	system("clear");
 	system("cat < Demonio.txt");
 	printf("%s",TXT_INTRO_01);
-	//system("cat < Princesa.txt");
     sleep(5);
 
 	eleccion = elegir_caballero(&alias);
-	printf("Ya estás listo para pelear %s\n", alias);
+	printf("%s",TXT_INTRO_02);
+	printf(ROSE "\n");
+	system("cat < Princesa.txt");
+	printf(WHITE "\n");
+    sleep(5);
 
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (Jugador == NULL){
@@ -74,12 +77,6 @@ int main(){
 	do{
 		accion = menu();
 		if (accion == 1){
-			mostrar_princesa++;
-			if (mostrar_princesa = 1){
-				system("cat < Princesa.txt");
-				//printf("%s",TXT_PRINCESA_INTRO);
-				sleep(2);
-			}
 			eleccion_opo = dificultad();
 			switch(eleccion_opo){
 				case 1:
@@ -101,6 +98,8 @@ int main(){
 			resultado = batalla(Jugador, Oponente[eleccion_opo-1]);
 			switch(resultado){
 				case 0:
+					printf("%s",TXT_DIOS);
+					sleep(2);
 					break;
 				case 1:
 					printf("%s",TXT_CAMINO_INFRA);
@@ -109,23 +108,32 @@ int main(){
 					tienda_inframundo(Jugador);
 					break;
 				case 2:
+					accion = 3;
 					break;
-
 				default:
+					accion = 3;
 					// Lore de la princesa
-					printf("\n\n");
+					printf("%s",TXT_FINAL1);
+					printf("\t\t'¿Eres tú… mi salvador?' —susurra, con lágrimas de emoción en los ojos.\n");
+					printf("Asientes, respirando con dificultad, y antes de que puedas decir una palabra más, ella corre hacia ti y te abraza con fuerza.\n");
+					printf("\t\t'Creí que nunca volvería a ver la luz del día...' exclama con efucividad\n");
+					printf("Tomas su rostro con suavidad, limpiando con tus dedos una lágrima que resbala por su mejilla.\n");
+					printf("\t\tNunca iba a dejar que estos dragones te alejaran de tu hogar…\n");
+					printf("%s",TXT_FINAL2);
 					system("cat < Beso.txt");
+					printf("%s",TXT_FINAL3);
+					system("cat < Fin.txt");
 			}   
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		} // TODO: Si la opción es 3 que guarde la partida.
 	} while (accion != 3);
 	printf("Saliendo");
-	sleep(1);
+	sleep(2);
 	printf(".");
-	sleep(1);
+	sleep(2);
 	printf(".");
-	sleep(1);
+	sleep(2);
 	printf(".\n");
 	free(alias);
 	free(Jugador);
