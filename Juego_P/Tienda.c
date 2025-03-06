@@ -96,7 +96,7 @@ void mejorar_stats(Caballero * stats){
 			default:
 				break;
 		}
-	}(while eleccion != 6);
+	}while (eleccion != 6);
 
 }
 
