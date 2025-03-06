@@ -13,15 +13,16 @@ int elegir_caballero(char ** nombre_c){
 		printf(BLUE "\n\n\t1. BOROMIR\n\t\tAtaque: 36\n\t\tSalud: 55\n\t\tVelocidad: 19\n");
 	 	//system("cat < Boromir.txt");
     	//sleep(1);
-		printf(RED "\t2. LA MONTAÑA\n\t\tAtaque: 50\n\t\tSalud: 48\n\t\tVelocidad: 12\n");
+		printf(YELLOW "\t2. LA MONTAÑA\n\t\tAtaque: 50\n\t\tSalud: 48\n\t\tVelocidad: 12\n");
 	 	//system("cat < La_Montana.txt");
     	//sleep(1);
-		printf(GREEN "\t3. CID CAMPEADOR\n\t\tAtaque: 38\n\t\tSalud: 57\n\t\tVelocidad: 15\n");
+		printf(LGREEN "\t3. CID CAMPEADOR\n\t\tAtaque: 38\n\t\tSalud: 57\n\t\tVelocidad: 15\n");
 	 	//system("cat < El_Cid.txt");
     	//sleep(1);
-		printf(WHITE "\t4. CREA TU PROPIO PERSONAJE\n ");
+		printf(CYAN "\t4. CREA TU PROPIO PERSONAJE");
+		printf(WHITE "\n"); // Para que los próximos prinfs se pinten en blanco
     	sleep(1);
-		printf("Elige que caballero quieres ser: ");
+		printf("\nElige que caballero quieres ser: ");
 		errores = scanf("%d",&elegir);
 		if (errores==0){ // Entra en el condicional si ha escrito una letra.
 			printf("No has introducido un número\n");
@@ -45,31 +46,28 @@ int elegir_caballero(char ** nombre_c){
 	}else{
 		elegir_alias=1; // Para saber que no ha cambiado el nombre al caballero
 	}
-		
 	switch (elegir){
 		case 1:
-			if (elegir_alias){
+			if (elegir_alias)
 				strcpy(*nombre_c,"Boromir");
-			}
 			printf("%s",CABALLERO1);
     		sleep(1);
 			break;
 		case 2:
-			if (elegir_alias){
+			if (elegir_alias)
 				strcpy(*nombre_c,"La Montaña");
-			}
 			printf("%s",CABALLERO2);
     		sleep(1);
 			break;
 		case 3:
-			if (elegir_alias){
+			if (elegir_alias)
 				strcpy(*nombre_c,"Cid Campeador");
-			}
 			printf("%s",CABALLERO3);
     		sleep(1);
 			break;
 		case 4:
-			if (elegir_alias);
+			printf("Has creado un caballero a tu gusto, ya veremos si serás capaz de superar el desafío\n");
+			break;
 	}
 	return elegir;
 }

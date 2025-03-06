@@ -9,6 +9,7 @@ typedef struct{
 	int ataque;
 	int velocidad;
 	int monedas;
+	int dibujo;
 }Caballero;
 
 
