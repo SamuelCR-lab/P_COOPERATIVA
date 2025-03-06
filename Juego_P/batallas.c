@@ -29,7 +29,6 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
             }
             ataqueDragon(jugador, &npc);
             if (jugador->vidaActual <= 0){
-                jugador->vidaActual = 0;
                 printf("El dragon %s ha ganado la batalla\n", npc.nombre);
                 if(vidas == 1){
                     vidas--;
@@ -41,7 +40,6 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                 }else if(vidas == 0){
                     vidas--;
                     system("cat < Muerte.txt");
-                    printf("lore");
                     return 1;
                 }else{
                     printf("Ya no hay mas intentos, GAME OVER");
