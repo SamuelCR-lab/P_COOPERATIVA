@@ -8,7 +8,7 @@ int menu(){
 	//system("clear");
 	system("cat < Menu.txt");
 	do{
-		printf("%s\n",MENU);
+		printf("\n%s\n",MENU);
 		printf("%s\n %s\n %s\n",ELECCION1,ELECCION2,ELECCION3);
 		printf("¿Que acción quieres realizar? ");
 		errores = scanf(" %d",&accion);

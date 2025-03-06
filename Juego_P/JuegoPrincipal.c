@@ -70,6 +70,7 @@ int main(){
 
 	if (strcmp(Jugador->alias,"Víctor de Juan") == 0){
 		// TODO: Easter egg por nuestro profe <3
+		// Eres el heredero de un antiguo caballero que murió en una honorable misión secreta, ahora que ya lo sabes puedes heredar su fortuna (+100 de oro)
 	}
 
 	// Eleccion de dificultad.
