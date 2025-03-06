@@ -18,9 +18,8 @@ int elegir_caballero(char ** nombre_c){
     	//sleep(1);
 		printf(GREEN "\t3. CID CAMPEADOR\n\t\tAtaque: 38\n\t\tSalud: 57\n\t\tVelocidad: 15\n");
 	 	//system("cat < El_Cid.txt");
-		printf(WHITE "\n"); // Pongo WHITE para que se resetee el color para los próximos printfs.
     	//sleep(1);
-		printf("\t4. CREA TU PROPIO PERSONAJE\n ");
+		printf(WHITE "\t4. CREA TU PROPIO PERSONAJE\n ");
     	sleep(1);
 		printf("Elige que caballero quieres ser: ");
 		errores = scanf("%d",&elegir);
@@ -28,10 +27,13 @@ int elegir_caballero(char ** nombre_c){
 			printf("No has introducido un número\n");
 			char buffer[50]; 
 			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
-		} else if(elegir < 1 || elegir > 3){
+		} else if(elegir < 1 || elegir > 4){
 			printf("Has introducido un número erróneo\n");
 		}
-	}while (elegir < 1 || elegir > 3 || errores == 0);
+	}while (elegir < 1 || elegir > 4 || errores == 0);
+	if (elegir == 4){
+		nuevoCaballero=1;
+	}
 	if(nuevoCaballero == 0){
 		printf("¿Quieres personalizar el nombre de tu caballero? Si o NO: ");
 		scanf(" %s", respuesta);

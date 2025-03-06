@@ -19,7 +19,7 @@ int main(){
 	system("clear");
 	system("cat < Demonio.txt");
 	printf("%s",TXT_INTRO_01);
-	system("cat < Princesa.txt");
+	//system("cat < Princesa.txt");
     sleep(5);
 
 	eleccion = elegir_caballero(&alias);
@@ -31,14 +31,23 @@ int main(){
 		free(alias);
 		return EXIT_FAILURE;
 	}
-
-	if (eleccion == 1){
-		CrearBoromir(Jugador, alias);
-		// A jugador se le asigna una copia del caballero.
-	}else if (eleccion == 2){
-		CrearLa_Montana(Jugador, alias); 
-	}else {
-		CrearEl_Cid(Jugador, alias);
+	switch (eleccion){
+		case 1:
+			CrearBoromir(Jugador, alias);
+			// A jugador se le asigna una copia del caballero.
+			break;
+		case 2:
+			CrearLa_Montana(Jugador, alias); 
+			break;
+		case 3:
+			CrearEl_Cid(Jugador, alias);
+			break;
+		case 4:
+			CrearCaballeroNuevo(Jugador, alias);
+			break;
+		default:
+			printf("ERROR en la eleccion de personaje.\n");
+			break;
 	}
 
 	// Reserva de memoria para los 4 dragones.
