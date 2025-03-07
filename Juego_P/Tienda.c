@@ -16,11 +16,13 @@ void mejorar_stats(Caballero * stats){
 	printf("%s",HACHA);
 	printf("%s",ARCO);
 	printf("%s",SALIR_TIENDA);
-	printf("Opción: ");
 	do{
+		printf("Opción: ");
 		errores = scanf(" %d",&eleccion);
 		if(errores == 0){
 			printf("Has elegido mal\n");
+			char buffer[50]; 
+			scanf("%s",buffer);
 			eleccion = 7;
 		}
 		switch(eleccion){
@@ -114,9 +116,12 @@ void tienda_inframundo(Caballero * stats){
 	printf("%s",SALIR_TIENDA);
 	printf("Opción: ");
 	do{
+		printf("Opción: ");
 		errores = scanf(" %d",&eleccion);
 		if(errores == 0){
 			printf("Has elegindo mal\n");
+			char buffer[50]; 
+			scanf("%s",buffer);
 			eleccion = 5;
 		}
 		c_vueltas++;

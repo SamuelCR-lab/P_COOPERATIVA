@@ -130,12 +130,12 @@ int main(){
 		} // TODO: Si la opción es 3 que guarde la partida.
 	} while (accion != 3);
 	printf("Saliendo");
-	sleep(2);
-	printf(".");
-	sleep(2);
-	printf(".");
-	sleep(2);
-	printf(".\n");
+	for (int i = 0;i<3;i++){
+		printf(".");
+		fflush(stdout);
+		sleep(1);	
+	}
+	printf("\n");
 	free(alias);
 	free(Jugador);
 	free(Oponente);
