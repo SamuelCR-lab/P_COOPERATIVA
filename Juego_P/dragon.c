@@ -47,6 +47,11 @@ void CrearCharizard(Dragon * Charizard){
     Charizard->velocidad = 20;
 	Charizard->monedas = 0;
 }
+// Funcion del ataque del Dragón.
+/**
+	Se consideran ataques criticos, que se le sumará al básico del presonaje.
+	Restara el total del ataque a la vida del contrincante.
+**/
 void ataqueDragon(Caballero * jugador, Dragon * npc){ // Necesitamos que se pase por referencia para que la vida se reste y se vea reflejado en la batalla
 	int critico = 0; // Inicializo critico a 0
 	int randomCri = rand() % 10;

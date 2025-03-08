@@ -40,6 +40,7 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 	El_Cid->monedas = 0; 
 	El_Cid->dibujo = 7;
 }
+// FUNCIÓN PARA CREAR UN PERSONAJE NUEVO.
 void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
 	int puntos = 110, vida, ataque, velocidad, errores, bandera, elegir_apariencia_caballero;
 	strcpy(Nuevo->nombre, alias);
@@ -119,6 +120,12 @@ void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
 	}
 	Nuevo->dibujo = elegir_apariencia_caballero;		
 }
+
+// Funcion del ataque del Caballero.
+/**
+	Se consideran ataques criticos como aleatórios, que se le sumará al básico del presonaje.
+	Restara el total del ataque a la vida del contrincante.
+**/
 void ataqueCaballero(Caballero* jugador, Dragon* npc){
 	int critico = 0, randomAtaque = 0;
 	int randomCri = rand() % 8;
@@ -131,6 +138,7 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
     npc->vidaActual -= jugador->ataque + critico + randomAtaque;
     sleep(1);
     printf("\tEl caballero %s ataca al dragon %s\n", jugador->alias, npc->nombre);
+    // Le damos color a nuestros dibujos ASCII.
     switch(jugador->dibujo){
     	case 1:
 	    	printf(CYAN "\n");

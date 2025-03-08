@@ -34,14 +34,14 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                     system("cat < Dios.txt");
                     jugador->monedas /= 2;
                     jugador->vidaActual = jugador->vida;
-                    return 0;
+                    return 1;
                 }else if(vidas == 0){
                     vidas--;
                     system("cat < Muerte.txt");
-                    return 1;
+                    return 2;
                 }else{
                     printf("Ya no hay mas intentos, GAME OVER");
-                    return 2;
+                    return 3;
                 }
             }
         }else{
@@ -82,6 +82,3 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
 	return 0;
 }
 
-// TODO: si te mata un dragon, viene dios y te revive con la mitad de la vida.
-//       Si te vuelve a matar, viene el demonio y te lleva a la tienda del inframundo y te vende almas, que cada una tiene una salud
-//       basadas en las monedas que tengs. Si no tienes monedas, carricoche.

@@ -28,6 +28,7 @@ int main(){
 	printf(WHITE "\n");
     sleep(5);
 
+    // Reserva de memória para un jugador.
 	Caballero* Jugador = (Caballero*) malloc (sizeof(Caballero));
 	if (Jugador == NULL){
 		printf("Ha ocurrido un error con la memoria del caballero\n");
@@ -53,7 +54,7 @@ int main(){
 			break;
 	}
 
-	// Reserva de memoria para los 4 dragones.
+	// Reserva de memória para los 4 dragones.
 	Dragon* Oponente = (Dragon*) malloc (MAX_DRAGONES * sizeof(Dragon));
 	if (Oponente == NULL){
 		printf("Ha ocurrido un error con la memoria de los dragones\n");
@@ -62,19 +63,16 @@ int main(){
 		return EXIT_FAILURE;
 	}
 
-	// Inicializacion de los cuatro dragones.
+	// Inicialización de los cuatro dragones.
 	CrearMushu(&Oponente[0]); //Se le asigna el contenido de la función.
 	CrearShenlong(&Oponente[1]);
 	CrearBalerion(&Oponente[2]);
 	CrearCharizard(&Oponente[3]);
 
-	if (strcmp(Jugador->alias,"Víctor de Juan") == 0){
-		// TODO: Easter egg por nuestro profe <3
-		// Eres el heredero de un antiguo caballero que murió en una honorable misión secreta, ahora que ya lo sabes puedes heredar su fortuna (+100 de oro)
-	}
-
-	// Eleccion de dificultad.
-	Jugador->monedas = 50;
+	if (strcmp(Jugador->alias,"Víctor de Juan") == 0);
+	Jugador->monedas += 100;
+	// Elección de dificultad.
+	//Jugador->monedas = 50;
 	do{
 		accion = menu();
 		if (accion == 1){
@@ -99,20 +97,24 @@ int main(){
 			resultado = batalla(Jugador, Oponente[eleccion_opo-1]);
 			switch(resultado){
 				case 0:
+					printf("\tIncreible!\n");
+					printf("\tTodo por la princesa!\n");
+					break;
+				case 1:
 					printf("%s",TXT_DIOS);
 					sleep(2);
 					break;
-				case 1:
+				case 2:
 					printf("%s",TXT_CAMINO_INFRA);
 					printf("%s",TXT_TIENDA_INFRA);
 					sleep(2);
 					tienda_inframundo(Jugador);
 					break;
-				case 2:
-					accion = 3;
+				case 3:
+					accion = 4;
 					break;
 				default:
-					accion = 3;
+					accion = 4;
 					// Lore de la princesa
 					printf("%s",TXT_FINAL1);
 					printf("\t\t'¿Eres tú… mi salvador?' —susurra, con lágrimas de emoción en los ojos.\n");

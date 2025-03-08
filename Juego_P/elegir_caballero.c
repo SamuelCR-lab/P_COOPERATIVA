@@ -42,29 +42,48 @@ int elegir_caballero(char ** nombre_c){
 	if (strcmp(respuesta, "si") ==0 ||strcmp(respuesta, "Si") ==0 ||strcmp(respuesta, "sí")==0 ||strcmp(respuesta, "Sí")==0 || nuevoCaballero == 1){
 		printf("\tQue nombre le quieres dar a tu caballero: ");
 		scanf(" %[^\n]", *nombre_c);
+
 		elegir_alias=0; // Para saber que sí ha cambiado el nombre al caballero.
 	}else{
 		elegir_alias=1; // Para saber que no ha cambiado el nombre al caballero
 	}
 	switch (elegir){
 		case 1:
-			if (elegir_alias)
+			if (elegir_alias == 0 && strcmp(*nombre_c,"Victor de Juan") == 0){
+				printf("%s",TXT_VIC_DEJU);
+				printf("\t\t ... 100 monedas obtenidas...\n\n");
+    			sleep(1);
+				break;
+			}else{
 				strcpy(*nombre_c,"Boromir");
-			printf("%s",CABALLERO1);
-    		sleep(1);
-			break;
+				printf("%s",CABALLERO1);
+    			sleep(1);
+				break;
+			}
 		case 2:
-			if (elegir_alias)
+			if (elegir_alias == 0 && strcmp(*nombre_c,"Victor de Juan") == 0){
+				printf("%s",TXT_VIC_DEJU);
+				printf("\t\t ... 100 monedas obtenidas...\n\n");
+    			sleep(1);
+				break;
+			}else{
 				strcpy(*nombre_c,"La Montaña");
-			printf("%s",CABALLERO2);
-    		sleep(1);
-			break;
+				printf("%s",CABALLERO2);
+    			sleep(1);
+				break;
+			}
 		case 3:
-			if (elegir_alias)
+			if (elegir_alias == 0 && strcmp(*nombre_c,"Victor de Juan") == 0){
+				printf("%s",TXT_VIC_DEJU);
+				printf("\t\t ... 100 monedas obtenidas...\n\n");
+    			sleep(1);
+				break;
+			}else{
 				strcpy(*nombre_c,"Cid Campeador");
-			printf("%s",CABALLERO3);
-    		sleep(1);
-			break;
+				printf("%s",CABALLERO3);
+    			sleep(1);
+				break;
+			}
 		case 4:
 			printf("Has creado un caballero a tu gusto, ya veremos si serás capaz de superar el desafío\n");
 			break;
