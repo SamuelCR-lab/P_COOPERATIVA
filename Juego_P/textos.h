@@ -35,7 +35,7 @@
 #define ALMA2_lore "\tLucifer sostiene un frasco de cristal agrietado, del cual emana una neblina oscura.\n\t'Esta es el alma de un hombre que traicionó su fe, vendiendo su honor a cambio de poder. Su destino fue la eterna agonía, pero tú puedes aprovechar su sacrificio. Te dará más vida, pero el peso de su culpa ralentizará tu mano y debilitará tu filo.'\n\n"
 #define ALMA3_lore "\tLucifer toma un frasco ennegrecido por dentro, con grietas de las que se filtran llamas carmesí.\n\t'Ah… esta es una joya especial. El alma de un ángel caído, un ser que desafió al cielo y pagó el precio con una eternidad de sufrimiento. Su poder es inmenso, pero el dolor de su caída te hará más pesado, más torpe. Podrás continuar, sí… pero cada golpe que des llevará el peso del arrepentimiento eterno.'"
 
-#define POCION "\t\t1. Pocion\tte incrementa 🩸+20 Vida\t\tpor 15 monedas\n"
+#define POCION "\t\t1. Pocion\tte incrementa🩸+20 la Vida\t\tpor 15 monedas\n"
 #define BOTAS "\t\t2. Botas\tte incrementa la ⚡Velocidad +3\t\tpor 25 monedas\n"
 #define ESPADA "\t\t3. Espada\tte incrementa el ⚔️Ataque +10\t\tpor 35 monedas\n"
 #define HACHA "\t\t4. Hacha\tte incrementa el ⚔️Ataque +15\t\tpor 45 monedas\n"

@@ -17,7 +17,7 @@ void CrearBoromir(Caballero* Boromir, char* alias){
 	Boromir->vidaActual = 55;
 	Boromir->ataque = 27;
 	Boromir->velocidad = 18;
-	Boromir->monedas = 0;
+	Boromir->monedas = 10;
 	Boromir->dibujo = 5;
 }
 void CrearLa_Montana(Caballero* La_Montana, char* alias){
@@ -27,7 +27,7 @@ void CrearLa_Montana(Caballero* La_Montana, char* alias){
 	La_Montana->vidaActual = 50;
 	La_Montana->ataque = 47;
 	La_Montana->velocidad = 12;
-	La_Montana->monedas = 0;
+	La_Montana->monedas = 10;
 	La_Montana->dibujo = 6;
 }
 void CrearEl_Cid(Caballero* El_Cid, char* alias){
@@ -37,7 +37,7 @@ void CrearEl_Cid(Caballero* El_Cid, char* alias){
 	El_Cid->vidaActual = 58;
 	El_Cid->ataque = 35;
 	El_Cid->velocidad = 15;
-	El_Cid->monedas = 0; 
+	El_Cid->monedas = 10; 
 	El_Cid->dibujo = 7;
 }
 // FUNCIÓN PARA CREAR UN PERSONAJE NUEVO.
@@ -92,7 +92,7 @@ void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
 		} else {
 			Nuevo->velocidad = velocidad;
 		}
-		Nuevo->monedas = 0;
+		Nuevo->monedas = 10;
 		printf("\n\n");
 	} while (bandera != 0);
 
