@@ -55,6 +55,7 @@ void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
 		printf("¿Cuánta vida quieres?: ");
 		errores = scanf("%d", &vida);
 		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+			vida=110;
 			printf("No has introducido un número\n");
 			char buffer[50]; 
 			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
@@ -66,33 +67,41 @@ void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
 			Nuevo->vida =  vida;
 			Nuevo->vidaActual = vida;
 		}
-		printf("¿Cuánto ataque quieres?: ");
+		printf("¿Cuánto ataque quieres? (te quedan %d): ", puntos-vida);
 		errores = scanf("%d", &ataque);
 		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+			ataque=110;
 			printf("No has introducido un número\n");
 			char buffer[50]; 
 			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
 			bandera ++;
-		} else if(puntos < vida+ataque){
+		} else if (ataque < 5){
+			printf("Tienes que poner más ataque\n");
+			bandera++;
+		}else if(puntos < vida+ataque){
 			printf("La suma de tus estadísticas supera el máximo permitido (110)\n");
 			bandera ++;
 		} else {
 			Nuevo->ataque =  ataque;
 		}
-		printf("¿Cuánta velocidad quieres?: ");
+		printf("¿Cuánta velocidad quieres? (te quedan %d): ", puntos-vida-ataque);
 		errores = scanf("%d", &velocidad);
 		if (errores==0){ // Entra en el condicional si ha escrito una letra.
+			velocidad=110;
 			printf("No has introducido un número\n");
 			char buffer[50]; 
 			scanf("%s",buffer); // Para limpiar el buffer y que no sea un bucle infinito.
 			bandera ++;
-		} else if(puntos < vida+ataque+velocidad){
+		} else if (velocidad < 5){
+			printf("Tienes que poner más velocidad\n");
+			bandera++;
+		}else  if(puntos < vida+ataque+velocidad){
 			printf("La suma de tus estadísticas supera el máximo permitido (110)\n");
 			bandera ++;
 		} else {
 			Nuevo->velocidad = velocidad;
 		}
-		Nuevo->monedas = 10;
+		Nuevo->monedas = 10 + (vida-ataque-velocidad);
 		printf("\n\n");
 	} while (bandera != 0);
 
@@ -112,13 +121,13 @@ void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
 	printf(WHITE "1, 2 o 3: ");
 	errores = scanf("%d", &elegir_apariencia_caballero);
 	if (errores==0){ // Entra en el condicional si ha escrito una letra.
-		elegir_apariencia_caballero = 4;
+		elegir_apariencia_caballero = 4; // Si no elige una opción válida se le otorga una skin predeterminada
 		char buffer[50]; 
 		scanf("%s",buffer); // Para limpiar el buffer.
 	} else if(elegir_apariencia_caballero < 1 || elegir_apariencia_caballero > 3){
-		elegir_apariencia_caballero = 4;
+		elegir_apariencia_caballero = 4; // Si no elige una opción válida se le otorga una skin predeterminada
 	}
-	Nuevo->dibujo = elegir_apariencia_caballero;		
+	Nuevo->dibujo = elegir_apariencia_caballero;
 }
 
 // Funcion del ataque del Caballero.
@@ -187,6 +196,6 @@ void ataqueCaballero(Caballero* jugador, Dragon* npc){
         		jugador->vidaActual = jugador->vida;
     	}
     }
-    printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);	
+    printf("\tSalud de %s: %d / %d\n", npc->nombre, npc->vidaActual, npc->vida);
 }
 	

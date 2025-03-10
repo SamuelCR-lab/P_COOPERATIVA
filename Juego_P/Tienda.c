@@ -106,13 +106,13 @@ void tienda_inframundo(Caballero * stats){
 	int eleccion,errores;
 	//system("clear");
 	system("cat < Tienda_inframundo.txt");
-	printf("Tienes %d monedas de oro\n\n",stats->monedas);
 	// TODO: lore tienda
 	printf("\tTras la lucha tu caballero %s tiene estas estadísticas:\n\tSalud = %d/%d\n\tAtaque = %d\n\tVelocidad = %d\n\n",stats->alias,stats->vidaActual,stats->vida,stats->ataque,stats->velocidad);
 	
 	printf("%s",ALMA1);
 	printf("%s",ALMA2);
 	printf("%s",ALMA3);
+	do{
 		printf("Opción: ");
 		errores = scanf(" %d",&eleccion);
 		if(errores == 0){
@@ -123,50 +123,59 @@ void tienda_inframundo(Caballero * stats){
 		}
 		switch(eleccion){
 			case 1:
-				printf("%s",ALMA1_lore);
-				if (stats->ataque > 0 && stats->velocidad > 0){
-					stats->vidaActual += 20;
 					stats->ataque -= 5;
 					stats->velocidad -= 5;
+				if (stats->ataque < 0 || stats->velocidad < 0){
+					printf("No puedes comprar esta alma\n");
+					eleccion=0; // Lo igualo a 0 para que se repita el bucle
+					stats->ataque += 5;
+					stats->velocidad += 5;
+				} else {
+					stats->vidaActual += 20;
 					if (stats->vidaActual > stats->vida){
 						stats->vida = stats->vidaActual;
 					}
+					printf("%s",ALMA1_lore);
 					printf("La pocion te ha aumentado 20 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
-				} else {
-					printf("No puedes comprar esta alma\n");
 				}
 				break;
 			case 2:
-				printf("%s",ALMA2_lore);
-				if (stats->ataque > 0 && stats->velocidad > 0){
-					stats->vidaActual += 50;
 					stats->ataque -= 10;
 					stats->velocidad -= 7;
+				if (stats->ataque < 0 || stats->velocidad < 0){
+					printf("No puedes comprar esta alma\n");
+					eleccion=0; // Lo igualo a 0 para que se repita el bucle
+					stats->ataque += 10;
+					stats->velocidad += 7;
+				} else {
+					stats->vidaActual += 50;
 					if (stats->vidaActual > stats->vida){
 						stats->vida = stats->vidaActual;
 					}
-					stats->monedas -=20;
+					printf("%s",ALMA2_lore);
 					printf("La pocion te ha aumentado 50 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
-				} else {
-					printf("No puedes comprar esta alma\n");
 				}
 				break;
 			case 3:
-				printf("%s",ALMA3_lore);
-				if (stats->ataque > 0 && stats->velocidad > 0){
+				stats->ataque -= 15;
+				stats->velocidad -= 9;
+				if (stats->ataque < 0 || stats->velocidad < 0){
+					printf("No puedes comprar esta alma\n");
+					eleccion=0; // Lo igualo a 0 para que se repita el bucle
+					stats->ataque += 15;
+					stats->velocidad += 9;
+				} else {
 					stats->vidaActual += 120;
-					stats->ataque -= 15;
-					stats->velocidad -= 9;
 					if (stats->vidaActual > stats->vida){
 						stats->vida = stats->vidaActual;
 					}
-					stats->monedas = 0;
+					printf("%s",ALMA3_lore);
 					printf("La pocion te ha aumentado 120 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
-				} else {
-					printf("No puedes comprar esta alma\n");
 				}
 				break;
 			default:
+				printf("Escribe 1, 2 o 3 porque si no, te quedas sin salud\n");
 				break;
 		}
+	}while(eleccion < 1 || eleccion > 3);
 }
