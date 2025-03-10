@@ -69,10 +69,10 @@ int main(){
 	CrearBalerion(&Oponente[2]);
 	CrearCharizard(&Oponente[3]);
 
-	if (strcmp(Jugador->alias,"Víctor de Juan") == 0);
-	Jugador->monedas += 100;
+	if (strcmp(Jugador->alias,"Víctor de Juan") == 0 && eleccion != 4)
+		Jugador->monedas += 100;
+
 	// Elección de dificultad.
-	//Jugador->monedas = 50;
 	do{
 		accion = menu();
 		if (accion == 1){
@@ -126,7 +126,7 @@ int main(){
 					system("cat < Beso.txt");
 					printf("%s",TXT_FINAL3);
 					system("cat < Fin.txt");
-			}   
+			}
 		}else if(accion == 2){
 			mejorar_stats(Jugador);
 		} // TODO: Si la opción es 3 que guarde la partida.

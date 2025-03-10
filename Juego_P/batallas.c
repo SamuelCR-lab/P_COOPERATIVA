@@ -52,17 +52,15 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                 if(vidas == 1){
                     vidas--;
                     system("cat < Dios.txt");
-                    printf("lore");
                     jugador->monedas /= 2;
-                    return 0;
+                    return 1;
                 }else if(vidas == 0){
                     vidas--;
                     system("cat < Muerte.txt");
-                    printf("lore");
-                    return 1;
+                    return 2;
                 }else{
                     printf("Ya no hay mas intentos, GAME OVER\n");
-                    return 2;
+                    return 3;
                 }
             }
             ataqueCaballero(jugador, &npc);
