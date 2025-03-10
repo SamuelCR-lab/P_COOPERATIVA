@@ -103,7 +103,7 @@ void mejorar_stats(Caballero * stats){
 }
 
 void tienda_inframundo(Caballero * stats){
-	int eleccion,errores,c_vueltas = 0;
+	int eleccion,errores;
 	//system("clear");
 	system("cat < Tienda_inframundo.txt");
 	printf("Tienes %d monedas de oro\n\n",stats->monedas);
@@ -113,9 +113,6 @@ void tienda_inframundo(Caballero * stats){
 	printf("%s",ALMA1);
 	printf("%s",ALMA2);
 	printf("%s",ALMA3);
-	printf("%s",SALIR_TIENDA);
-	printf("Opción: ");
-	do{
 		printf("Opción: ");
 		errores = scanf(" %d",&eleccion);
 		if(errores == 0){
@@ -124,10 +121,10 @@ void tienda_inframundo(Caballero * stats){
 			scanf("%s",buffer);
 			eleccion = 5;
 		}
-		c_vueltas++;
 		switch(eleccion){
 			case 1:
 				printf("%s",ALMA1_lore);
+				if (stats->ataque > 0 && stats->velocidad > 0){
 					stats->vidaActual += 20;
 					stats->ataque -= 5;
 					stats->velocidad -= 5;
@@ -135,9 +132,13 @@ void tienda_inframundo(Caballero * stats){
 						stats->vida = stats->vidaActual;
 					}
 					printf("La pocion te ha aumentado 20 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
+				} else {
+					printf("No puedes comprar esta alma\n");
+				}
 				break;
 			case 2:
 				printf("%s",ALMA2_lore);
+				if (stats->ataque > 0 && stats->velocidad > 0){
 					stats->vidaActual += 50;
 					stats->ataque -= 10;
 					stats->velocidad -= 7;
@@ -146,9 +147,13 @@ void tienda_inframundo(Caballero * stats){
 					}
 					stats->monedas -=20;
 					printf("La pocion te ha aumentado 50 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
+				} else {
+					printf("No puedes comprar esta alma\n");
+				}
 				break;
 			case 3:
 				printf("%s",ALMA3_lore);
+				if (stats->ataque > 0 && stats->velocidad > 0){
 					stats->vidaActual += 120;
 					stats->ataque -= 15;
 					stats->velocidad -= 9;
@@ -157,9 +162,11 @@ void tienda_inframundo(Caballero * stats){
 					}
 					stats->monedas = 0;
 					printf("La pocion te ha aumentado 120 de salud y ahora tu salud es = %d\n\n",stats->vidaActual);
+				} else {
+					printf("No puedes comprar esta alma\n");
+				}
 				break;
 			default:
 				break;
 		}
-	}while (eleccion != 4 || c_vueltas < 2);
 }
