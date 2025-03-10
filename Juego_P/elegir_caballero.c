@@ -8,7 +8,7 @@
 
 int elegir_caballero(char ** nombre_c){
 	int elegir,errores,elegir_alias, nuevoCaballero = 0;
-	char respuesta[5];
+	char respuesta[5] = "no";
 	do{ // Es un do while porque siempre se va a ejecutar mínimo una vez y las variables aún no tienen ningún valor asignado.
 		printf(BLUE "\n\n\t1. BOROMIR\n\t\tAtaque: 36\n\t\tSalud: 55\n\t\tVelocidad: 19\n");
 	 	//system("cat < Boromir.txt");
@@ -49,7 +49,7 @@ int elegir_caballero(char ** nombre_c){
 	}
 	switch (elegir){
 		case 1:
-			if (elegir_alias == 0 && strcmp(*nombre_c,"Victor de Juan") == 0){
+			if (elegir_alias == 0 && strcmp(*nombre_c,"Víctor de Juan") == 0){
 				printf("%s",TXT_VIC_DEJU);
 				printf("\t\t ... 100 monedas obtenidas...\n\n");
     			sleep(1);
@@ -61,7 +61,7 @@ int elegir_caballero(char ** nombre_c){
 				break;
 			}
 		case 2:
-			if (elegir_alias == 0 && strcmp(*nombre_c,"Victor de Juan") == 0){
+			if (elegir_alias == 0 && strcmp(*nombre_c,"Víctor de Juan") == 0){
 				printf("%s",TXT_VIC_DEJU);
 				printf("\t\t ... 100 monedas obtenidas...\n\n");
     			sleep(1);
@@ -73,7 +73,7 @@ int elegir_caballero(char ** nombre_c){
 				break;
 			}
 		case 3:
-			if (elegir_alias == 0 && strcmp(*nombre_c,"Victor de Juan") == 0){
+			if (elegir_alias == 0 && strcmp(*nombre_c,"Víctor de Juan") == 0){
 				printf("%s",TXT_VIC_DEJU);
 				printf("\t\t ... 100 monedas obtenidas...\n\n");
     			sleep(1);
