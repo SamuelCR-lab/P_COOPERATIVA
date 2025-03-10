@@ -45,7 +45,7 @@ void CrearCaballeroNuevo(Caballero* Nuevo, char* alias){
 	int puntos = 110, vida, ataque, velocidad, errores, bandera, elegir_apariencia_caballero;
 	strcpy(Nuevo->nombre, alias);
 	strcpy(Nuevo->alias, alias);
-	printf("Tienes un máximo de 110 puntos que puedes reartir entre las tres estadísticas:\n");
+	printf("Tienes un máximo de 110 puntos que puedes repartir entre las tres estadísticas:\n");
 	do {
 		bandera = 0;
 		Nuevo->vida =  0;
