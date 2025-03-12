@@ -10,7 +10,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
     static int vidas = 1;
     srand(time(NULL)); // crea una llista de numeros random en funcion de los segundos del PC
                        // Cada vez que hace rand() selecciona el siguiente número de la lista.
-    //system("clear");
+    system("clear");
     system("cat < Batalla.txt");
 	while (jugador->vidaActual >= 0 && npc.vidaActual >= 0){
         printf("Ronda %d: \n", ronda);
@@ -21,7 +21,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                 printf("El caballero %s ha ganado la batalla\n", jugador->alias);
                 jugador->monedas += npc.monedas;
                 if (strcmp(npc.nombre,"Charizard") == 0){
-                    return 3;
+                    return 4;
                 }else{
                     return 0;
                 }
@@ -69,7 +69,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                 printf("El caballero %s ha ganado la batalla\n", jugador->alias);
                 jugador->monedas += npc.monedas;
                 if (strcmp(npc.nombre,"Charizard") == 0){
-                    return 3;
+                    return 4;
                 }else{
                     return 0;
                 }

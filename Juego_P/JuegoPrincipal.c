@@ -74,6 +74,7 @@ int main(){
 
 	// Elección de dificultad.
 	do{
+		printf("\n\n\n\n\n\n\n\n");
 		accion = menu();
 		if (accion == 1){
 			eleccion_opo = dificultad();
@@ -111,10 +112,10 @@ int main(){
 					tienda_inframundo(Jugador);
 					break;
 				case 3:
-					accion = 4;
+					accion = resultado;
 					break;
 				default:
-					accion = 4;
+					accion = 3;
 					// Lore de la princesa
 					printf("%s",TXT_FINAL1);
 					printf("\t\t'¿Eres tú… mi salvador?' —susurra, con lágrimas de emoción en los ojos.\n");

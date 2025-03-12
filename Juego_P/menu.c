@@ -6,6 +6,7 @@
 int menu(){
 	int accion, errores;
 	//system("clear");
+	printf("\n\n\n\n\n\n")
 	system("cat < Menu.txt");
 	do{
 		printf("\n%s\n",MENU);
