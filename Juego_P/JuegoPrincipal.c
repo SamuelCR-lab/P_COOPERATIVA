@@ -112,7 +112,7 @@ int main(){
 					tienda_inframundo(Jugador);
 					break;
 				case 3:
-					accion = resultado;
+					accion = 3;
 					break;
 				default:
 					accion = 3;

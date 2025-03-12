@@ -21,7 +21,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                 printf("El caballero %s ha ganado la batalla\n", jugador->alias);
                 jugador->monedas += npc.monedas;
                 if (strcmp(npc.nombre,"Charizard") == 0){
-                    return 4;
+                    return 3;
                 }else{
                     return 0;
                 }
@@ -40,7 +40,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                     system("cat < Muerte.txt");
                     return 2;
                 }else{
-                    printf("Ya no hay mas intentos, GAME OVER");
+                    printf("Ya no hay mas intentos, GAME OVER\n");
                     return 3;
                 }
             }
@@ -69,7 +69,7 @@ int batalla(Caballero * jugador, Dragon npc){ // Pasamos dragón por valor para 
                 printf("El caballero %s ha ganado la batalla\n", jugador->alias);
                 jugador->monedas += npc.monedas;
                 if (strcmp(npc.nombre,"Charizard") == 0){
-                    return 4;
+                    return 3;
                 }else{
                     return 0;
                 }
