@@ -11,4 +11,4 @@ read mensaje_commit
 git commit -m "$mensaje_commit"
 
 # Hacer git push usando SSH (te pedirá la passphrase de tu clave SSH)
-git push origin master
+git push 
